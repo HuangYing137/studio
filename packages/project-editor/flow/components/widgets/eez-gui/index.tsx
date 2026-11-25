@@ -1,5 +1,5 @@
 import React from "react";
-import { translateProjectEditorLabel } from "project-editor/core/localization";
+import { translateProjectEditorLabel } from "eez-studio-shared/i10n";
 import { observable, makeObservable, computed } from "mobx";
 
 import QRC from "../qrcodegen";
