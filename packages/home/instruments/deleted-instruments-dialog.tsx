@@ -1,4 +1,5 @@
 import React from "react";
+import { translateProjectEditorLabel } from "eez-studio-shared/i10n";
 import { findDOMNode } from "react-dom";
 import { computed, values, makeObservable } from "mobx";
 import { observer } from "mobx-react";
@@ -67,8 +68,8 @@ const DeletedInstrumentsDialog = observer(
                             <div style={{ display: "flex" }}>
                                 <ButtonAction
                                     className="btn btn-sm btn-outline-success"
-                                    text="Restore"
-                                    title="Restore"
+                                    text={translateProjectEditorLabel("Restore")}
+                                    title={translateProjectEditorLabel("Restore")}
                                     onClick={() => {
                                         instrument.restore();
                                         this.props.instrumentsStore.selectedInstrumentId =
@@ -78,8 +79,8 @@ const DeletedInstrumentsDialog = observer(
                                 />
                                 <ButtonAction
                                     className="btn btn-sm btn-outline-danger"
-                                    text="Delete Permanently"
-                                    title="Delete instrument permanently including all the history"
+                                    text={translateProjectEditorLabel("Delete Permanently")}
+                                    title={translateProjectEditorLabel("Delete instrument permanently including all the history")}
                                     onClick={() => {
                                         confirm(
                                             "Are you sure?",
