@@ -148,7 +148,10 @@ export const validators = {
         }
         let value = filterInteger(object[ruleName]);
         if (isNaN(value) || typeof value !== "number") {
-            return VALIDATION_MESSAGE_INVALID_VALUE;
+            return localizedValidationMessage(
+                VALIDATION_MESSAGE_INVALID_VALUE,
+                "数值无效。"
+            );
         }
         return null;
     },
@@ -157,7 +160,10 @@ export const validators = {
         return function (object: any, ruleName: string) {
             let value = UNITS[unit].parseValue(object[ruleName].toString());
             if (typeof value !== "number" || isNaN(value)) {
-                return VALIDATION_MESSAGE_INVALID_VALUE;
+                return localizedValidationMessage(
+                VALIDATION_MESSAGE_INVALID_VALUE,
+                "数值无效。"
+            );
             }
             return null;
         };
