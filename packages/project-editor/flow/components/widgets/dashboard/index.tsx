@@ -1,4 +1,5 @@
 import React from "react";
+import { translateProjectEditorLabel } from "project-editor/core/localization";
 import {
     observable,
     makeObservable,
@@ -126,7 +127,7 @@ export class TextDashboardWidget extends Widget {
                 propertyGridGroup: generalGroup
             },
             makeDataPropertyInfo("data", {
-                displayName: "Text"
+                displayName: translateProjectEditorLabel("Text")
             }),
             makeStylePropertyInfo("style", "Default style")
         ],
@@ -448,7 +449,7 @@ export class TextInputWidget extends Widget {
 
         properties: [
             makeDataPropertyInfo("data", {
-                displayName: "Value"
+                displayName: translateProjectEditorLabel("Value")
             }),
             makeDataPropertyInfo("readOnly"),
             makeDataPropertyInfo("placehoder"),
@@ -949,7 +950,7 @@ export class CheckboxDashboardWidget extends Widget {
 
         properties: [
             makeDataPropertyInfo("data", {
-                displayName: "Value"
+                displayName: translateProjectEditorLabel("Value")
             }),
             makeExpressionProperty(
                 {
@@ -1145,7 +1146,7 @@ export class RadioDashboardWidget extends Widget {
             makeAssignableExpressionProperty(
                 {
                     name: "variable",
-                    displayName: "Group variable",
+                    displayName: translateProjectEditorLabel("Group variable"),
                     type: PropertyType.MultilineText,
                     propertyGridGroup: specificGroup
                 },
@@ -1308,7 +1309,7 @@ export class SwitchDashboardWidget extends Widget {
 
         properties: [
             makeDataPropertyInfo("data", {
-                displayName: "Value"
+                displayName: translateProjectEditorLabel("Value")
             }),
             makeDataPropertyInfo("enabled"),
             makeStylePropertyInfo("style", "Default style")
@@ -1828,7 +1829,7 @@ export class QRCodeDashboardWidget extends Widget {
 
         properties: [
             makeDataPropertyInfo("data", {
-                displayName: "Text"
+                displayName: translateProjectEditorLabel("Text")
             }),
             {
                 name: "errorCorrection",
@@ -1979,7 +1980,7 @@ export class ButtonDashboardWidget extends Widget {
 
         properties: [
             makeDataPropertyInfo("data", {
-                displayName: "Label"
+                displayName: translateProjectEditorLabel("Label")
             }),
             makeDataPropertyInfo("enabled"),
             makeStylePropertyInfo("style", "Default style"),
