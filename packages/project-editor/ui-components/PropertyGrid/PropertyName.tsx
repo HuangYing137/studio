@@ -12,7 +12,7 @@ import { getNumModifications } from "project-editor/store";
 
 import { propertyCollapsedStore } from "./PropertyCollapsedStore";
 import classNames from "classnames";
-import { translateProjectEditorLabel } from "project-editor/core/localization";
+import { translateProjectEditorLabel } from "eez-studio-shared/i10n";
 
 ////////////////////////////////////////////////////////////////////////////////
 
