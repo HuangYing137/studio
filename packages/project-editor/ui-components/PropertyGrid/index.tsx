@@ -32,7 +32,7 @@ import { groupCollapsedStore } from "./GroupCollapsedStore";
 import { PropertyEnclosure } from "./PropertyEnclosure";
 import { getPropertyGroups } from "./groups";
 import { PropertyMenu } from "./PropertyMenu";
-import { translateProjectEditorLabel } from "project-editor/core/localization";
+import { translateProjectEditorLabel } from "eez-studio-shared/i10n";
 
 ////////////////////////////////////////////////////////////////////////////////
 
