@@ -64,6 +64,18 @@ const zhCNLabels: { [key: string]: string } = {
     "Threshold2": "阈值2", "Mode (0 - scroll, 1 - scan)": "模式（0 - 滚动，1 - 扫描）",
     "Bit (0 - scroll, 1 - scan)": "位（0 - 滚动，1 - 扫描）",
     "Input": "输入", "Output": "输出", "Add": "添加", "Delete": "删除",
+    Presets: "预设", Basic: "基础", "Common Widgets": "常用控件",
+    "LVGL Actions": "LVGL 动作", "Common Actions": "常用动作",
+    "Other components": "其他组件", "User Widgets": "用户控件",
+    "User Actions": "用户动作", Button: "按钮", Label: "标签",
+    Switch: "开关", Checkbox: "复选框", "Radio Button": "单选按钮",
+    "Drop Down List": "下拉列表", Slider: "滑块", "Text Input": "文本输入框",
+    "Multiline Text": "多行文本", "Progress Bar": "进度条", "Bar Graph": "条形图",
+    "Up/Down": "增减控件", "List": "列表", "Tab": "选项卡",
+    "Group": "分组", "Container": "容器", "Line": "线条", "Rectangle": "矩形",
+    "Arc": "弧形", "Image": "图像", "QR Code": "二维码", "Chart": "图表",
+    "LED": "LED 指示灯", "Numeric": "数值显示", "Text": "文本",
+    "Instrument": "仪器", "Terminal": "终端", "Plot": "曲线图",
     "Copy": "复制", "Paste": "粘贴", "Cut": "剪切", "Select": "选择"
 };
 
