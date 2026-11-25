@@ -1,5 +1,6 @@
 import { clipboard } from "electron";
 import React from "react";
+import { getLocale } from "eez-studio-shared/i10n";
 import {
     computed,
     action,
@@ -334,7 +335,7 @@ export const NativeVariableImplementationInfoPropertyUI = observer(
                             <IconAction
                                 icon="material:content_copy"
                                 iconSize={20}
-                                title="Copy to Clipboard"
+                                title={getLocale().toLowerCase().startsWith("zh") ? "复制到剪贴板" : "Copy to Clipboard"}
                                 onClick={() => {
                                     clipboard.writeText(code);
                                 }}
