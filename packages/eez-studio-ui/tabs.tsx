@@ -3,6 +3,7 @@ import { observer } from "mobx-react";
 import classNames from "classnames";
 
 import { Loader } from "eez-studio-ui/loader";
+import { getLocale } from "eez-studio-shared/i10n";
 import { Icon } from "eez-studio-ui/icon";
 
 import { Menu, MenuItem } from "@electron/remote";
@@ -56,7 +57,9 @@ export const TabView = observer(
             if (tab.openInWindow) {
                 menu.append(
                     new MenuItem({
-                        label: "Open in New Window",
+                        label: getLocale().toLowerCase().startsWith("zh")
+                            ? "在新窗口中打开"
+                            : "Open in New Window",
                         click: () => tab.openInWindow!()
                     })
                 );
@@ -65,7 +68,9 @@ export const TabView = observer(
             if (tab.copyProjectPath) {
                 menu.append(
                     new MenuItem({
-                        label: "Copy Project Path",
+                        label: getLocale().toLowerCase().startsWith("zh")
+                            ? "复制项目路径"
+                            : "Copy Project Path",
                         click: () => tab.copyProjectPath!()
                     })
                 );
@@ -74,7 +79,7 @@ export const TabView = observer(
             if (tab.close) {
                 menu.append(
                     new MenuItem({
-                        label: "Close",
+                        label: getLocale().toLowerCase().startsWith("zh") ? "关闭" : "Close",
                         click: () => tab.close!()
                     })
                 );
@@ -108,7 +113,7 @@ export const TabView = observer(
                     <i
                         className="close material-icons"
                         onClick={this.onClose}
-                        title="Close tab"
+                        title={getLocale().toLowerCase().startsWith("zh") ? "关闭标签页" : "Close tab"}
                     >
                         close
                     </i>
