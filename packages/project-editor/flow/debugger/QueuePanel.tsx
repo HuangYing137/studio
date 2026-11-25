@@ -1,4 +1,5 @@
 import React from "react";
+import { translateProjectEditorLabel } from "project-editor/core/localization";
 import { observer } from "mobx-react";
 import { ITreeNode, Tree } from "eez-studio-ui/tree";
 import { Panel } from "project-editor/ui-components/Panel";
@@ -47,7 +48,7 @@ export const QueuePanel = observer(
                                               </svg>
                                           }
                                           iconSize={16}
-                                          title="Resume (F5)"
+                                          title={translateProjectEditorLabel("Resume (F5)")}
                                           onClick={() =>
                                               this.props.runtime.resume()
                                           }
@@ -64,7 +65,7 @@ export const QueuePanel = observer(
                                               </svg>
                                           }
                                           iconSize={16}
-                                          title="Pause (F6)"
+                                          title={translateProjectEditorLabel("Pause (F6)")}
                                           onClick={() =>
                                               this.props.runtime.pause()
                                           }
@@ -82,7 +83,7 @@ export const QueuePanel = observer(
                                           }
                                           iconSize={18}
                                           style={{ marginTop: 4 }}
-                                          title="Step over (F10)"
+                                          title={translateProjectEditorLabel("Step over (F10)")}
                                           onClick={() => {
                                               this.props.runtime.runSingleStep(
                                                   "step-over"
@@ -104,7 +105,7 @@ export const QueuePanel = observer(
                                           }
                                           iconSize={18}
                                           style={{ marginTop: 4 }}
-                                          title="Step into (F11)"
+                                          title={translateProjectEditorLabel("Step into (F11)")}
                                           onClick={() => {
                                               this.props.runtime.runSingleStep(
                                                   "step-into"
@@ -126,7 +127,7 @@ export const QueuePanel = observer(
                                           }
                                           iconSize={18}
                                           style={{ marginTop: 4 }}
-                                          title="Step out (Shift + F11)"
+                                          title={translateProjectEditorLabel("Step out (Shift + F11)")}
                                           onClick={() => {
                                               this.props.runtime.runSingleStep(
                                                   "step-out"
