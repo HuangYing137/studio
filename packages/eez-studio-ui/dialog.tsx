@@ -5,6 +5,7 @@ import { observable, action, makeObservable } from "mobx";
 import { observer } from "mobx-react";
 import classNames from "classnames";
 
+import { getLocale } from "eez-studio-shared/i10n";
 import { Icon } from "eez-studio-ui/icon";
 import { IconAction } from "eez-studio-ui/action";
 
@@ -236,7 +237,7 @@ export const Dialog = observer(
                     onClick: this.onCancel,
                     disabled: this.disableButtons,
                     style: { marginLeft: "auto" },
-                    text: this.props.cancelButtonText || "Cancel"
+                    text: this.props.cancelButtonText || (getLocale().toLowerCase().startsWith("zh") ? "取消" : "Cancel")
                 });
             }
 
@@ -252,7 +253,7 @@ export const Dialog = observer(
                             ? !this.props.okEnabled()
                             : false),
                     style: {},
-                    text: this.props.okButtonText || "OK"
+                    text: this.props.okButtonText || (getLocale().toLowerCase().startsWith("zh") ? "确定" : "OK")
                 });
             }
 
