@@ -752,7 +752,7 @@ export class WizardModel {
                 projectType: PROJECT_TYPE_NAMES[ProjectType.FIRMWARE],
                 image: EEZ_GUI_PROJECT_ICON(128),
                 projectName: "EEZ-GUI",
-                description: "Start your new EEZ-GUI project development here.",
+                description: translateProjectEditorLabel("Start your new EEZ-GUI project development here."),
                 projectFileUrl: getTemplatePathOrUrl(
                     "templates/firmware.eez-project"
                 )
@@ -762,7 +762,7 @@ export class WizardModel {
                 projectType: PROJECT_TYPE_NAMES[ProjectType.LVGL],
                 image: LVGL_PROJECT_ICON(128),
                 projectName: "LVGL",
-                description: "Start your new LVGL project development here.",
+                description: translateProjectEditorLabel("Start your new LVGL project development here."),
                 projectFileUrl: {
                     "8.4.0": getTemplatePathOrUrl(
                         "templates/v0.23.0/LVGL-8.3.eez-project"
@@ -811,7 +811,7 @@ export class WizardModel {
                 projectType: PROJECT_TYPE_NAMES[ProjectType.IEXT],
                 image: IEXT_PROJECT_ICON(128),
                 projectName: "IEXT",
-                description: "Start your new IEXT project development here.",
+                description: translateProjectEditorLabel("Start your new IEXT project development here."),
                 projectFileUrl: {
                     SCPI: getTemplatePathOrUrl("templates/IEXT.eez-project"),
                     PROPRIETARY: getTemplatePathOrUrl(
@@ -824,7 +824,7 @@ export class WizardModel {
                 projectType: PROJECT_TYPE_NAMES[ProjectType.EEZ_GUI_LITE],
                 image: EEZ_GUI_LITE_PROJECT_ICON(128),
                 projectName: "EEZ-GUI Lite",
-                description: "Start your new EEZ-GUI Lite project development here.",
+                description: translateProjectEditorLabel("Start your new EEZ-GUI Lite project development here."),
                 projectFileUrl: getTemplatePathOrUrl(
                     "templates/eez-gui-lite.eez-project"
                 )
