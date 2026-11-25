@@ -1,5 +1,5 @@
 import React from "react";
-import { translateProjectEditorLabel } from "project-editor/core/localization";
+import { translateProjectEditorLabel } from "eez-studio-shared/i10n";
 import { observer } from "mobx-react";
 import { IListNode, List } from "eez-studio-ui/list";
 import { Panel } from "project-editor/ui-components/Panel";
