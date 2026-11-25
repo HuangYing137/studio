@@ -5,7 +5,7 @@ import {
     isProperSubclassOf
 } from "project-editor/core/object";
 import React from "react";
-import { translateProjectEditorLabel } from "project-editor/core/localization";
+import { translateProjectEditorLabel } from "eez-studio-shared/i10n";
 import { ProjectEditor } from "project-editor/project-editor-interface";
 import { mostReadable } from "eez-studio-shared/color";
 import type { ProjectStore } from "project-editor/store";
