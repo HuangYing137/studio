@@ -32,7 +32,7 @@ import { groupCollapsedStore } from "./GroupCollapsedStore";
 import { PropertyEnclosure } from "./PropertyEnclosure";
 import { getPropertyGroups } from "./groups";
 import { PropertyMenu } from "./PropertyMenu";
-import { translateProjectEditorLabel } from "project-editor/ui-components/localization";
+import { translateProjectEditorLabel } from "project-editor/core/localization";
 
 ////////////////////////////////////////////////////////////////////////////////
 
