@@ -32,6 +32,7 @@ import { groupCollapsedStore } from "./GroupCollapsedStore";
 import { PropertyEnclosure } from "./PropertyEnclosure";
 import { getPropertyGroups } from "./groups";
 import { PropertyMenu } from "./PropertyMenu";
+import { translateProjectEditorLabel } from "project-editor/ui-components/localization";
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -379,7 +380,7 @@ const PropertiesGroup = observer(
                             size={18}
                             className="triangle"
                         />
-                        {group.title}
+                        {translateProjectEditorLabel(group.title)}
                     </div>
                     <div className="EezStudio_PropertyGrid_Group_Body">
                         {this.props.children}
