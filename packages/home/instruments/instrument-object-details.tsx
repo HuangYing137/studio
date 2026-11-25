@@ -1,4 +1,5 @@
 import React from "react";
+import { translateProjectEditorLabel } from "eez-studio-shared/i10n";
 import { observer } from "mobx-react";
 
 import { Loader } from "eez-studio-ui/loader";
@@ -52,8 +53,8 @@ export const InstrumentToolbar = observer(
                 <Toolbar>
                     {this.props.instrument.isUnknownExtension && (
                         <ButtonAction
-                            text="Install Extension"
-                            title="Install extension for this instrument"
+                            text={translateProjectEditorLabel("Install Extension")}
+                            title={translateProjectEditorLabel("Install extension for this instrument")}
                             className="btn btn-default btn-primary"
                             onClick={() =>
                                 installExtension(this.props.instrument)
@@ -62,23 +63,23 @@ export const InstrumentToolbar = observer(
                     )}
                     {!this.props.instrumentsStore.selectInstrument && (
                         <ButtonAction
-                            text="Open in Tab"
-                            title="Open instrument in new tab"
+                            text={translateProjectEditorLabel("Open in Tab")}
+                            title={translateProjectEditorLabel("Open instrument in new tab")}
                             className="btn btn-secondary"
                             onClick={this.onOpenInTab}
                         />
                     )}
                     {!this.props.instrumentsStore.selectInstrument && (
                         <ButtonAction
-                            text="Open in New Window"
-                            title="Open instrument in new window"
+                            text={translateProjectEditorLabel("Open in New Window")}
+                            title={translateProjectEditorLabel("Open instrument in new window")}
                             className="btn btn-secondary"
                             onClick={this.onOpenInWindow}
                         />
                     )}
                     <ButtonAction
-                        text="Delete"
-                        title="Delete instrument"
+                        text={translateProjectEditorLabel("Delete")}
+                        title={translateProjectEditorLabel("Delete instrument")}
                         className="btn btn-danger"
                         onClick={this.onDelete}
                     />
