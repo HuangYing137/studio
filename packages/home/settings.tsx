@@ -1079,6 +1079,8 @@ const TemplateSettings = observer(
 
 ////////////////////////////////////////////////////////////////////////////////
 
+const isChinese = () => getLocale().toLowerCase().startsWith("zh");
+
 const SettingsSectionHeader = ({
     title
 }: {
