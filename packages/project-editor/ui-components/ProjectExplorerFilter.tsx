@@ -1,4 +1,5 @@
 import React from "react";
+import { translateProjectEditorLabel } from "eez-studio-shared/i10n";
 
 import type { SortDirectionType } from "project-editor/core/objectAdapter";
 
