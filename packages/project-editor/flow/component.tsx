@@ -1,5 +1,5 @@
 import React from "react";
-import { translateProjectEditorLabel } from "project-editor/core/localization";
+import { translateProjectEditorLabel } from "eez-studio-shared/i10n";
 import { observable, computed, makeObservable, runInAction } from "mobx";
 import { keepAliveComputed } from "project-editor/core/keep-alive";
 import classNames from "classnames";
