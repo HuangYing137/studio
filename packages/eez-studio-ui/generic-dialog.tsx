@@ -13,6 +13,7 @@ import { map } from "lodash-es";
 import { humanize } from "eez-studio-shared/string";
 import { UNITS } from "eez-studio-shared/units";
 import { guid } from "eez-studio-shared/guid";
+import { getLocale } from "eez-studio-shared/i10n";
 
 import { Rule, validators } from "eez-studio-shared/validation";
 
@@ -766,7 +767,7 @@ export const GenericDialog = observer(
                                             }}
                                             style={{ marginLeft: 20 }}
                                         >
-                                            Abort
+                                            {getLocale().toLowerCase().startsWith("zh") ? "中止" : "Abort"}
                                         </button>
                                     </>
                                 )}
