@@ -1,4 +1,5 @@
 import React from "react";
+import { translateProjectEditorLabel } from "project-editor/core/localization";
 import { action, computed, makeObservable } from "mobx";
 import { observer } from "mobx-react";
 import classNames from "classnames";
@@ -57,7 +58,7 @@ export const LogsPanel = observer(
                                 key="clear"
                                 icon="material:delete"
                                 iconSize={20}
-                                title="Clear logs"
+                                title={translateProjectEditorLabel("Clear logs")}
                                 onClick={this.props.runtime.logs.clear}
                             ></IconAction>
                         ]}
