@@ -12,6 +12,11 @@ export {
 
 import { isArray } from "eez-studio-shared/util";
 import { isValidPath } from "./util-electron";
+import { getLocale } from "eez-studio-shared/i10n";
+
+function localizedValidationMessage(english: string, chinese: string) {
+    return getLocale().toLowerCase().startsWith("zh") ? chinese : english;
+}
 
 const VALIDATION_MESSAGE_INVALID_VALUE = "Invalid value.";
 export const VALIDATION_MESSAGE_REQUIRED = "Please fill out this field.";
@@ -41,7 +46,10 @@ export const validators = {
             object[ruleName] == undefined ||
             object[ruleName].toString().trim() === ""
         ) {
-            return VALIDATION_MESSAGE_REQUIRED;
+            return localizedValidationMessage(
+                VALIDATION_MESSAGE_REQUIRED,
+                "请填写此字段。"
+            );
         }
         return null;
     },
@@ -51,16 +59,22 @@ export const validators = {
             const value = object[ruleName];
             if (max !== undefined) {
                 if (value < min || value > max) {
-                    return VALIDATION_MESSAGE_RANGE_INCLUSIVE.replace(
-                        "${min}",
-                        min.toString()
-                    ).replace("${max}", max.toString());
+                    return localizedValidationMessage(
+                        VALIDATION_MESSAGE_RANGE_INCLUSIVE.replace(
+                            "${min}",
+                            min.toString()
+                        ).replace("${max}", max.toString()),
+                        `请输入 ${min} 到 ${max} 之间的数值。`
+                    );
                 }
             } else {
                 if (value < min) {
-                    return VALIDATION_MESSAGE_RANGE_INCLUSIVE_WITHOUT_MAX.replace(
-                        "${min}",
-                        min.toString()
+                    return localizedValidationMessage(
+                        VALIDATION_MESSAGE_RANGE_INCLUSIVE_WITHOUT_MAX.replace(
+                            "${min}",
+                            min.toString()
+                        ),
+                        `请输入大于或等于 ${min} 的数值。`
                     );
                 }
             }
@@ -73,16 +87,22 @@ export const validators = {
             const value = object[ruleName];
             if (max !== undefined) {
                 if (value <= min || value >= max) {
-                    return VALIDATION_MESSAGE_RANGE_EXCLUSIVE.replace(
-                        "${min}",
-                        min.toString()
-                    ).replace("${max}", max.toString());
+                    return localizedValidationMessage(
+                        VALIDATION_MESSAGE_RANGE_EXCLUSIVE.replace(
+                            "${min}",
+                            min.toString()
+                        ).replace("${max}", max.toString()),
+                        `请输入大于 ${min} 且小于 ${max} 的数值（不包括边界值）。`
+                    );
                 }
             } else {
                 if (value <= min) {
-                    return VALIDATION_MESSAGE_RANGE_EXCLUSIVE_WITHOUT_MAX.replace(
-                        "${min}",
-                        min.toString()
+                    return localizedValidationMessage(
+                        VALIDATION_MESSAGE_RANGE_EXCLUSIVE_WITHOUT_MAX.replace(
+                            "${min}",
+                            min.toString()
+                        ),
+                        `请输入大于 ${min} 的数值。`
                     );
                 }
             }
@@ -102,7 +122,10 @@ export const validators = {
                         element !== origObject && element[ruleName] === value
                 )
             ) {
-                return message || VALIDATION_MESSAGE_NOT_UNIQUE;
+                return message || localizedValidationMessage(
+                    VALIDATION_MESSAGE_NOT_UNIQUE,
+                    "此字段的值必须唯一。"
+                );
             }
             return null;
         };
@@ -111,7 +134,10 @@ export const validators = {
     integer: (object: any, ruleName: string) => {
         let value = filterInteger(object[ruleName]);
         if (isNaN(value) || typeof value !== "number") {
-            return VALIDATION_MESSAGE_INVALID_VALUE;
+            return localizedValidationMessage(
+                VALIDATION_MESSAGE_INVALID_VALUE,
+                "数值无效。"
+            );
         }
         return null;
     },
@@ -154,9 +180,12 @@ export const validators = {
             }
 
             if (invalidCharFound) {
-                return VALIDATION_MESSAGE_INVALID_CHAR.replace(
-                    "${char}",
-                    invalidCharFound
+                return localizedValidationMessage(
+                    VALIDATION_MESSAGE_INVALID_CHAR.replace(
+                        "${char}",
+                        invalidCharFound
+                    ),
+                    `不允许使用字符“${invalidCharFound}”。`
                 );
             }
 
@@ -171,7 +200,7 @@ export const validators = {
 
         return isValidPath(object[ruleName], false)
             ? null
-            : "Invalid file name";
+            : localizedValidationMessage("Invalid file name", "文件名无效");
     }
 };
 
