@@ -7,6 +7,7 @@ import classNames from "classnames";
 
 import { getLocale } from "eez-studio-shared/i10n";
 import { Icon } from "eez-studio-ui/icon";
+import { translateProjectEditorLabel } from "project-editor/core/localization";
 import { IconAction } from "eez-studio-ui/action";
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -446,7 +447,7 @@ export const BootstrapDialog = observer(
                     <IconAction
                         key={button.id}
                         icon={button.icon!}
-                        title={button.title || ""}
+                        title={translateProjectEditorLabel(button.title || "")}
                         style={{ color: "#333" }}
                         onClick={button.onClick}
                         enabled={!button.disabled}
@@ -510,7 +511,7 @@ export const BootstrapDialog = observer(
                                         id="myModalLabel"
                                     >
                                         {props.titleIcon}
-                                        <span>{props.title}</span>
+                                        <span>{translateProjectEditorLabel(props.title)}</span>
                                     </h5>
                                     {!this.props.cancelDisabled && (
                                         <button
