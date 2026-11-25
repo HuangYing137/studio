@@ -1,4 +1,5 @@
 import React from "react";
+import { translateProjectEditorLabel } from "project-editor/core/localization";
 import {
     action,
     computed,
@@ -688,7 +689,7 @@ export const GenericDialog = observer(
                         key={fieldGroup.name}
                         className="EezStudio_PropertyList_Fieldset"
                     >
-                        <div className="EezStudio_PropertyList_Legend">{fieldGroup.name}</div>
+                        <div className="EezStudio_PropertyList_Legend">{translateProjectEditorLabel(fieldGroup.name)}</div>
                         {propertyList}
                     </div>
                 );
@@ -717,7 +718,7 @@ export const GenericDialog = observer(
                     <Dialog
                         modal={this.modal}
                         backdrop={this.props.backdrop}
-                        title={this.props.dialogDefinition.title}
+                        title={translateProjectEditorLabel(this.props.dialogDefinition.title)}
                         size={this.props.dialogDefinition.size}
                         okButtonText={this.props.okButtonText}
                         cancelButtonText={this.props.cancelButtonText}
