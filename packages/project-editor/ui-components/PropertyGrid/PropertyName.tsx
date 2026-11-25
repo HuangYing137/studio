@@ -12,7 +12,7 @@ import { getNumModifications } from "project-editor/store";
 
 import { propertyCollapsedStore } from "./PropertyCollapsedStore";
 import classNames from "classnames";
-import { translateProjectEditorLabel } from "project-editor/ui-components/localization";
+import { translateProjectEditorLabel } from "project-editor/core/localization";
 
 ////////////////////////////////////////////////////////////////////////////////
 
