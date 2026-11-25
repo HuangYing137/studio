@@ -274,8 +274,7 @@ const zhCNLabels: { [key: string]: string } = {
     "Instrument Commands": "仪器命令", IEXT: "IEXT", Changes: "更改记录",
     Breakpoints: "断点", "Components Palette": "组件面板", All: "全部", Order: "排序",
     "LVGL Actions": "LVGL 动作", "Common Actions": "常用动作",
-    "Other components": "其他组件", "User Widgets": "用户控件",
-    "User Actions": "用户动作", Button: "按钮", Label: "标签",
+    "Other components": "其他组件", Button: "按钮", Label: "标签",
     "All Templates": "全部模板", "Builtin Templates": "内置模板",
     "BB3 Script Templates": "BB3 脚本模板", "From envox.eu/gitea": "来自 envox.eu/gitea",
     "Project Git Repository": "项目 Git 仓库", "Creating project ...": "正在创建项目…",
@@ -302,9 +301,20 @@ const zhCNLabels: { [key: string]: string } = {
     "Up/Down": "增减控件", "List": "列表", "Tab": "选项卡",
     "Group": "分组", "Container": "容器", "Line": "线条", "Rectangle": "矩形",
     "Arc": "弧形", "Image": "图像", "QR Code": "二维码", "Chart": "图表",
-    "LED": "LED 指示灯", "Numeric": "数值显示", "Text": "文本",
+    "LED": "LED 指示灯", "Numeric": "数值显示",
     "Instrument": "仪器", "Terminal": "终端", "Plot": "曲线图",
     "Copy": "复制", "Paste": "粘贴", "Cut": "剪切", "Select": "选择"
+    Install: "安装", "Install extension": "安装扩展", Update: "更新",
+    "Update extension to the latest version": "将扩展更新到最新版本",
+    Replace: "替换", "Replace installed extension with selected version": "用所选版本替换已安装的扩展",
+    Uninstall: "卸载", "Uninstall extension": "卸载扩展", Export: "导出",
+    "Export extension": "导出扩展", Installed: "已安装", "Not installed": "未安装",
+    "New versions": "有新版本", "Update All": "全部更新", Actions: "操作",
+    "Update Catalog": "更新目录", "Install Extension": "安装扩展",
+    "Install extension from local file": "从本地文件安装扩展",
+    "Install extension from local folder": "从本地文件夹安装扩展",
+    "Project Editor Extensions": "项目编辑器扩展",
+    "Instrument Extensions": "仪器扩展", "Measurement Extensions": "测量扩展"
 };
 
 export function translateProjectEditorLabel(label: string) {
