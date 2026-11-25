@@ -1,4 +1,5 @@
 import React from "react";
+import { getLocale } from "eez-studio-shared/i10n";
 import { observable, computed, makeObservable } from "mobx";
 import { keepAliveComputed } from "project-editor/core/keep-alive";
 import classNames from "classnames";
@@ -128,7 +129,7 @@ export const GeometryProperties = observer(
                         updateObject={this.props.updateObject}
                     />
 
-                    <div title="Width">W</div>
+                    <div title={getLocale().toLowerCase().startsWith("zh") ? "宽度" : "Width"}>W</div>
                     <Property
                         propertyInfo={
                             findPropertyByNameInClassInfo(
@@ -141,7 +142,7 @@ export const GeometryProperties = observer(
                         updateObject={this.props.updateObject}
                     />
 
-                    <div title="Height">H</div>
+                    <div title={getLocale().toLowerCase().startsWith("zh") ? "高度" : "Height"}>H</div>
                     <Property
                         propertyInfo={
                             findPropertyByNameInClassInfo(
@@ -544,7 +545,7 @@ export class Page extends Flow {
                                 validators.unique(
                                     {},
                                     project.pages,
-                                    "Page or User Widget with this name already exists"
+                                    getLocale().toLowerCase().startsWith("zh") ? "已存在同名页面或用户控件" : "Page or User Widget with this name already exists"
                                 )
                             ]
                         }
