@@ -28,7 +28,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 24
+          node-version: 20
           cache: npm
 
       - name: Install dependencies
@@ -42,10 +42,22 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Verify Windows installer exists
+        shell: pwsh
+        run: |
+          $installers = Get-ChildItem -Path dist -Filter *.exe -File
+          if ($installers.Count -eq 0) {
+            throw "No Windows .exe installer was produced."
+          }
+          $installers | ForEach-Object { Write-Host $_.FullName }
+
       - name: Upload Windows distribution
         uses: actions/upload-artifact@v4
         with:
           name: eez-studio-windows-x64
-          path: dist/**
+          path: |
+            dist/*.exe
+            dist/*.blockmap
+            dist/*.yml
           if-no-files-found: error
           retention-days: 14
