@@ -2,6 +2,7 @@ import React from "react";
 import { action, observable, makeObservable, autorun } from "mobx";
 import { observer } from "mobx-react";
 import classNames from "classnames";
+import { getLocale } from "eez-studio-shared/i10n";
 
 import { Icon } from "eez-studio-ui/icon";
 
@@ -23,6 +24,7 @@ import { instrumentDatabases } from "eez-studio-shared/db";
 ////////////////////////////////////////////////////////////////////////////////
 
 const SAVED_OPTIONS_VERSION = 1;
+const isChinese = () => getLocale().toLowerCase().startsWith("zh");
 
 class HomeTabStore {
     activeTab:
@@ -117,11 +119,11 @@ export const Home = observer(
                                     homeTabStore.activeTab = "open";
                                 })}
                                 title={
-                                    "Open a local project or select one from the recent list"
+                                    isChinese() ? "打开本地项目或从最近使用列表中选择" : "Open a local project or select one from the recent list"
                                 }
                             >
                                 <Icon icon={HOME_TAB_OPEN_ICON} size={32} />{" "}
-                                Open
+                                {isChinese() ? "打开" : "Open"}
                             </div>
                             <div
                                 className={classNames(
@@ -134,10 +136,10 @@ export const Home = observer(
                                 onClick={action(() => {
                                     homeTabStore.activeTab = "create";
                                 })}
-                                title="Create a new project"
+                                title={isChinese() ? "创建新项目" : "Create a new project"}
                             >
                                 <Icon icon={HOME_TAB_CREATE_ICON} size={32} />{" "}
-                                Create
+                                {isChinese() ? "创建" : "Create"}
                             </div>
                             <div
                                 className={classNames(
@@ -150,10 +152,10 @@ export const Home = observer(
                                 onClick={action(() => {
                                     homeTabStore.activeTab = "examples";
                                 })}
-                                title="Example projects ready to run or edit"
+                                title={isChinese() ? "可直接运行或编辑的示例项目" : "Example projects ready to run or edit"}
                             >
                                 <Icon icon={HOME_TAB_EXAMPLES_ICON} size={32} />{" "}
-                                Examples
+                                {isChinese() ? "示例" : "Examples"}
                             </div>
                             {/*<div
                                 className={classNames(
@@ -182,13 +184,13 @@ export const Home = observer(
                                 onClick={action(() => {
                                     homeTabStore.activeTab = "instruments";
                                 })}
-                                title="Instruments manager"
+                                title={isChinese() ? "仪器管理器" : "Instruments manager"}
                             >
                                 <Icon
                                     icon={HOME_TAB_INSTRUMENTS_ICON}
                                     size={32}
                                 />{" "}
-                                Instruments
+                                {isChinese() ? "仪器" : "Instruments"}
                             </div>
                             <div
                                 className={classNames(
@@ -202,7 +204,7 @@ export const Home = observer(
                                 onClick={action(() => {
                                     homeTabStore.activeTab = "extensions";
                                 })}
-                                title="Extensions manager"
+                                title={isChinese() ? "扩展管理器" : "Extensions manager"}
                             >
                                 <Icon
                                     icon={"material:extension"}
@@ -212,7 +214,7 @@ export const Home = observer(
                                             .newVersionsInAllSections.length > 0
                                     }
                                 />
-                                Extensions
+                                {isChinese() ? "扩展" : "Extensions"}
                             </div>
                             <div
                                 className={classNames(
@@ -225,7 +227,7 @@ export const Home = observer(
                                 onClick={action(() => {
                                     homeTabStore.activeTab = "settings";
                                 })}
-                                title="Global user settings"
+                                title={isChinese() ? "全局用户设置" : "Global user settings"}
                             >
                                 <Icon
                                     icon={"material:settings"}
@@ -235,7 +237,7 @@ export const Home = observer(
                                             ?.isCompactDatabaseAdvisable
                                     }
                                 />
-                                Settings
+                                {isChinese() ? "设置" : "Settings"}
                             </div>
                         </div>
                         {/*
