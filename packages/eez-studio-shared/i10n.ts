@@ -214,7 +214,7 @@ const zhCNLabels: { [key: string]: string } = {
     "Array size": "数组大小", "String length": "字符串长度",
     "Read only": "只读", "Read-only": "只读", Optional: "可选",
     Required: "必填", Default: "默认", Properties: "属性",
-    "Copy to Clipboard": "复制到剪贴板", "Generate GUID": "生成 GUID",
+    "Copy to Clipboard": "复制到剪贴板", "Clear Search": "清除搜索", "Generate GUID": "生成 GUID",
     "Open in system explorer": "在系统文件管理器中打开",
     "Select file": "选择文件", "Select folder": "选择文件夹",
     "No help page defined!": "未定义帮助页面！",
