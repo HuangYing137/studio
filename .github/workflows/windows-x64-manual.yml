@@ -1,6 +1,17 @@
-name: Windows x64 build (manual)
+name: Windows x64 build
 
 on:
+  push:
+    branches:
+      - chinese-i18n-integration
+    paths:
+      - ".github/workflows/windows-x64-manual.yml"
+      - "package.json"
+      - "package-lock.json"
+      - "packages/**"
+      - "installation/**"
+      - "tsconfig*.json"
+      - "gulpfile.*"
   workflow_dispatch:
 
 permissions:
