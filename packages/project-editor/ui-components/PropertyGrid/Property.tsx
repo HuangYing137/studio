@@ -51,7 +51,7 @@ import { ImageProperty } from "./ImageProperty";
 import { General } from "project-editor/project/project";
 import { UniqueValueInput } from "./UniqueValueInput";
 import { IconEnumDropdown } from "./IconEnumDropdown";
-import { translateProjectEditorLabel } from "project-editor/ui-components/localization";
+import { translateProjectEditorLabel } from "project-editor/core/localization";
 
 ////////////////////////////////////////////////////////////////////////////////
 
