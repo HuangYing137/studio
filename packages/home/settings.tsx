@@ -606,7 +606,7 @@ const CompactDatabaseDialog = observer(
             return (
                 <Dialog
                     open={true}
-                    title="Compacting Database"
+                    title={isChinese() ? "正在压缩数据库" : "Compacting Database"}
                     size="small"
                     cancelButtonText="Close"
                     cancelDisabled={this.sizeAfter === undefined}
@@ -614,11 +614,11 @@ const CompactDatabaseDialog = observer(
                     <table className="EezStudio_CompactDatabaseDialogTable">
                         <tbody>
                             <tr>
-                                <td>Size before</td>
+                                <td>{isChinese() ? "压缩前大小" : "Size before"}</td>
                                 <td>{formatBytes(this.sizeBefore)}</td>
                             </tr>
                             <tr>
-                                <td>Size after</td>
+                                <td>{isChinese() ? "压缩后大小" : "Size after"}</td>
                                 <td>
                                     {this.sizeAfter !== undefined ? (
                                         formatBytes(this.sizeAfter)
@@ -629,7 +629,7 @@ const CompactDatabaseDialog = observer(
                             </tr>
                             {this.sizeReduced !== undefined && (
                                 <tr>
-                                    <td>Size reduced by </td>
+                                    <td>{isChinese() ? "减少了 " : "Size reduced by "}</td>
                                     <td>
                                         {formatBytes(
                                             this.sizeBefore - this.sizeAfter!
@@ -721,7 +721,7 @@ const SelectedDatabaseDetails = observer(
                     </div>
 
                     <div>
-                        <label className="form-label">Path:</label>
+                        <label className="form-label">{isChinese() ? "路径：" : "Path:"}</label>
                         <div>{selectedDatabase.filePath}</div>
 
                         <button
@@ -810,17 +810,17 @@ const DatatabaseList = observer(
                     <ToolbarHeader>
                         <IconAction
                             icon="material:add"
-                            title="Create a new database"
+                            title={isChinese() ? "创建新数据库" : "Create a new database"}
                             onClick={settingsController.createNewDatabase}
                         />
                         <IconAction
                             icon={HOME_TAB_OPEN_ICON}
-                            title="Open an existing database"
+                            title={isChinese() ? "打开现有数据库" : "Open an existing database"}
                             onClick={settingsController.openDatabase}
                         />
                         <IconAction
                             icon="material:delete"
-                            title="Delete a database"
+                            title={isChinese() ? "删除数据库" : "Delete a database"}
                             onClick={settingsController.deleteDatabase}
                             enabled={
                                 settingsController.selectedDatabase &&
@@ -941,7 +941,7 @@ const PythonSettings = observer(
                     <td>
                         <PropertyList>
                             <StaticProperty
-                                name="Default path"
+                                name={isChinese() ? "默认路径" : "Default path"}
                                 value={
                                     this.pythonPathError
                                         ? "Python not found"
@@ -950,7 +950,7 @@ const PythonSettings = observer(
                                 className="StaticPropertyValueWrap"
                             />
                             <BooleanProperty
-                                name={`Set custom path`}
+                                name={isChinese() ? "设置自定义路径" : "Set custom path"}
                                 value={settingsController.pythonUseCustomPath}
                                 onChange={action(
                                     value =>
@@ -961,7 +961,7 @@ const PythonSettings = observer(
                             />
                             {settingsController.pythonUseCustomPath && (
                                 <AbsoluteFileInputProperty
-                                    name="Custom Python path"
+                                    name={isChinese() ? "自定义 Python 路径" : "Custom Python path"}
                                     value={settingsController.pythonCustomPath}
                                     onChange={action(value => {
                                         settingsController.pythonCustomPath =
@@ -1026,11 +1026,11 @@ const TemplateSettings = observer(
         render() {
             return (
                 <tr>
-                    <td>Project Templates</td>
+                    <td>{isChinese() ? "项目模板" : "Project Templates"}</td>
                     <td>
                         <PropertyList>
                             <BooleanProperty
-                                name={`Use local templates folder`}
+                                name={isChinese() ? "使用本地模板文件夹" : "Use local templates folder"}
                                 value={settingsController.useLocalTemplates}
                                 onChange={action(
                                     value =>
@@ -1042,7 +1042,7 @@ const TemplateSettings = observer(
                             {settingsController.useLocalTemplates && (
                                 <>
                                     <AbsoluteDirectoryInputProperty
-                                        name="Local templates path"
+                                        name={isChinese() ? "本地模板路径" : "Local templates path"}
                                         value={
                                             settingsController.localTemplatesPath
                                         }
@@ -1052,7 +1052,7 @@ const TemplateSettings = observer(
                                         })}
                                     />
                                     <tr>
-                                        <td>Repository</td>
+                                        <td>{isChinese() ? "仓库" : "Repository"}</td>
                                         <td>
                                             <a
                                                 href="#"
