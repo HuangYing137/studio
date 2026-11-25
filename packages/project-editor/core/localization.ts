@@ -57,7 +57,14 @@ const zhCNLabels: { [key: string]: string } = {
     "Zone to threshold1": "阈值1区域", "BB3 module field": "BB3 模块字段",
     "Second BB3 module field": "第二个 BB3 模块字段",
     "On/Off text": "开/关文本", "Box width": "框宽度",
-    "Clear logs": "清空日志"
+    "changed": "已更改",
+    "Set variable entries": "设置变量条目",
+    "When": "当", "Then output": "然后输出", "With value": "使用值",
+    "Cases": "分支", "Yes": "是", "No": "否",
+    "Threshold2": "阈值2", "Mode (0 - scroll, 1 - scan)": "模式（0 - 滚动，1 - 扫描）",
+    "Bit (0 - scroll, 1 - scan)": "位（0 - 滚动，1 - 扫描）",
+    "Input": "输入", "Output": "输出", "Add": "添加", "Delete": "删除",
+    "Copy": "复制", "Paste": "粘贴", "Cut": "剪切", "Select": "选择"
 };
 
 export function translateProjectEditorLabel(label: string) {
