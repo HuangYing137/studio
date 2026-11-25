@@ -1,6 +1,7 @@
 import path from "path";
 import { dialog, getCurrentWindow } from "@electron/remote";
 import React from "react";
+import { translateProjectEditorLabel } from "eez-studio-shared/i10n";
 import {
     action,
     computed,
@@ -617,7 +618,7 @@ const ExportDialog = observer(
             return (
                 <Dialog
                     className="EezStudio_ExportDialog"
-                    title="Export"
+                    title={translateProjectEditorLabel("Export")}
                     onOk={this.onOK}
                     additionalFooterControl={
                         this.error ? (
