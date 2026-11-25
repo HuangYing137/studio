@@ -2,7 +2,7 @@ import React from "react";
 import { observable, makeObservable } from "mobx";
 
 import { humanize } from "eez-studio-shared/string";
-import { translateProjectEditorLabel } from "project-editor/core/localization";
+import { translateProjectEditorLabel } from "eez-studio-shared/i10n";
 import { Rect } from "eez-studio-shared/geometry";
 import { isArray, objectClone } from "eez-studio-shared/util";
 
