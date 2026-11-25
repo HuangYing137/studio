@@ -1,4 +1,5 @@
 import React from "react";
+import { translateProjectEditorLabel } from "project-editor/core/localization";
 import { observable, computed, makeObservable, runInAction } from "mobx";
 import { keepAliveComputed } from "project-editor/core/keep-alive";
 import classNames from "classnames";
@@ -1695,34 +1696,34 @@ const AlignAndDistributePropertyGridUI = observer(
                             <div className="EezStudio_ActionGroup_Actions_Group">
                                 <IconAction
                                     icon={ALIGN_HORIZONTAL_LEFT_ICON()}
-                                    title="Align left edges"
+                                    title={translateProjectEditorLabel("Align left edges")}
                                     onClick={this.onAlignHorizontalLeft}
                                 />
                                 <IconAction
                                     icon={ALIGN_HORIZONTAL_CENTER_ICON()}
-                                    title="Center on vertical axis"
+                                    title={translateProjectEditorLabel("Center on vertical axis")}
                                     onClick={this.onAlignHorizontalCenter}
                                 />
                                 <IconAction
                                     icon={ALIGN_HORIZONTAL_RIGHT_ICON()}
-                                    title="Align right edges"
+                                    title={translateProjectEditorLabel("Align right edges")}
                                     onClick={this.onAlignHorizontalRight}
                                 />
                             </div>
                             <div className="EezStudio_ActionGroup_Actions_Group">
                                 <IconAction
                                     icon={ALIGN_VERTICAL_TOP_ICON()}
-                                    title="Align top edges"
+                                    title={translateProjectEditorLabel("Align top edges")}
                                     onClick={this.onAlignVerticalTop}
                                 />
                                 <IconAction
                                     icon={ALIGN_VERTICAL_CENTER_ICON()}
-                                    title="Center on horizontal axis"
+                                    title={translateProjectEditorLabel("Center on horizontal axis")}
                                     onClick={this.onAlignVerticalCenter}
                                 />
                                 <IconAction
                                     icon={ALIGN_VERTICAL_BOTTOM_ICON()}
-                                    title="Align bottom edges"
+                                    title={translateProjectEditorLabel("Align bottom edges")}
                                     onClick={this.onAlignVerticalBottom}
                                 />
                             </div>
@@ -1737,28 +1738,28 @@ const AlignAndDistributePropertyGridUI = observer(
                                 <div className="EezStudio_ActionGroup_Actions_Group">
                                     <IconAction
                                         icon={DISTRIBUTE_HORIZONTAL_LEFT_ICON()}
-                                        title="Distribute left edges equidistantly"
+                                        title={translateProjectEditorLabel("Distribute left edges equidistantly")}
                                         onClick={
                                             this.onDistributeHorizontalLeft
                                         }
                                     />
                                     <IconAction
                                         icon={DISTRIBUTE_HORIZONTAL_CENTER_ICON()}
-                                        title="Distribute centers equidistantly horizontally"
+                                        title={translateProjectEditorLabel("Distribute centers equidistantly horizontally")}
                                         onClick={
                                             this.onDistributeHorizontalCenter
                                         }
                                     />
                                     <IconAction
                                         icon={DISTRIBUTE_HORIZONTAL_RIGHT_ICON()}
-                                        title="Distribute right edges equidistantly"
+                                        title={translateProjectEditorLabel("Distribute right edges equidistantly")}
                                         onClick={
                                             this.onDistributeHorizontalRight
                                         }
                                     />
                                     <IconAction
                                         icon={DISTRIBUTE_HORIZONTAL_GAPS_ICON()}
-                                        title="Make horizontal gaps equal"
+                                        title={translateProjectEditorLabel("Make horizontal gaps equal")}
                                         onClick={
                                             this.onDistributeHorizontalGaps
                                         }
@@ -1767,26 +1768,26 @@ const AlignAndDistributePropertyGridUI = observer(
                                 <div className="EezStudio_ActionGroup_Actions_Group">
                                     <IconAction
                                         icon={DISTRIBUTE_VERTICAL_TOP_ICON()}
-                                        title="Distribute top edges equidistantly"
+                                        title={translateProjectEditorLabel("Distribute top edges equidistantly")}
                                         onClick={this.onDistributeVerticalTop}
                                     />
                                     <IconAction
                                         icon={DISTRIBUTE_VERTICAL_CENTER_ICON()}
-                                        title="Distribute centers equidistantly vertically"
+                                        title={translateProjectEditorLabel("Distribute centers equidistantly vertically")}
                                         onClick={
                                             this.onDistributeVerticalCenter
                                         }
                                     />
                                     <IconAction
                                         icon={DISTRIBUTE_VERTICAL_BOTTOM_ICON()}
-                                        title="Distribute bottom edges equidistantly"
+                                        title={translateProjectEditorLabel("Distribute bottom edges equidistantly")}
                                         onClick={
                                             this.onDistributeVerticalBottom
                                         }
                                     />
                                     <IconAction
                                         icon={DISTRIBUTE_VERTICAL_GAPS_ICON()}
-                                        title="Make vertical gaps equal"
+                                        title={translateProjectEditorLabel("Make vertical gaps equal")}
                                         onClick={this.onDistributeVerticalGaps}
                                     />
                                 </div>
@@ -1845,12 +1846,12 @@ const CenterWidgetUI = observer(
                 <div className="EezStudio_AlignAndDistributeIcons">
                     <IconAction
                         icon={ALIGN_HORIZONTAL_CENTER_ICON()}
-                        title="Center horizontally relative to parent"
+                        title={translateProjectEditorLabel("Center horizontally relative to parent")}
                         onClick={this.onCenterHorizontally}
                     />
                     <IconAction
                         icon={ALIGN_VERTICAL_CENTER_ICON()}
-                        title="Center vertically relative to parent"
+                        title={translateProjectEditorLabel("Center vertically relative to parent")}
                         onClick={this.onCenterVertically}
                     />
                 </div>
@@ -2045,7 +2046,7 @@ const WidgetGeometryProperties = observer(
                             showCenterButtons) && (
                             <div className="EezStudio_WidgetGeometryProperty_Info">
                                 {absolutePosition != undefined && (
-                                    <span title="Absolute position (X, Y) on the page">
+                                    <span title={translateProjectEditorLabel("Absolute position (X, Y) on the page")}>
                                         Absolute: {absolutePosition}
                                     </span>
                                 )}
@@ -2257,7 +2258,7 @@ export class Component extends EezObject {
             },
             {
                 name: "layoutBox",
-                displayName: "Laid out at",
+                displayName: translateProjectEditorLabel("Laid out at"),
                 type: PropertyType.String,
                 propertyGridGroup: geometryGroup,
                 computed: true,
@@ -2269,7 +2270,7 @@ export class Component extends EezObject {
             },
             {
                 name: "absolutePosition",
-                displayName: "Absolute pos.",
+                displayName: translateProjectEditorLabel("Absolute pos."),
                 type: PropertyType.String,
                 propertyGridGroup: geometryGroup,
                 computed: true,
@@ -2311,7 +2312,7 @@ export class Component extends EezObject {
             },
             {
                 name: "centerWidgetUI",
-                displayName: "Center widget",
+                displayName: translateProjectEditorLabel("Center widget"),
                 type: PropertyType.Any,
                 propertyGridGroup: geometryGroup,
                 computed: true,
@@ -2339,7 +2340,7 @@ export class Component extends EezObject {
             },
             {
                 name: "customInputs",
-                displayName: "Inputs",
+                displayName: translateProjectEditorLabel("Inputs"),
                 type: PropertyType.Array,
                 typeClass: CustomInput,
                 propertyGridGroup: flowGroup,
@@ -2353,7 +2354,7 @@ export class Component extends EezObject {
             },
             {
                 name: "customOutputs",
-                displayName: "Outputs",
+                displayName: translateProjectEditorLabel("Outputs"),
                 type: PropertyType.Array,
                 typeClass: CustomOutput,
                 propertyGridGroup: flowGroup,
@@ -2850,7 +2851,7 @@ export class Component extends EezObject {
         if (this.catchError) {
             outputs.push({
                 name: "@error",
-                displayName: "@Error",
+                displayName: translateProjectEditorLabel("@Error"),
                 type: "string",
                 isOptionalOutput: false,
                 isSequenceOutput: false
@@ -2998,7 +2999,7 @@ export class EventHandler extends EezObject {
         properties: [
             {
                 name: "eventName",
-                displayName: "Event",
+                displayName: translateProjectEditorLabel("Event"),
                 type: PropertyType.Enum,
                 enumItems: (eventHandler: EventHandler) => {
                     const eventHandlers = getParent(
@@ -3174,7 +3175,7 @@ export class EventHandler extends EezObject {
                     fields: [
                         {
                             name: "eventName",
-                            displayName: "Event",
+                            displayName: translateProjectEditorLabel("Event"),
                             type: "enum",
                             enumItems: (values: any) =>
                                 getEventEnumItems(eventHandlers, values)
@@ -3329,7 +3330,7 @@ export class Widget extends Component {
             resizingProperty,
             {
                 name: "flexGrow",
-                displayName: "Grow",
+                displayName: translateProjectEditorLabel("Grow"),
                 type: PropertyType.Boolean,
                 propertyGridGroup: geometryGroup,
                 hideInPropertyGrid: (widget: Widget) =>
@@ -3337,7 +3338,7 @@ export class Widget extends Component {
             },
             {
                 name: "alignSelf",
-                displayName: "Align self",
+                displayName: translateProjectEditorLabel("Align self"),
                 type: PropertyType.Enum,
                 enumItems: [
                     { id: "auto", label: "Auto" },
@@ -3372,7 +3373,7 @@ export class Widget extends Component {
             },
             {
                 name: "variant",
-                displayName: "Variant",
+                displayName: translateProjectEditorLabel("Variant"),
                 type: PropertyType.Enum,
                 enumItems: (widget: IEezObject) => [
                     ...getStyleVariants(widget).map(styleVariant => ({
@@ -3389,7 +3390,7 @@ export class Widget extends Component {
             },
             {
                 name: "variantRules",
-                displayName: "Variant rules",
+                displayName: translateProjectEditorLabel("Variant rules"),
                 type: PropertyType.Array,
                 typeClass: VariantRule,
                 // a widget without rules has no list (and saves none)
@@ -3472,7 +3473,7 @@ export class Widget extends Component {
             },
             {
                 name: "timelineUI",
-                displayName: "Keyframe editor",
+                displayName: translateProjectEditorLabel("Keyframe editor"),
                 type: PropertyType.Any,
                 propertyGridGroup: timelineGroup,
                 propertyGridRowComponent: TimelineKeyframePropertyUI,
@@ -4232,7 +4233,7 @@ export class Widget extends Component {
                         },
                         {
                             name: "icon",
-                            displayName: "Icon (SVG)",
+                            displayName: translateProjectEditorLabel("Icon (SVG)"),
                             type: "string"
                         }
                     ]
@@ -4333,7 +4334,7 @@ export class Widget extends Component {
         if (this.outputWidgetHandle) {
             outputs.push({
                 name: "@widget",
-                displayName: "@Widget",
+                displayName: translateProjectEditorLabel("@Widget"),
                 type: "widget",
                 isOptionalOutput: false,
                 isSequenceOutput: false
@@ -5139,7 +5140,7 @@ function renderActionComponent(
                 {seqInputIndex != -1 && (
                     <ComponentInputSpan
                         componentInput={actionNode.inputs[seqInputIndex]}
-                        title="Sequence input"
+                        title={translateProjectEditorLabel("Sequence input")}
                     />
                 )}
                 <div
@@ -5165,7 +5166,7 @@ function renderActionComponent(
                 {seqOutputIndex != -1 && (
                     <ComponentOutputSpan
                         componentOutput={actionNode.outputs[seqOutputIndex]}
-                        title="Sequence output"
+                        title={translateProjectEditorLabel("Sequence output")}
                     />
                 )}
             </div>
