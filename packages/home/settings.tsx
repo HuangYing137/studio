@@ -1099,12 +1099,12 @@ export const Settings = observer(
             return (
                 <div className="EezStudio_HomeSettingsBody">
                     <PropertyList>
-                        <SettingsSectionHeader title="Databases" />
+                        <SettingsSectionHeader title={isChinese() ? "数据库" : "Databases"} />
                         <Databases />
 
-                        <SettingsSectionHeader title="Localization" />
+                        <SettingsSectionHeader title={isChinese() ? "语言和区域" : "Localization"} />
                         <SelectProperty
-                            name="Locale"
+                            name={isChinese() ? "界面语言" : "Locale"}
                             value={settingsController.locale}
                             onChange={settingsController.onLocaleChange}
                         >
@@ -1123,7 +1123,7 @@ export const Settings = observer(
                                 ))}
                         </SelectProperty>
                         <SelectProperty
-                            name="Date format"
+                            name={isChinese() ? "日期格式" : "Date format"}
                             value={settingsController.dateFormat}
                             onChange={settingsController.onDateFormatChanged}
                         >
@@ -1137,7 +1137,7 @@ export const Settings = observer(
                             ))}
                         </SelectProperty>
                         <SelectProperty
-                            name="Time format"
+                            name={isChinese() ? "时间格式" : "Time format"}
                             value={settingsController.timeFormat}
                             onChange={settingsController.onTimeFormatChanged}
                         >
@@ -1151,35 +1151,35 @@ export const Settings = observer(
                             ))}
                         </SelectProperty>
 
-                        <SettingsSectionHeader title="External Tools" />
+                        <SettingsSectionHeader title={isChinese() ? "外部工具" : "External Tools"} />
                         <PythonSettings />
 
-                        <SettingsSectionHeader title="Project Editor" />
+                        <SettingsSectionHeader title={isChinese() ? "项目编辑器" : "Project Editor"} />
                         <SelectProperty
-                            name="Project editor layout"
+                            name={isChinese() ? "项目编辑器布局" : "Project editor layout"}
                             value={settingsController.projectEditorLayout}
                             onChange={settingsController.setProjectEditorLayout}
                         >
-                            <option value="classic">Classic</option>
+                            <option value="classic">{isChinese() ? "经典布局" : "Classic"}</option>
                             <option value="project-explorer">
-                                Project Explorer
+                                {isChinese() ? "项目浏览器" : "Project Explorer"}
                             </option>
                         </SelectProperty>
                         <SelectProperty
-                            name="Properties editor"
+                            name={isChinese() ? "属性编辑器" : "Properties editor"}
                             value={settingsController.propertiesEditor}
                             onChange={settingsController.setPropertiesEditor}
                         >
                             <option value="panel">
-                                Panel (tab on the right side)
+                                {isChinese() ? "面板（位于右侧的标签页）" : "Panel (tab on the right side)"}
                             </option>
-                            <option value="dialog">Popup dialog</option>
+                            <option value="dialog">{isChinese() ? "弹出对话框" : "Popup dialog"}</option>
                         </SelectProperty>
                         <TemplateSettings />
 
-                        <SettingsSectionHeader title="Appearance" />
+                        <SettingsSectionHeader title={isChinese() ? "外观" : "Appearance"} />
                         <BooleanProperty
-                            name={`Dark theme`}
+                            name={isChinese() ? "深色主题" : "Dark theme"}
                             value={settingsController.isDarkTheme}
                             onChange={settingsController.switchTheme}
                             checkboxStyleSwitch={true}
