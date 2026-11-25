@@ -51,7 +51,7 @@ import { ImageProperty } from "./ImageProperty";
 import { General } from "project-editor/project/project";
 import { UniqueValueInput } from "./UniqueValueInput";
 import { IconEnumDropdown } from "./IconEnumDropdown";
-import { translateProjectEditorLabel } from "project-editor/core/localization";
+import { translateProjectEditorLabel } from "eez-studio-shared/i10n";
 
 ////////////////////////////////////////////////////////////////////////////////
 
