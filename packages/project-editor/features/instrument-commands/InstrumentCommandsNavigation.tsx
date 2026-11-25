@@ -1,4 +1,5 @@
 import React from "react";
+import { getLocale } from "eez-studio-shared/i10n";
 import { observer } from "mobx-react";
 
 import { IconAction } from "eez-studio-ui/action";
@@ -34,7 +35,7 @@ export const InstrumentCommandsList = observer(
                 additionalButtons = [
                     <IconAction
                         key="refresh"
-                        title="Refresh with content from commands help folder"
+                        title={getLocale().toLowerCase().startsWith("zh") ? "从命令帮助文件夹刷新内容" : "Refresh with content from commands help folder"}
                         icon="material:refresh"
                         iconSize={16}
                         onClick={this.handleRefresh}
@@ -109,7 +110,7 @@ export const InstrumentCommandHelpPreview = observer(
                     />
                 );
             } else {
-                return <div>No help page defined!</div>;
+                return <div>{getLocale().toLowerCase().startsWith("zh") ? "未定义帮助页面！" : "No help page defined!"}</div>;
             }
         }
     }
