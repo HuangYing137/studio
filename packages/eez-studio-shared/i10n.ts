@@ -315,6 +315,13 @@ const zhCNLabels: { [key: string]: string } = {
     "Install extension from local folder": "从本地文件夹安装扩展",
     "Project Editor Extensions": "项目编辑器扩展",
     "Instrument Extensions": "仪器扩展", "Measurement Extensions": "测量扩展"
+    Import: "导入", Connection: "连接", "From file:": "从文件：",
+    "Description:": "描述：", Restore: "恢复", "Delete Permanently": "永久删除",
+    "Delete instrument permanently including all the history": "永久删除仪器及其全部历史记录",
+    "Install extension for this instrument": "为此仪器安装扩展",
+    "Open in Tab": "在标签页中打开", "Open instrument in new tab": "在新标签页中打开仪器",
+    "Open in New Window": "在新窗口中打开", "Open instrument in new window": "在新窗口中打开仪器",
+    "Delete instrument": "删除仪器"
 };
 
 export function translateProjectEditorLabel(label: string) {
