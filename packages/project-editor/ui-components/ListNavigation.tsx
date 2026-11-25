@@ -31,6 +31,7 @@ import { List } from "project-editor/ui-components/List";
 
 import { ProjectContext } from "project-editor/project/context";
 import classNames from "classnames";
+import { getLocale } from "eez-studio-shared/i10n";
 import { ProjectEditor } from "project-editor/project-editor-interface";
 import { getExternalItems } from "project-editor/project/helper";
 import type { Project } from "project-editor/project/project";
@@ -42,6 +43,8 @@ import {
 } from "project-editor/ui-components/ProjectExplorerFilter";
 
 ////////////////////////////////////////////////////////////////////////////////
+
+const isChinese = () => getLocale().toLowerCase().startsWith("zh");
 
 export const SortControl = observer(
     class SortControl extends React.Component<{
@@ -112,7 +115,7 @@ const AddButton = observer(
         render() {
             return (
                 <IconAction
-                    title={`Add ${
+                    title={isChinese() ? "添加新项目" : `Add ${
                         this.props.navigationObject
                             ? getAddItemName(this.props.navigationObject)
                             : "Item"
@@ -143,7 +146,7 @@ const DeleteButton = observer(
         render() {
             return (
                 <IconAction
-                    title="Delete Selected Item"
+                    title={isChinese() ? "删除所选项目" : "Delete Selected Item"}
                     icon="material:delete"
                     iconSize={16}
                     onClick={this.onDelete}
