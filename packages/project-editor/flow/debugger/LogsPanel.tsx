@@ -1,5 +1,5 @@
 import React from "react";
-import { translateProjectEditorLabel } from "project-editor/core/localization";
+import { translateProjectEditorLabel } from "eez-studio-shared/i10n";
 import { action, computed, makeObservable } from "mobx";
 import { observer } from "mobx-react";
 import classNames from "classnames";
