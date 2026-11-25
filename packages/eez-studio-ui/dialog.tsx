@@ -517,7 +517,7 @@ export const BootstrapDialog = observer(
                                             type="button"
                                             className="btn-close float-right"
                                             disabled={props.disableButtons}
-                                            aria-label="Close"
+                                            aria-label={getLocale().toLowerCase().startsWith("zh") ? "关闭" : "Close"}
                                             onClick={props.onCancel}
                                         ></button>
                                     )}
