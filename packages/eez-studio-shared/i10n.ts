@@ -303,7 +303,7 @@ const zhCNLabels: { [key: string]: string } = {
     "Arc": "弧形", "Image": "图像", "QR Code": "二维码", "Chart": "图表",
     "LED": "LED 指示灯", "Numeric": "数值显示",
     "Instrument": "仪器", "Terminal": "终端", "Plot": "曲线图",
-    "Copy": "复制", "Paste": "粘贴", "Cut": "剪切", "Select": "选择"
+    "Copy": "复制", "Paste": "粘贴", "Cut": "剪切", "Select": "选择",
     Install: "安装", "Install extension": "安装扩展", Update: "更新",
     "Update extension to the latest version": "将扩展更新到最新版本",
     Replace: "替换", "Replace installed extension with selected version": "用所选版本替换已安装的扩展",
@@ -314,7 +314,7 @@ const zhCNLabels: { [key: string]: string } = {
     "Install extension from local file": "从本地文件安装扩展",
     "Install extension from local folder": "从本地文件夹安装扩展",
     "Project Editor Extensions": "项目编辑器扩展",
-    "Instrument Extensions": "仪器扩展", "Measurement Extensions": "测量扩展"
+    "Instrument Extensions": "仪器扩展", "Measurement Extensions": "测量扩展",
     Import: "导入", Connection: "连接", "From file:": "从文件：",
     "Description:": "描述：", Restore: "恢复", "Delete Permanently": "永久删除",
     "Delete instrument permanently including all the history": "永久删除仪器及其全部历史记录",
