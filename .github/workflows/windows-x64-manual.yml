@@ -12,6 +12,17 @@ on:
       - "installation/**"
       - "tsconfig*.json"
       - "gulpfile.*"
+  pull_request:
+    branches:
+      - master
+    paths:
+      - ".github/workflows/windows-x64-manual.yml"
+      - "package.json"
+      - "package-lock.json"
+      - "packages/**"
+      - "installation/**"
+      - "tsconfig*.json"
+      - "gulpfile.*"
   workflow_dispatch:
 
 permissions:
