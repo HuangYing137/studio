@@ -1,5 +1,6 @@
 import { observer } from "mobx-react";
 import React from "react";
+import { translateProjectEditorLabel } from "eez-studio-shared/i10n";
 
 import { Icon } from "eez-studio-ui/icon";
 
@@ -235,7 +236,7 @@ export const Messages = observer(
 
             if (clickedMessage) {
                 menuItems.push({
-                    label: "Copy",
+                    label: translateProjectEditorLabel("Copy"),
                     click: () => {
                         copyToClipboard(
                             collectMessagesText(
@@ -248,7 +249,7 @@ export const Messages = observer(
             }
 
             menuItems.push({
-                label: "Copy All",
+                label: translateProjectEditorLabel("Copy All"),
                 click: () => {
                     copyToClipboard(
                         collectMessagesText(

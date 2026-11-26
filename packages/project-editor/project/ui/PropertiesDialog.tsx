@@ -1,4 +1,5 @@
 import React from "react";
+import { translateProjectEditorLabel } from "eez-studio-shared/i10n";
 import { createRoot } from "react-dom/client";
 import {
     action,
@@ -137,12 +138,12 @@ const PropertiesDialogObjects = observer(
             let title;
 
             if (objects.length == 0) {
-                title = "Nothing selected";
+                title = translateProjectEditorLabel("Nothing selected");
             } else if (objects.length == 1) {
                 icon = getObjectIcon(objects[0]);
                 title = getPropertiesPanelLabel(objects[0]);
             } else {
-                title = "Multiple objects selected";
+                title = translateProjectEditorLabel("Multiple objects selected");
             }
 
             // if LVGL project show properties for both Page object and Screen widget object

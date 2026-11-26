@@ -1,5 +1,6 @@
 import os from "os";
 import React from "react";
+import { translateProjectEditorLabel } from "eez-studio-shared/i10n";
 import { createRoot, Root } from "react-dom/client";
 import {
     action,
@@ -1244,7 +1245,7 @@ const CommandPalette = observer(
                                 </span>
                                 <span className="EezStudio_CommandPalette_ItemLabel">
                                     <HighlightedLabel
-                                        label={item.label}
+                                        label={translateProjectEditorLabel(item.label)}
                                         positions={positions}
                                     />
                                 </span>
@@ -1263,8 +1264,8 @@ const CommandPalette = observer(
                         {matchedItems.length == 0 && (
                             <div className="EezStudio_CommandPalette_Message">
                                 {state.mode == "commands"
-                                    ? "No matching commands"
-                                    : "No matching objects"}
+                                    ? translateProjectEditorLabel("No matching commands")
+                                    : translateProjectEditorLabel("No matching objects")}
                             </div>
                         )}
                         {matchedItems.length > visibleItems.length && (
