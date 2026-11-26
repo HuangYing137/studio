@@ -288,7 +288,7 @@ const EditorButtons = observer(
                                 <IconAction
                                     title={
                                         this.context.undoManager.canUndo
-                                            ? `Undo "${this.context.undoManager.undoDescription}"`
+                                            ? `${translateProjectEditorLabel("Undo")} "${this.context.undoManager.undoDescription}"`
                                             : ""
                                     }
                                     icon="material:undo"
@@ -300,7 +300,7 @@ const EditorButtons = observer(
                                 <IconAction
                                     title={
                                         this.context.undoManager.canRedo
-                                            ? `Redo "${this.context.undoManager.redoDescription}"`
+                                            ? `${translateProjectEditorLabel("Redo")} "${this.context.undoManager.redoDescription}"`
                                             : ""
                                     }
                                     icon="material:redo"
