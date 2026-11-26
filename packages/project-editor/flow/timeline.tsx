@@ -1439,7 +1439,7 @@ export const TimelineKeyframePropertyUI = observer(
                             <td className="property-heading">{translateProjectEditorLabel("From Value")}</td>
                             <td className="property-heading">{translateProjectEditorLabel("To Value")}</td>
                             <td className="property-heading">
-                                Easing{" "}
+                                {translateProjectEditorLabel("Easing")}{" "}
                                 <a>
                                     <Icon
                                         icon="material:info"
