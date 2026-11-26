@@ -378,7 +378,18 @@ const zhCNLabels: { [key: string]: string } = {
     "Reset Layout": "重置布局",
     "Hide Components Palette": "隐藏组件面板",
     "Show Components Palette": "显示组件面板",
-    "Search the project": "搜索项目"
+    "Search the project": "搜索项目",
+    "Imported Project Assets Usage": "导入项目资源使用情况",
+    "This feature can't be removed": "无法移除此功能",
+    "Remove feature from the project": "从项目中移除功能",
+    "Add feature to the project": "向项目添加功能",
+    "Project features": "项目功能",
+    "Widget properties": "控件属性",
+    "Delete Selected Item": "删除所选项目",
+    "Contains invalid IDs": "包含无效 ID",
+    "Number of changed IDs": "已更改 ID 的数量",
+    "Sort by ID": "按 ID 排序",
+    "No items found.": "未找到项目项。"
 };
 
 export function translateProjectEditorLabel(label: string) {

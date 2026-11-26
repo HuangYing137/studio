@@ -1,4 +1,5 @@
 import React from "react";
+import { translateProjectEditorLabel } from "eez-studio-shared/i10n";
 import { observer } from "mobx-react";
 import { action, computed, makeObservable, observable } from "mobx";
 import classNames from "classnames";
@@ -617,12 +618,12 @@ const ExportedItemsGroupTab = observer(
                                 icon="material:error"
                                 size={16}
                                 className="text-danger"
-                                title="Contains invalid IDs"
+                                title={translateProjectEditorLabel("Contains invalid IDs")}
                             />
                         ) : group.numModified > 0 ? (
                             <span
                                 className="badge rounded-pill text-bg-primary"
-                                title="Number of changed IDs"
+                                title={translateProjectEditorLabel("Number of changed IDs")}
                             >
                                 {group.numModified}
                             </span>
@@ -646,7 +647,7 @@ const ExportedItemsGroupView = observer(
             if (visibleItems.length == 0) {
                 return (
                     <div className="EezStudio_ExportedItemsDialog_NoItems">
-                        No items found.
+                        {translateProjectEditorLabel("No items found.")}
                     </div>
                 );
             }
@@ -656,11 +657,12 @@ const ExportedItemsGroupView = observer(
                     <thead>
                         <tr>
                             <th className="EezStudio_ExportedItemsDialog_NameColumn">
-                                Name
+                                {translateProjectEditorLabel("Name")}
+
                             </th>
                             <th
                                 className="EezStudio_ExportedItemsDialog_IdColumn EezStudio_ExportedItemsDialog_Sortable"
-                                title="Sort by ID"
+                                title={translateProjectEditorLabel("Sort by ID")}
                                 onClick={() => model.toggleIdSortOrder()}
                             >
                                 ID
