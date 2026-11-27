@@ -425,5 +425,15 @@
     "No changes!": "没有更改！",
     "New Color": "新建颜色",
     "Copy to other themes": "复制到其他主题",
-    "New Theme": "新建主题"
+    "New Theme": "新建主题",
+    "Commit Change (ENTER)": "提交更改（回车）",
+    "Discard Change (ESC)": "放弃更改（Esc）",
+    "Expand All Items": "展开所有项目",
+    "Collapse All Items": "折叠所有项目",
+    "Add item": "添加项目",
+    "Add Item Before": "在前面添加项目",
+    "Add Item After": "在后面添加项目",
+    "Delete Item": "删除项目",
+    "Move Up": "上移",
+    "Move Down": "下移"
 }
