@@ -333,7 +333,7 @@
     "Center View": "视图居中",
     "Center View on All Pages": "所有页面视图居中",
     "Set the Same Zoom for All Pages": "为所有页面设置相同缩放比例",
-    "Start": "起始",
+    "Start": "开始",
     "End": "结束",
     "Duration": "持续时间",
     "Property": "属性",
@@ -631,5 +631,6 @@
     "Align items": "交叉轴对齐",
     "Both": "两者",
     "Vertical": "垂直",
-    "Horizontal": "水平"
+    "Horizontal": "水平",
+    "Page dots style": "页面圆点样式"
 }
