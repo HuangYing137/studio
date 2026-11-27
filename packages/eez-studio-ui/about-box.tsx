@@ -176,7 +176,7 @@ const AboutBox = observer(
             var buildDate = mtime.toString();
 
             return (
-                <Dialog cancelButtonText="Close">
+                <Dialog cancelButtonText={t("Close")}>
                     <div className="EezStudio_AboutBox">
                         <div className="EezStudio_Logo">
                             <img
@@ -189,7 +189,7 @@ const AboutBox = observer(
                         </div>
 
                         <div className="EezStudio_Version">
-                            Version {this.packageJSON.version} (
+                            {t("Version")} {this.packageJSON.version} (
                             <a
                                 href="#"
                                 onClick={event => {
@@ -206,7 +206,7 @@ const AboutBox = observer(
                         </div>
 
                         <div className="EezStudio_BuildDate">
-                            Build date {formatDateTimeLong(new Date(buildDate))}
+                            {t("Build date")} {formatDateTimeLong(new Date(buildDate))}
                         </div>
 
                         {this.versionInfo}
