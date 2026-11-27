@@ -35,6 +35,7 @@ export class TerminalWidget extends Widget {
     static classInfo = makeDerivedClassInfo(Widget.classInfo, {
         enabledInComponentPalette: (projectType: ProjectType) =>
             projectType === ProjectType.DASHBOARD,
+        componentPaletteLabel: translateProjectEditorLabel("Terminal"),
 
         componentPaletteGroupName: "!1Input",
 
