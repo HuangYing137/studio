@@ -697,5 +697,15 @@
     "filePathValue is not a string": "文件路径值不是字符串",
     "All Files": "所有文件",
     "Markdown": "Markdown",
-    "Stream": "数据流"
+    "Stream": "数据流",
+    "Integer": "整数",
+    "Fraction and unit": "小数部分和单位",
+    "Fraction": "小数部分",
+    "Integer and fraction": "整数和小数",
+    "Integer, unit and fraction": "整数、单位和小数",
+    "Value and unit": "数值和单位",
+    "Change to {0}": "更改为 {0}",
+    "Convert to MultilineText": "转换为多行文本",
+    "Sampled field": "采样字段",
+    "Product of two sampled fields": "两个采样字段的乘积"
 }
