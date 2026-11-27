@@ -660,5 +660,13 @@
     "Build From Structure Definition": "根据结构定义生成",
     "Advanced options are set via JSON value, check": "高级选项通过 JSON 值设置，可查看",
     "Tabulator documentation": "Tabulator 文档",
-    "Selectable rows": "可选择的行"
+    "Selectable rows": "可选择的行",
+    "Timeout (ms)": "超时时间（毫秒）",
+    "Delay (ms)": "延迟（毫秒）",
+    "Minimum delay between commands.": "命令之间的最小延迟。",
+    "Instrument ID": "仪器 ID",
+    "Instrument not found": "未找到仪器",
+    "Invalid item type": "无效的项目类型",
+    "Select Instrument": "选择仪器",
+    "Unknown instrument": "未知仪器"
 }
