@@ -707,5 +707,8 @@
     "Change to {0}": "更改为 {0}",
     "Convert to MultilineText": "转换为多行文本",
     "Sampled field": "采样字段",
-    "Product of two sampled fields": "两个采样字段的乘积"
+    "Product of two sampled fields": "两个采样字段的乘积",
+    "Dropdown": "下拉列表",
+    "Bit (0 - {0}, a digital trace in its own lane)": "位（0 - {0}，在独立轨道中显示的数字信号）",
+    "Bit must be 0 - {0}": "位必须在 0 - {0} 之间"
 }
