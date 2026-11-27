@@ -1090,7 +1090,7 @@ const ArrayElementProperties = observer(
                                 }
                                 iconSize={18}
                                 onClick={this.onAddBefore}
-                                title="Add Item Before"
+                                title={t("Add Item Before")}
                                 enabled={
                                     ArrayElementProperties.updateStartTime.get() ==
                                     undefined
