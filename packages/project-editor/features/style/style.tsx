@@ -1,4 +1,5 @@
 import React from "react";
+import { translateProjectEditorLabel as t } from "eez-studio-shared/i10n";
 import fs from "fs";
 import path from "path";
 import { observable, computed, makeObservable } from "mobx";
@@ -84,7 +85,7 @@ const propertyMenu = (props: PropertyProps): IMenuItem[] => {
         const cssAttributeName = props.propertyInfo.cssAttributeName;
         if (cssAttributeName) {
             menuItems.push({
-                label: "Help",
+                label: t("Help"),
                 click: () => {
                     openCssHelpPage(cssAttributeName);
                 }
@@ -99,7 +100,7 @@ const backgroundColorPropertyMenu = (props: PropertyProps): IMenuItem[] => {
     let menuItems: IMenuItem[] = [];
 
     menuItems.push({
-        label: "Transparent",
+        label: t("Transparent"),
         click: () => {
             props.objects.forEach(object =>
                 updateObject(object, {
@@ -111,7 +112,7 @@ const backgroundColorPropertyMenu = (props: PropertyProps): IMenuItem[] => {
 
     if (isDashboardProject(props.objects[0])) {
         menuItems.push({
-            label: "Help",
+            label: t("Help"),
             click: () => {
                 openCssHelpPage("background-color");
             }
@@ -435,7 +436,7 @@ const useStyleProperty: PropertyInfo = {
 
         if (isAnyPropertyModified(props)) {
             menuItems.push({
-                label: "Reset All Modifications",
+                label: t("Reset All Modifications"),
                 click: () => {
                     const propertyValues: any = {};
                     properties.forEach(propertyInfo => {
@@ -451,11 +452,11 @@ const useStyleProperty: PropertyInfo = {
                 const object = props.objects[0] as Style;
 
                 menuItems.push({
-                    label: "Create New Style",
+                    label: t("Create New Style"),
                     click: () => {
                         return showGenericDialog({
                             dialogDefinition: {
-                                title: "New Style",
+                                title: t("New Style"),
                                 fields: [
                                     {
                                         name: "name",
@@ -526,7 +527,7 @@ const useStyleProperty: PropertyInfo = {
                 const style = (props.objects[0] as Style).parentStyle;
                 if (style) {
                     menuItems.push({
-                        label: "Update Style",
+                        label: t("Update Style"),
                         click: () => {
                             projectStore.undoManager.setCombineCommands(true);
 
@@ -1129,14 +1130,14 @@ const NUMBER_PROPERTY_RANGES: {
     max: number;
     integer: boolean;
 }[] = [
-    { name: "letterSpacing", label: "Letter spacing", min: -100, max: 100, integer: false },
-    { name: "lineHeight", label: "Line height", min: 0, max: 1000, integer: true },
-    { name: "focusRingWidth", label: "Focus ring width", min: 0, max: 255, integer: true },
-    { name: "focusRingOffset", label: "Focus ring offset", min: 0, max: 255, integer: true },
-    { name: "shadowOffsetX", label: "Shadow offset X", min: -128, max: 127, integer: true },
-    { name: "shadowOffsetY", label: "Shadow offset Y", min: -128, max: 127, integer: true },
-    { name: "shadowBlur", label: "Shadow blur", min: 0, max: 255, integer: true },
-    { name: "shadowSpread", label: "Shadow spread", min: -128, max: 127, integer: true }
+    { name: "letterSpacing", label: t("Letter spacing"), min: -100, max: 100, integer: false },
+    { name: "lineHeight", label: t("Line height"), min: 0, max: 1000, integer: true },
+    { name: "focusRingWidth", label: t("Focus ring width"), min: 0, max: 255, integer: true },
+    { name: "focusRingOffset", label: t("Focus ring offset"), min: 0, max: 255, integer: true },
+    { name: "shadowOffsetX", label: t("Shadow offset X"), min: -128, max: 127, integer: true },
+    { name: "shadowOffsetY", label: t("Shadow offset Y"), min: -128, max: 127, integer: true },
+    { name: "shadowBlur", label: t("Shadow blur"), min: 0, max: 255, integer: true },
+    { name: "shadowSpread", label: t("Shadow spread"), min: -128, max: 127, integer: true }
 ];
 
 const cssProperty: PropertyInfo = {
@@ -1520,7 +1521,7 @@ export class Style extends EezObject {
         newItem: async (parent: IEezObject) => {
             const result = await showGenericDialog({
                 dialogDefinition: {
-                    title: "New Style",
+                    title: t("New Style"),
                     fields: [
                         {
                             name: "name",
