@@ -200,8 +200,8 @@ const labelPositionPropertyInfo: PropertyInfo = {
     displayName: translateProjectEditorLabel("Label position"),
     type: PropertyType.Enum,
     enumItems: [
-        { id: "top", label: "Top" },
-        { id: "left", label: "Left" }
+        { id: "top", label: translateProjectEditorLabel("Top") },
+        { id: "left", label: translateProjectEditorLabel("Left") }
     ],
     propertyGridGroup: specificGroup,
     disabled: (widget: IEezObject) => !(widget as { label?: string }).label
@@ -351,10 +351,10 @@ export class TextWidget extends Widget {
                 displayName: translateProjectEditorLabel("Fit to content"),
                 type: PropertyType.Enum,
                 enumItems: [
-                    { id: "none", label: "None" },
-                    { id: "width", label: "Width" },
-                    { id: "height", label: "Height" },
-                    { id: "both", label: "Both" }
+                    { id: "none", label: translateProjectEditorLabel("None") },
+                    { id: "width", label: translateProjectEditorLabel("Width") },
+                    { id: "height", label: translateProjectEditorLabel("Height") },
+                    { id: "both", label: translateProjectEditorLabel("Both") }
                 ],
                 enumDisallowUndefined: true,
                 propertyGridGroup: geometryGroup
@@ -385,35 +385,35 @@ export class TextWidget extends Widget {
                 enumItems: [
                     {
                         id: DisplayOption.All,
-                        label: "All"
+                        label: translateProjectEditorLabel("All")
                     },
                     {
                         id: DisplayOption.Integer,
-                        label: "Integer"
+                        label: translateProjectEditorLabel("Integer")
                     },
                     {
                         id: DisplayOption.FractionAndUnit,
-                        label: "Fraction and unit"
+                        label: translateProjectEditorLabel("Fraction and unit")
                     },
                     {
                         id: DisplayOption.Fraction,
-                        label: "Fraction"
+                        label: translateProjectEditorLabel("Fraction")
                     },
                     {
                         id: DisplayOption.Unit,
-                        label: "Unit"
+                        label: translateProjectEditorLabel("Unit")
                     },
                     {
                         id: DisplayOption.IntegerAndFraction,
-                        label: "Integer and fraction"
+                        label: translateProjectEditorLabel("Integer and fraction")
                     },
                     {
                         id: DisplayOption.IntegerUnitAndFraction,
-                        label: "Integer, unit and fraction"
+                        label: translateProjectEditorLabel("Integer, unit and fraction")
                     },
                     {
                         id: DisplayOption.ValueAndUnit,
-                        label: "Value and unit"
+                        label: translateProjectEditorLabel("Value and unit")
                     }
                 ],
                 propertyGridGroup: specificGroup,
@@ -677,7 +677,7 @@ export class TextWidget extends Widget {
             ...TEXT_WIDGET_NAMES.filter(
                 name => name != getTextWidgetName(this)
             ).map(name => ({
-                label: `Change to ${name}`,
+                label: translateProjectEditorLabel("Change to {0}").replace("{0}", name),
                 click: () => {
                     const widget = this.changeTo(name);
                     if (widget) {
@@ -686,7 +686,7 @@ export class TextWidget extends Widget {
                 }
             })),
             {
-                label: "Convert to MultilineText",
+                label: translateProjectEditorLabel("Convert to MultilineText"),
                 click: () => {
                     const widget = this.convertToMultilineText();
                     if (widget) {
@@ -1043,10 +1043,10 @@ export class DisplayDataWidget extends TextWidget {
                 displayName: translateProjectEditorLabel("Fit to content"),
                 type: PropertyType.Enum,
                 enumItems: [
-                    { id: "none", label: "None" },
-                    { id: "width", label: "Width" },
-                    { id: "height", label: "Height" },
-                    { id: "both", label: "Both" }
+                    { id: "none", label: translateProjectEditorLabel("None") },
+                    { id: "width", label: translateProjectEditorLabel("Width") },
+                    { id: "height", label: translateProjectEditorLabel("Height") },
+                    { id: "both", label: translateProjectEditorLabel("Both") }
                 ],
                 propertyGridGroup: geometryGroup,
                 hideInPropertyGrid: (widget: DisplayDataWidget) =>
@@ -2289,9 +2289,9 @@ const YT_CHART_MAX_BIT = 7;
 // framework (yt_chart_widget.h)
 const YT_CHART_TRACE_TYPES = [
     // the YT history of the field
-    { id: "field", label: "Sampled field", value: 0 },
+    { id: "field", label: translateProjectEditorLabel("Sampled field"), value: 0 },
     // the product of the YT histories of field and field2 (e.g. P = U * I)
-    { id: "product", label: "Product of two sampled fields", value: 1 }
+    { id: "product", label: translateProjectEditorLabel("Product of two sampled fields"), value: 1 }
 ];
 
 function isProductTrace(trace: YTChartTrace) {
@@ -3430,11 +3430,11 @@ export class LineChartEmbeddedWidget extends Widget {
                 enumItems: [
                     {
                         id: "floating",
-                        label: "Floating"
+                        label: translateProjectEditorLabel("Floating")
                     },
                     {
                         id: "fixed",
-                        label: "Fixed"
+                        label: translateProjectEditorLabel("Fixed")
                     }
                 ],
                 propertyGridGroup: specificGroup
@@ -4648,7 +4648,7 @@ export class DropDownListWidget extends Widget {
 
         componentPaletteGroupName: "!1Input",
 
-        componentPaletteLabel: "Dropdown",
+        componentPaletteLabel: translateProjectEditorLabel("Dropdown"),
 
         flowComponentId: WIDGET_TYPE_DROP_DOWN_LIST,
 
