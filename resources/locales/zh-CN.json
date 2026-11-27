@@ -377,5 +377,14 @@
     "Popup dialog": "弹出对话框",
     "Appearance": "外观",
     "Dark theme": "深色主题",
-    "It is recommended to compact the database every 30 days.": "建议每 30 天压缩一次数据库。"
+    "It is recommended to compact the database every 30 days.": "建议每 30 天压缩一次数据库。",
+    "Set as Active": "设为活动数据库",
+    "Show in Folder": "在文件夹中显示",
+    "Copy Path to Clipboard": "复制路径",
+    "Database size is ": "数据库大小：",
+    "Database compacted ": "上次压缩时间：",
+    "Compact Database": "压缩数据库",
+    "Python not found": "未找到 Python",
+    "or": "或",
+    "[ACTIVE] ": "【当前】"
 }
