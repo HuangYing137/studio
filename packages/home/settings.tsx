@@ -669,7 +669,7 @@ const DatabaseListItem = observer(
                             fontWeight: database.isActive ? "bold" : "normal"
                         }}
                     >
-                        {database.isActive ? "[ACTIVE] " : ""}
+                        {database.isActive ? t("[ACTIVE] ") : ""}
                         {path.parse(database.filePath).name}
                     </td>
                 </tr>
@@ -755,11 +755,11 @@ const SelectedDatabaseDetails = observer(
                         })}
                     >
                         <div>
-                            Database size is{" "}
+                            {t("Database size is ")}
                             {formatBytes(selectedDatabase.databaseSize)}.
                         </div>
                         <div>
-                            Database compacted{" "}
+                            {t("Database compacted ")}
                             {formatDateRelative(
                                 selectedDatabase.timeOfLastDatabaseCompactOperation
                             )}
