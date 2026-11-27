@@ -682,5 +682,18 @@
     "Never started": "尚未启动",
     "pattern is not a string": "正则表达式模式不是字符串",
     "Invalid regular expression": "正则表达式无效",
-    "text is not a string or readable stream": "文本既不是字符串，也不是可读流"
+    "text is not a string or readable stream": "文本既不是字符串，也不是可读流",
+    "command is not a string": "命令不是字符串",
+    "arguments is not an array": "参数列表不是数组",
+    "argument at position {0} is not a string": "第 {0} 个参数不是字符串",
+    "filePath is not a string": "文件路径不是字符串",
+    "encoding is not a string": "编码格式不是字符串",
+    "Unsupported encoding value {0}, supported: {1}": "不支持编码格式 {0}，支持的格式：{1}",
+    "filters is not an array": "筛选器不是数组",
+    "filters empty": "筛选器不能为空",
+    "filters is not an array of strings": "筛选器必须是字符串数组",
+    "invalid filter at position {0}": "第 {0} 个筛选器无效",
+    "fileName is not a string": "文件名不是字符串",
+    "filePathValue is not a string": "文件路径值不是字符串",
+    "All Files": "所有文件"
 }
