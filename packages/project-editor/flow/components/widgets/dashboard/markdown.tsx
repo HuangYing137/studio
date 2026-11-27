@@ -1,4 +1,5 @@
 import React from "react";
+import { translateProjectEditorLabel } from "eez-studio-shared/i10n";
 
 import { markdownToSafeHtml } from "eez-studio-shared/safe-markdown";
 
