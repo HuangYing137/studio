@@ -1,4 +1,5 @@
 import React from "react";
+import { translateProjectEditorLabel as t } from "eez-studio-shared/i10n";
 import { PassThrough } from "stream";
 import { ChildProcessWithoutNullStreams, spawn } from "child_process";
 
@@ -118,19 +119,19 @@ registerActionComponents("Dashboard Specific", [
         execute: (context: IDashboardComponentContext) => {
             const commandValue: any = context.evalProperty("command");
             if (typeof commandValue != "string") {
-                context.throwError("command is not a string");
+                context.throwError(t("command is not a string"));
                 return;
             }
             const argsValue: any = context.evalProperty("arguments");
             if (!isArray(argsValue)) {
-                context.throwError("arguments is not an array");
+                context.throwError(t("arguments is not an array"));
                 return;
             }
 
             const i = argsValue.findIndex((arg: any) => typeof arg != "string");
             if (i != -1) {
                 context.throwError(
-                    `argument at position ${i + 1} is not a string`
+                    t("argument at position {0} is not a string").replace("{0}", String(i + 1))
                 );
                 return;
             }
