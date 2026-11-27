@@ -13,6 +13,7 @@ import {
 import { observer } from "mobx-react";
 
 import { humanize } from "eez-studio-shared/string";
+import { translateProjectEditorLabel as t } from "eez-studio-shared/i10n";
 
 import { Loader } from "eez-studio-ui/loader";
 
@@ -623,7 +624,7 @@ export const ImportCommandsDocDialog = observer(
                                         />{" "}
                                         Command
                                     </th>
-                                    <th className="col-4">From</th>
+                                    <th className="col-4">{t("From")}</th>
                                 </tr>
                             );
                         } else if (section === "updated") {
@@ -716,7 +717,7 @@ export const ImportCommandsDocDialog = observer(
                     ];
                 } else {
                     content = (
-                        <h4 style={{ textAlign: "center" }}>No changes!</h4>
+                        <h4 style={{ textAlign: "center" }}>{t("No changes!")}</h4>
                     );
 
                     buttons = [
@@ -756,7 +757,7 @@ export const ImportCommandsDocDialog = observer(
                                     type="button"
                                     className="btn-close float-right"
                                     onClick={this.onCancel}
-                                    aria-label="Close"
+                                    aria-label={t("Close")}
                                 ></button>
                             </div>
                             <div className="modal-body">{content}</div>
