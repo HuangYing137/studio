@@ -695,5 +695,7 @@
     "invalid filter at position {0}": "第 {0} 个筛选器无效",
     "fileName is not a string": "文件名不是字符串",
     "filePathValue is not a string": "文件路径值不是字符串",
-    "All Files": "所有文件"
+    "All Files": "所有文件",
+    "Markdown": "Markdown",
+    "Stream": "数据流"
 }
