@@ -653,5 +653,12 @@
     "Select Structure": "选择结构",
     "Basic options": "基本选项",
     "Advanced options": "高级选项",
-    "Persistent configuration": "持久化配置"
+    "Persistent configuration": "持久化配置",
+    "The options are copied as a JSON literal to the clipboard": "选项已作为 JSON 字面量复制到剪贴板",
+    "Copy options as a JSON literal to the clipboard": "将选项作为 JSON 字面量复制到剪贴板",
+    "Copy Options": "复制选项",
+    "Build From Structure Definition": "根据结构定义生成",
+    "Advanced options are set via JSON value, check": "高级选项通过 JSON 值设置，可查看",
+    "Tabulator documentation": "Tabulator 文档",
+    "Selectable rows": "可选择的行"
 }
