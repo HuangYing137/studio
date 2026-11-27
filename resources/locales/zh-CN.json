@@ -401,5 +401,11 @@
     "Widget": "控件",
     "TIP": "提示",
     "For native variable implementation": "对于原生变量，必须提供 get 和 set 函数的实现。下面是这些函数的基本实现代码。你可以将其复制并粘贴到项目中的源文件里。",
-    "For variable implementation": "对于变量，必须提供 get 和 set 函数的实现。下面是这些函数的基本实现代码。你可以将其复制并粘贴到项目中的源文件里。"
+    "For variable implementation": "对于变量，必须提供 get 和 set 函数的实现。下面是这些函数的基本实现代码。你可以将其复制并粘贴到项目中的源文件里。",
+    "Add new item": "添加新项目",
+    "Add Characters": "添加字符",
+    "Delete Character": "删除字符",
+    "Add or Remove Characters": "添加或删除字符",
+    "Alpha (%)": "透明度 (%)",
+    "Conditional operator": "条件运算符"
 }
