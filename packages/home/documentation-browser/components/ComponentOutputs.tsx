@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import { translateProjectEditorLabel as t } from "eez-studio-shared/i10n";
 import { observer } from "mobx-react";
 import { ComponentInfo } from "../component-info";
 import { BodySection } from "./BodySection";
@@ -13,7 +14,7 @@ export const ComponentOutputs = observer(
             const { componentInfo } = this.props;
 
             return (
-                <BodySection title="Outputs">
+                <BodySection title={t("Outputs")}>
                     <dl>
                         {componentInfo.outputs
                             .filter(
