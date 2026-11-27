@@ -236,7 +236,7 @@ export class FlowDocument implements IDocument {
             } else if (selectedGroups.length === 0 && commonGroup && componentsNotInGroup.length >= 1) {
                 // Add to the common group that some selected components belong to
                 additionalMenuItems.push({
-                    label: "Add to Group",
+                    label: translateProjectEditorLabel("Add to Group"),
                     click: async () => {
                         this.addComponentsToGroup(
                             commonGroup!,
