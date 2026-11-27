@@ -1,4 +1,5 @@
 import React from "react";
+import { translateProjectEditorLabel as t } from "eez-studio-shared/i10n";
 import { observer } from "mobx-react";
 import classNames from "classnames";
 
@@ -130,7 +131,7 @@ export const StylesDefinitionTree = observer(
         get rootNode(): ITreeNode {
             return {
                 id: "root",
-                label: "Root",
+                label: t("Root"),
                 children:
                     this.props.styleProperties.map(styleProperty => {
                         const numModifications =
