@@ -3,6 +3,7 @@
 // (widgets/eez-gui/containers.tsx).
 
 import React from "react";
+import { translateProjectEditorLabel as t } from "eez-studio-shared/i10n";
 import { observable, computed, makeObservable, toJS, runInAction } from "mobx";
 import { observer } from "mobx-react";
 import { range } from "lodash-es";
@@ -197,7 +198,7 @@ const ContainerWidgetEditLayout = observer(
                 {
                     jsPanel: {
                         id: "container-widget-edit-layout",
-                        title: "Edit Layout",
+                        title: t("Edit Layout"),
                         width: page.width,
                         height: page.height,
                         onclosed: onDispose
@@ -358,7 +359,7 @@ export class ContainerDashboardWidget extends Widget {
                     },
                     {
                         id: "docking-manager",
-                        label: "Docking Manager"
+                        label: t("Docking Manager")
                     }
                 ],
                 propertyGridGroup: layoutGroup
@@ -381,7 +382,7 @@ export class ContainerDashboardWidget extends Widget {
                     return widget.layout != "docking-manager";
                 }
             },
-            makeStylePropertyInfo("style", "Default style", {
+            makeStylePropertyInfo("style", t("Default style"), {
                 hideInDocumentation: "none"
             })
         ],
@@ -446,7 +447,7 @@ export class ContainerDashboardWidget extends Widget {
 
         return [
             {
-                label: "Remove Container",
+                label: t("Remove Container"),
                 click: () => {
                     const widgets = this.removeContainer();
                     if (widgets.length > 0) {
@@ -823,7 +824,7 @@ export class ListDashboardWidget extends Widget {
                 type: PropertyType.Number,
                 propertyGridGroup: specificGroup
             },
-            makeStylePropertyInfo("style", "Default style"),
+            makeStylePropertyInfo("style", t("Default style")),
             makeDataPropertyInfo("data")
         ],
 
@@ -868,7 +869,7 @@ export class ListDashboardWidget extends Widget {
                 messages.push(
                     new Message(
                         MessageType.ERROR,
-                        "List item widget is missing",
+                        t("List item widget is missing"),
                         object
                     )
                 );
@@ -1000,7 +1001,7 @@ export class GridDashboardWidget extends Widget {
                     }
                 ]
             },
-            makeStylePropertyInfo("style", "Default style"),
+            makeStylePropertyInfo("style", t("Default style")),
             makeDataPropertyInfo("data")
         ],
 
@@ -1046,7 +1047,7 @@ export class GridDashboardWidget extends Widget {
                 messages.push(
                     new Message(
                         MessageType.ERROR,
-                        "Grid item widget is missing",
+                        t("Grid item widget is missing"),
                         object
                     )
                 );
@@ -1220,7 +1221,7 @@ export class SelectDashboardWidget extends Widget {
                     return object;
                 }
             },
-            makeStylePropertyInfo("style", "Default style"),
+            makeStylePropertyInfo("style", t("Default style")),
             makeDataPropertyInfo("data", {}, "boolean")
         ],
 
@@ -1268,7 +1269,7 @@ export class SelectDashboardWidget extends Widget {
                             messages.push(
                                 new Message(
                                     MessageType.ERROR,
-                                    "Some select children are missing",
+                                    t("Some select children are missing"),
                                     object
                                 )
                             );
@@ -1276,7 +1277,7 @@ export class SelectDashboardWidget extends Widget {
                             messages.push(
                                 new Message(
                                     MessageType.ERROR,
-                                    "Too many select children defined",
+                                    t("Too many select children defined"),
                                     object
                                 )
                             );
@@ -1290,7 +1291,7 @@ export class SelectDashboardWidget extends Widget {
                     messages.push(
                         new Message(
                             MessageType.WARNING,
-                            "Child of Select widget has different width",
+                            t("Child of Select widget has different width"),
                             childObject
                         )
                     );
@@ -1300,7 +1301,7 @@ export class SelectDashboardWidget extends Widget {
                     messages.push(
                         new Message(
                             MessageType.WARNING,
-                            "Child of Select widget has different height",
+                            t("Child of Select widget has different height"),
                             childObject
                         )
                     );
@@ -1520,7 +1521,7 @@ export class UserWidgetDashboardWidget extends Widget {
             makeDataPropertyInfo("context"),
             {
                 name: "userWidgetPageName",
-                displayName: "User widget",
+                displayName: t("User widget"),
                 type: PropertyType.ObjectReference,
                 propertyGridGroup: specificGroup,
                 referencedObjectCollectionPath: "userWidgets"
@@ -1590,7 +1591,7 @@ export class UserWidgetDashboardWidget extends Widget {
                 messages.push(
                     new Message(
                         MessageType.ERROR,
-                        "Either user widget page or data must be set",
+                        t("Either user widget page or data must be set"),
                         object
                     )
                 );
@@ -1599,7 +1600,7 @@ export class UserWidgetDashboardWidget extends Widget {
                     messages.push(
                         new Message(
                             MessageType.ERROR,
-                            "Both user widget page and data set, only user widget page is used",
+                            t("Both user widget page and data set, only user widget page is used"),
                             object
                         )
                     );
@@ -1870,7 +1871,7 @@ export class UserWidgetDashboardWidget extends Widget {
 
         return [
             {
-                label: "Replace with Container",
+                label: t("Replace with Container"),
                 click: () => {
                     const widget = this.replaceWithContainer();
                     if (widget) {
