@@ -14,7 +14,7 @@
     "Default value": "默认值",
     "Description": "描述",
     "Enabled": "启用",
-    "Visible": "可见",
+    "Visible": "正常显示",
     "Locked": "锁定",
     "Color": "颜色",
     "Background color": "背景颜色",
@@ -386,5 +386,16 @@
     "Compact Database": "压缩数据库",
     "Python not found": "未找到 Python",
     "or": "或",
-    "[ACTIVE] ": "【当前】"
+    "[ACTIVE] ": "【当前】",
+    "Unlock this widget": "解锁此控件",
+    "Lock this widget": "锁定此控件",
+    "Show": "显示",
+    "Hide": "隐藏",
+    "Hidden widget lines": "隐藏控件的显示方式",
+    "Dimmed": "淡化显示",
+    "Hidden": "完全隐藏",
+    "Unlock All": "全部解锁",
+    "Lock All": "全部锁定",
+    "Show All": "全部显示",
+    "Hide all": "全部隐藏"
 }
