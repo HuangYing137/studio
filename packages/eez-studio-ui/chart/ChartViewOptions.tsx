@@ -2,6 +2,7 @@ import React from "react";
 import { observable, action, makeObservable } from "mobx";
 import { observer } from "mobx-react";
 import classNames from "classnames";
+import { translateProjectEditorLabel as t } from "eez-studio-shared/i10n";
 
 import { Checkbox, Radio } from "eez-studio-ui/properties";
 
@@ -80,7 +81,7 @@ export const ChartViewOptions = observer(
                             <div className="EezStudio_SideDockView_Property">
                                 <select
                                     className="form-select"
-                                    title="Chart rendering algorithm"
+                                    title=t("Chart rendering algorithm")
                                     value={globalViewOptions.renderAlgorithm}
                                     onChange={action(
                                         (
@@ -91,9 +92,9 @@ export const ChartViewOptions = observer(
                                                     .value as WaveformRenderAlgorithm)
                                     )}
                                 >
-                                    <option value="avg">Average</option>
-                                    <option value="minmax">Min-max</option>
-                                    <option value="gradually">Gradually</option>
+                                    <option value="avg">{t(t("Average"))}</option>
+                                    <option value="minmax">{t(t("Min-max"))}</option>
+                                    <option value="gradually">{t(t("Gradually"))}</option>
                                 </select>
                             </div>
                         </div>
@@ -307,10 +308,10 @@ const DynamicSubdivisionOptions = observer(
                         <tbody>
                             <tr>
                                 <td />
-                                <td>Steps</td>
+                                <td>{t(t("Steps"))}</td>
                             </tr>
                             <tr>
-                                <td>Time</td>
+                                <td>{t(t("Time"))}</td>
                                 <td>
                                     <input
                                         type="text"
@@ -424,12 +425,12 @@ const FixedSubdivisionOptions = observer(
                         <tbody>
                             <tr>
                                 <td />
-                                <td>X axis</td>
+                                <td>{t(t("X axis"))}</td>
                                 <td />
-                                <td>Y axis</td>
+                                <td>{t(t("Y axis"))}</td>
                             </tr>
                             <tr>
-                                <td>Major</td>
+                                <td>{t(t("Major"))}</td>
                                 <td>
                                     <input
                                         type="number"
@@ -465,7 +466,7 @@ const FixedSubdivisionOptions = observer(
                                         })}
                                     />
                                 </td>
-                                <td>by</td>
+                                <td>{t("by")}</td>
                                 <td>
                                     <input
                                         type="number"
@@ -496,7 +497,7 @@ const FixedSubdivisionOptions = observer(
                                 </td>
                             </tr>
                             <tr>
-                                <td>Minor</td>
+                                <td>{t(t("Minor"))}</td>
                                 <td>
                                     <input
                                         type="number"
