@@ -535,9 +535,9 @@ const CopyOptionsButton = observer(
                         marginTop: 10,
                         marginBottom: 10
                     }}
-                    title=t("Copy options as a JSON literal to the clipboard")
+                    title={t("Copy options as a JSON literal to the clipboard")}
                 >
-                    Copy Options
+                    {t("Copy Options")}
                 </Button>
             );
         }
@@ -977,7 +977,7 @@ class TabulatorOptions extends EezObject {
                                     );
                                 })();
                             }}
-                            title=t("Build From Structure Definition")
+                            title={t("Build From Structure Definition")}
                         />
                     ];
                 }
@@ -997,7 +997,7 @@ class TabulatorOptions extends EezObject {
                 messages.push(
                     new Message(
                         MessageType.ERROR,
-                        `t("Selectable rows") should be either empty, true, false, number or highlight`,
+                        t("Selectable rows") + " 应为留空、true、false、数字或 highlight",
                         getChildOfObject(options, "selectableRows")
                     )
                 );
@@ -1179,7 +1179,7 @@ export class TabulatorWidget extends Widget {
                                     openLink("https://tabulator.info/docs/6.2");
                                 }}
                             >
-                                Tabulator documentation
+                                {t("Tabulator documentation")}
                             </a>{" "}
                             for available options.
                         </span>
