@@ -2354,7 +2354,7 @@ class YTChartTrace extends EezObject {
             },
             {
                 name: "bit",
-                displayName: `Bit (0 - ${YT_CHART_MAX_BIT}, a digital trace in its own lane)`,
+                displayName: translateProjectEditorLabel("Bit (0 - {0}, a digital trace in its own lane)").replace("{0}", String(YT_CHART_MAX_BIT)),
                 type: PropertyType.Number,
                 isOptional: true,
                 disabled: isProductTrace
@@ -2434,7 +2434,7 @@ class YTChartTrace extends EezObject {
                     messages.push(
                         new Message(
                             MessageType.ERROR,
-                            `Bit must be 0 - ${YT_CHART_MAX_BIT}`,
+                            translateProjectEditorLabel("Bit must be 0 - {0}").replace("{0}", String(YT_CHART_MAX_BIT)),
                             getChildOfObject(trace, "bit")
                         )
                     );
