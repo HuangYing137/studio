@@ -235,8 +235,8 @@ export const ArrayProperty = observer(
                         onClick={this.collapseAll}
                         title={
                             this.allCollapsed
-                                ? "Expand All Items"
-                                : "Collapse All Items"
+                                ? t("Expand All Items")
+                                : t("Collapse All Items")
                         }
                     />
                 );
