@@ -586,7 +586,7 @@ export class Color extends EezObject {
 
             const result = await showGenericDialog({
                 dialogDefinition: {
-                    title: "New Color",
+                    title: t("New Color"),
                     fields: [
                         {
                             name: "name",
@@ -672,7 +672,7 @@ export class Color extends EezObject {
 
             if (editable) {
                 additionalMenuItems.push({
-                    label: "Copy to other themes",
+                    label: t("Copy to other themes"),
                     click: () => {
                         const projectStore = getProjectStore(thisObject);
 
@@ -779,7 +779,7 @@ export class Theme extends EezObject implements ITheme {
         newItem: async (parent: IEezObject) => {
             const result = await showGenericDialog({
                 dialogDefinition: {
-                    title: "New Theme",
+                    title: t("New Theme"),
                     fields: [
                         {
                             name: "name",
