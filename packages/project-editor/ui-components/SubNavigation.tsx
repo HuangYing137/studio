@@ -62,7 +62,7 @@ export const SubNavigation = observer(
                     <ul className="nav nav-pills">
                         {this.props.items.map(item => (
                             <li
-                                key={t(item.name)}
+                                key={item.name}
                                 className="nav-item"
                                 onClick={() => this.selectItem(item.name)}
                             >
@@ -72,7 +72,7 @@ export const SubNavigation = observer(
                                     })}
                                     href="#"
                                 >
-                                    {item.name}
+                                    {t(item.name)}
                                     {item.numItems > 0 ? (
                                         <span
                                             className="badge rounded-pill bg-secondary ms-1"
