@@ -710,5 +710,18 @@
     "Product of two sampled fields": "两个采样字段的乘积",
     "Dropdown": "下拉列表",
     "Bit (0 - {0}, a digital trace in its own lane)": "位（0 - {0}，在独立轨道中显示的数字信号）",
-    "Bit must be 0 - {0}": "位必须在 0 - {0} 之间"
+    "Bit must be 0 - {0}": "位必须在 0 - {0} 之间",
+    "Evaluate": "求值",
+    "Watch": "监视",
+    "Eval JS": "执行 JavaScript",
+    "SwitchCase": "条件分支",
+    "Page open": "页面打开",
+    "Page close": "页面关闭",
+    "Keydown": "按键按下",
+    "Push": "压入",
+    "Set": "设置",
+    "Question": "提问",
+    "NoOp": "空操作",
+    "Label OUT": "输出标签",
+    "Label IN": "输入标签"
 }
