@@ -635,7 +635,7 @@ const CompactDatabaseDialog = observer(
                                         {formatBytes(
                                             this.sizeBefore - this.sizeAfter!
                                         )}{" "}
-                                        or {this.sizeReduced}%
+                                        {t("or")} {this.sizeReduced}%
                                     </td>
                                 </tr>
                             )}
@@ -696,7 +696,7 @@ const SelectedDatabaseDetails = observer(
                                 className="btn btn-primary btn-sm"
                                 onClick={settingsController.setAsActiveDatabase}
                             >
-                                Set as Active
+                                {t("Set as Active")}
                             </button>
                         </div>
                     )}
@@ -706,7 +706,7 @@ const SelectedDatabaseDetails = observer(
                             htmlFor="EezStudio_ProjectEditorScrapbook_ItemDetails_Description"
                             className="form-label"
                         >
-                            Description:
+                            {t("Description:")}
                         </label>
                         <textarea
                             className="form-control"
@@ -733,7 +733,7 @@ const SelectedDatabaseDetails = observer(
                             }
                             style={{ marginTop: "5px" }}
                         >
-                            Show in Folder
+                            {t("Show in Folder")}
                         </button>
 
                         <button
@@ -744,7 +744,7 @@ const SelectedDatabaseDetails = observer(
                             }
                             style={{ marginTop: "5px", marginLeft: "5px" }}
                         >
-                            Copy Path to Clipboard
+                            {t("Copy Path to Clipboard")}
                         </button>
                     </div>
 
@@ -774,7 +774,7 @@ const SelectedDatabaseDetails = observer(
                                 className="btn btn-secondary btn-sm"
                                 onClick={settingsController.compactDatabase}
                             >
-                                Compact Database
+                                {t("Compact Database")}
                             </button>
                         </div>
                     </div>
