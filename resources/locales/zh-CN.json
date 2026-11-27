@@ -673,5 +673,14 @@
     "Terminal for:": "终端对应仪器：",
     "Embedded Dashboard": "嵌入式仪表板",
     "Cycle detected in Embedded Dashboard widget": "嵌入式仪表板控件中检测到循环引用",
-    "Dashboard not specified": "未指定仪表板"
+    "Dashboard not specified": "未指定仪表板",
+    "Invalid URL property": "URL 属性无效",
+    "Body is not a string": "请求正文不是字符串",
+    "Failed: ": "请求失败：",
+    "Failed to evaluate {0}. header name": "无法计算第 {0} 个请求头名称",
+    "Failed to evaluate {0}. header value": "无法计算第 {0} 个请求头值",
+    "Never started": "尚未启动",
+    "pattern is not a string": "正则表达式模式不是字符串",
+    "Invalid regular expression": "正则表达式无效",
+    "text is not a string or readable stream": "文本既不是字符串，也不是可读流"
 }
