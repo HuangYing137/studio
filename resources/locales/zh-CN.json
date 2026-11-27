@@ -565,5 +565,21 @@
     "Top left": "左上",
     "Top right": "右上",
     "Bottom right": "右下",
-    "Bottom left": "左下"
+    "Bottom left": "左下",
+    "Root": "根",
+    "Export to XLIFF": "导出为 XLIFF",
+    "Import from XLIFF": "从 XLIFF 导入",
+    "Bitmap": "位图",
+    "Outline": "轮廓",
+    "Normal": "常规",
+    "Italic": "斜体",
+    "Bold": "粗体",
+    "Bold Italic": "粗斜体",
+    "Once": "一次",
+    "List (one or more values)": "列表（一个或多个值）",
+    "Integer (NR1)": "整数（NR1）",
+    "Decimal (NR2)": "小数（NR2）",
+    "Real (NR3)": "实数（NR3）",
+    "Sent to all the channels of the group": "发送到组中的所有通道",
+    "Refused for a channel in the group (313)": "组中的某个通道拒绝（313）"
 }
