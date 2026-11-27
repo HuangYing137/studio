@@ -945,7 +945,7 @@ const PythonSettings = observer(
                                 name={t("Default path")}
                                 value={
                                     this.pythonPathError
-                                        ? "Python not found"
+                                        ? t("Python not found")
                                         : this.pythonPath
                                 }
                                 className="StaticPropertyValueWrap"
