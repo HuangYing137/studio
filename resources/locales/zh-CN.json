@@ -452,5 +452,19 @@
     "Fatal": "严重错误",
     "Error": "错误",
     "Warning": "警告",
-    "Info": "信息"
+    "Info": "信息",
+    "Open a local project or select one from the recent list": "打开本地项目或从最近使用列表中选择",
+    "Open": "打开",
+    "Create a new project": "创建新项目",
+    "Create": "创建",
+    "Example projects ready to run or edit": "可直接运行或编辑的示例项目",
+    "Examples": "示例",
+    "Instruments manager": "仪器管理器",
+    "Instruments": "仪器",
+    "Extensions manager": "扩展管理器",
+    "Extensions": "扩展",
+    "Global user settings": "全局用户设置",
+    "Settings": "设置",
+    "Open a local EEZ Studio Project": "打开本地 EEZ Studio 项目",
+    "Run dashboard projects from the list of shortcuts": "从快捷方式列表运行仪表板项目"
 }
