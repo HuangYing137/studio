@@ -1,4 +1,5 @@
 import React from "react";
+import { translateProjectEditorLabel as t } from "eez-studio-shared/i10n";
 import { makeObservable, observable } from "mobx";
 import type { Socket, SocketType } from "dgram";
 
@@ -102,8 +103,8 @@ export class UDPInActionComponent extends ActionComponent {
                 displayName: "Listen for",
                 type: PropertyType.Enum,
                 enumItems: [
-                    { id: "udp", label: "UDP messages" },
-                    { id: "multicast", label: "Multicast messages" }
+                    { id: "udp", label: t("UDP messages") },
+                    { id: "multicast", label: t("Multicast messages") }
                 ],
                 enumDisallowUndefined: true,
                 propertyGridGroup: specificGroup
@@ -361,9 +362,9 @@ export class UDPOutActionComponent extends ActionComponent {
                 displayName: "Send a",
                 type: PropertyType.Enum,
                 enumItems: [
-                    { id: "udp", label: "UDP message" },
-                    { id: "broadcast", label: "Broadcast message" },
-                    { id: "multicast", label: "Multicast message" }
+                    { id: "udp", label: t("UDP message") },
+                    { id: "broadcast", label: t("Broadcast message") },
+                    { id: "multicast", label: t("Multicast message") }
                 ],
                 enumDisallowUndefined: true,
                 propertyGridGroup: specificGroup
@@ -422,8 +423,8 @@ export class UDPOutActionComponent extends ActionComponent {
                 displayName: "Bind to",
                 type: PropertyType.Enum,
                 enumItems: [
-                    { id: "random", label: "Random local port" },
-                    { id: "fixed", label: "Fixed local port" }
+                    { id: "random", label: t("Random local port") },
+                    { id: "fixed", label: t("Fixed local port") }
                 ],
                 enumDisallowUndefined: true,
                 propertyGridGroup: specificGroup
