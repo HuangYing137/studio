@@ -361,5 +361,21 @@
     "Check for Updates": "检查更新",
     "Home": "主页",
     "Select Project Editor Extension": "选择项目编辑器扩展",
-    "Version": "版本"
+    "Version": "版本",
+    "Databases": "数据库",
+    "Localization": "语言和区域",
+    "Locale": "界面语言",
+    "Date format": "日期格式",
+    "Time format": "时间格式",
+    "External Tools": "外部工具",
+    "Project Editor": "项目编辑器",
+    "Project editor layout": "项目编辑器布局",
+    "Classic": "经典布局",
+    "Project Explorer": "项目浏览器",
+    "Properties editor": "属性编辑器",
+    "Panel (tab on the right side)": "面板（位于右侧的标签页）",
+    "Popup dialog": "弹出对话框",
+    "Appearance": "外观",
+    "Dark theme": "深色主题",
+    "It is recommended to compact the database every 30 days.": "建议每 30 天压缩一次数据库。"
 }
