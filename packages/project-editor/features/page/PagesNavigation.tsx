@@ -17,7 +17,7 @@ import { ProjectEditor } from "project-editor/project-editor-interface";
 import type { PageTabState } from "project-editor/features/page/PageEditor";
 import type { Widget } from "project-editor/flow/component";
 import classNames from "classnames";
-import { getLocale } from "eez-studio-shared/i10n";
+import { translateProjectEditorLabel as t } from "eez-studio-shared/i10n";
 import { IconAction } from "eez-studio-ui/action";
 import {
     Body,
@@ -30,7 +30,6 @@ import { CommentActionComponent } from "project-editor/flow/components/actions";
 
 ////////////////////////////////////////////////////////////////////////////////
 
-const isChinese = () => getLocale().toLowerCase().startsWith("zh");
 
 const LOCK_ICON = (
     <svg viewBox="0 0 1664 1408">
@@ -306,8 +305,8 @@ export const PageStructure = observer(
                             icon={widget.locked ? LOCK_ICON : UNLOCK_ICON}
                             title={
                                 widget.locked
-                                    ? (isChinese() ? "解锁此控件" : "Unlock this widget")
-                                    : (isChinese() ? "锁定此控件" : "Lock this widget")
+                                    ? (t("Unlock this widget"))
+                                    : (t("Lock this widget"))
                             }
                             iconSize={14}
                             onClick={action(() =>
@@ -325,7 +324,7 @@ export const PageStructure = observer(
                                     ? EYE_CLOSE_ICON
                                     : EYE_OPEN_ICON
                             }
-                            title={widget.hiddenInEditor ? (isChinese() ? "显示" : "Show") : (isChinese() ? "隐藏" : "Hide")}
+                            title={widget.hiddenInEditor ? (t("Show")) : (t("Hide"))}
                             iconSize={14}
                             onClick={action(() => {
                                 const hiddenInEditor = !widget.hiddenInEditor;
@@ -376,7 +375,7 @@ export const PageStructure = observer(
                         <Toolbar style={{ minHeight: 38 }}>
                             {this.isAnyHidden ? (
                                 <label className="EezStudio_PageStructure_HiddenWidgetLines">
-                                    <span>{isChinese() ? "隐藏控件的显示方式" : "Hidden widget lines"}</span>
+                                    <span>{t("Hidden widget lines")}</span>
                                     <select
                                         className="form-select"
                                         value={
@@ -389,15 +388,15 @@ export const PageStructure = observer(
                                         })}
                                         style={{ margin: "2px 10px 2px 5px" }}
                                     >
-                                        <option value="visible">{isChinese() ? "正常显示" : "Visible"}</option>
-                                        <option value="dimmed">{isChinese() ? "淡化显示" : "Dimmed"}</option>
-                                        <option value="hidden">{isChinese() ? "完全隐藏" : "Hidden"}</option>
+                                        <option value="visible">{t("Visible")}</option>
+                                        <option value="dimmed">{t("Dimmed")}</option>
+                                        <option value="hidden">{t("Hidden")}</option>
                                     </select>
                                 </label>
                             ) : null}
                             <IconAction
                                 title={
-                                    this.isAnyLocked ? (isChinese() ? "全部解锁" : "Unlock All") : (isChinese() ? "全部锁定" : "Lock All")
+                                    this.isAnyLocked ? (t("Unlock All")) : (t("Lock All"))
                                 }
                                 icon={
                                     this.isAnyLocked ? UNLOCK_ICON : LOCK_ICON
@@ -411,7 +410,7 @@ export const PageStructure = observer(
                             />
                             <IconAction
                                 title={
-                                    this.isAnyHidden ? (isChinese() ? "全部显示" : "Show All") : (isChinese() ? "全部隐藏" : "Hide all")
+                                    this.isAnyHidden ? (t("Show All")) : (t("Hide all"))
                                 }
                                 icon={
                                     this.isAnyHidden
