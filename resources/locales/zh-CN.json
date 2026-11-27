@@ -668,5 +668,10 @@
     "Instrument not found": "未找到仪器",
     "Invalid item type": "无效的项目类型",
     "Select Instrument": "选择仪器",
-    "Unknown instrument": "未知仪器"
+    "Unknown instrument": "未知仪器",
+    "No instrument": "未指定仪器",
+    "Terminal for:": "终端对应仪器：",
+    "Embedded Dashboard": "嵌入式仪表板",
+    "Cycle detected in Embedded Dashboard widget": "嵌入式仪表板控件中检测到循环引用",
+    "Dashboard not specified": "未指定仪表板"
 }
