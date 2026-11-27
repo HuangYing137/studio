@@ -629,7 +629,7 @@ export function makeExpressionProperty(
                                   )
                               ) {
                                   menuItems.push({
-                                      label: "Convert to input",
+                                      label: translateProjectEditorLabel("Convert to input"),
                                       click: () => {
                                           const projectStore = getProjectStore(
                                               props.objects[0]
@@ -1219,24 +1219,24 @@ function getBreakpointMenuItems(component: Component) {
     if (projectStore.projectTypeTraits.hasFlowSupport) {
         if (uiStateStore?.isBreakpointAddedForComponent(component)) {
             additionalMenuItems.push({
-                label: "Remove Breakpoint",
+                label: translateProjectEditorLabel("Remove Breakpoint"),
                 click: () => uiStateStore.removeBreakpoint(component)
             });
 
             if (uiStateStore.isBreakpointEnabledForComponent(component)) {
                 additionalMenuItems.push({
-                    label: "Disable Breakpoint",
+                    label: translateProjectEditorLabel("Disable Breakpoint"),
                     click: () => uiStateStore.disableBreakpoint(component)
                 });
             } else {
                 additionalMenuItems.push({
-                    label: "Enable Breakpoint",
+                    label: translateProjectEditorLabel("Enable Breakpoint"),
                     click: () => uiStateStore.enableBreakpoint(component)
                 });
             }
         } else {
             additionalMenuItems.push({
-                label: "Add Breakpoint",
+                label: translateProjectEditorLabel("Add Breakpoint"),
                 click: () => uiStateStore.addBreakpoint(component)
             });
         }
@@ -1691,7 +1691,7 @@ const AlignAndDistributePropertyGridUI = observer(
             return (
                 <div className="EezStudio_AlignAndDistributeIcons EezStudio_ActionGroups">
                     <div className="EezStudio_ActionGroup">
-                        <div className="EezStudio_ActionGroup_Title">Align</div>
+                        <div className="EezStudio_ActionGroup_Title">{translateProjectEditorLabel("Align")}</div>
                         <div className="EezStudio_ActionGroup_Actions">
                             <div className="EezStudio_ActionGroup_Actions_Group">
                                 <IconAction
@@ -3013,8 +3013,8 @@ export class EventHandler extends EezObject {
                 name: "handlerType",
                 type: PropertyType.Enum,
                 enumItems: [
-                    { id: "flow", label: "Flow" },
-                    { id: "action", label: "Action" }
+                    { id: "flow", label: translateProjectEditorLabel("Flow") },
+                    { id: "action", label: translateProjectEditorLabel("Action") }
                 ],
                 enumDisallowUndefined: true,
                 disabled: eventHandler =>
@@ -3184,8 +3184,8 @@ export class EventHandler extends EezObject {
                             name: "handlerType",
                             type: "enum",
                             enumItems: [
-                                { id: "flow", label: "Flow" },
-                                { id: "action", label: "Action" }
+                                { id: "flow", label: translateProjectEditorLabel("Flow") },
+                                { id: "action", label: translateProjectEditorLabel("Action") }
                             ],
                             visible: () =>
                                 project.projectTypeTraits.hasFlowSupport
@@ -3341,12 +3341,12 @@ export class Widget extends Component {
                 displayName: translateProjectEditorLabel("Align self"),
                 type: PropertyType.Enum,
                 enumItems: [
-                    { id: "auto", label: "Auto" },
-                    { id: "start", label: "Start" },
-                    { id: "center", label: "Center" },
-                    { id: "end", label: "End" },
-                    { id: "stretch", label: "Stretch" },
-                    { id: "baseline", label: "Baseline" }
+                    { id: "auto", label: translateProjectEditorLabel("Auto") },
+                    { id: "start", label: translateProjectEditorLabel("Start") },
+                    { id: "center", label: translateProjectEditorLabel("Center") },
+                    { id: "end", label: translateProjectEditorLabel("End") },
+                    { id: "stretch", label: translateProjectEditorLabel("Stretch") },
+                    { id: "baseline", label: translateProjectEditorLabel("Baseline") }
                 ],
                 propertyGridGroup: geometryGroup,
                 hideInPropertyGrid: (widget: Widget) =>
@@ -3380,7 +3380,7 @@ export class Widget extends Component {
                         id: styleVariant.name,
                         label: styleVariant.name
                     })),
-                    { id: WIDGET_VARIANT_NONE, label: "None" }
+                    { id: WIDGET_VARIANT_NONE, label: translateProjectEditorLabel("None") }
                 ],
                 propertyGridGroup: styleGroup,
                 disabled: (widget: Widget) =>
@@ -3444,7 +3444,7 @@ export class Widget extends Component {
             },
             {
                 name: "allowOutside",
-                displayName: `Hide "Widget is outside of its parent" warning`,
+                displayName: translateProjectEditorLabel(`Hide "Widget is outside of its parent" warning`),
                 type: PropertyType.Boolean,
                 propertyGridGroup: geometryGroup,
                 disabled: component => isLVGLProject(component),
@@ -3669,7 +3669,7 @@ export class Widget extends Component {
             if (!project.projectTypeTraits.isLVGL) {
                 if (objects.length === 1) {
                     putInMenuItems.push({
-                        label: "Put in Select",
+                        label: translateProjectEditorLabel("Put in Select"),
                         click: () => {
                             const selectWidget = (
                                 objects[0] as Widget
@@ -3681,7 +3681,7 @@ export class Widget extends Component {
 
                 if (areAllChildrenOfTheSameParent(objects)) {
                     putInMenuItems.push({
-                        label: "Put in Container",
+                        label: translateProjectEditorLabel("Put in Container"),
                         click: () => {
                             const containerWidget = Widget.putInContainer(
                                 objects as Widget[]
@@ -3712,7 +3712,7 @@ export class Widget extends Component {
                     }
 
                     putInMenuItems.push({
-                        label: "Put in List",
+                        label: translateProjectEditorLabel("Put in List"),
                         click: () => {
                             const listWidget = Widget.putInList(
                                 objects as Widget[]
@@ -3722,7 +3722,7 @@ export class Widget extends Component {
                     });
 
                     userWidgetMenuItems.push({
-                        label: "Create User Widget",
+                        label: translateProjectEditorLabel("Create User Widget"),
                         click: async () => {
                             const layoutWidget =
                                 await Widget.createUserWidgetPage(
@@ -3735,7 +3735,7 @@ export class Widget extends Component {
                     });
 
                     userWidgetMenuItems.push({
-                        label: "Replace with User Widget",
+                        label: translateProjectEditorLabel("Replace with User Widget"),
                         click: async () => {
                             const layoutWidget =
                                 await Widget.replaceWithUserWidgetPage(
@@ -3749,7 +3749,7 @@ export class Widget extends Component {
 
                     if (isEezGuiProject(objects[0]) && objects.length === 1) {
                         presetMenuItems.push({
-                            label: "Save as Preset...",
+                            label: translateProjectEditorLabel("Save as Preset..."),
                             click: () => (objects[0] as Widget).saveAsPreset()
                         });
                     }
@@ -3757,7 +3757,7 @@ export class Widget extends Component {
 
                 if (objects.length === 1) {
                     resizeMenuItems.push({
-                        label: "Resize...",
+                        label: translateProjectEditorLabel("Resize..."),
                         click: async () => {
                             const widget = objects[0] as Widget;
 
@@ -3862,13 +3862,13 @@ export class Widget extends Component {
             ) {
                 positionAndSizeMenuItems.push(
                     {
-                        label: "Copy position and size",
+                        label: translateProjectEditorLabel("Copy position and size"),
                         click: async () => {
                             positionAndSize = thisObject.rect;
                         }
                     },
                     {
-                        label: "Paste position and size",
+                        label: translateProjectEditorLabel("Paste position and size"),
                         click: async () => {
                             if (positionAndSize) {
                                 updateObject(thisObject, {
