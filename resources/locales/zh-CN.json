@@ -435,5 +435,13 @@
     "Add Item After": "在后面添加项目",
     "Delete Item": "删除项目",
     "Move Up": "上移",
-    "Move Down": "下移"
+    "Move Down": "下移",
+    "Copy image to clipboard": "复制图像到剪贴板",
+    "Paste image from clipboard": "从剪贴板粘贴图像",
+    "Select image file": "选择图像文件",
+    "Remove image": "移除图像",
+    "Pick color from screen": "从屏幕拾取颜色",
+    "Switch input mode": "切换输入模式",
+    "Lighten color": "调亮颜色",
+    "Darken color": "调暗颜色"
 }
