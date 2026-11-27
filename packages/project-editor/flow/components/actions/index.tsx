@@ -395,8 +395,8 @@ export class EvalExprActionComponent extends ActionComponent {
         enabledInComponentPalette: (projectType: ProjectType, projectStore?: ProjectStore) =>
             projectType !== ProjectType.EEZ_GUI_LITE &&
             (!projectStore || !projectStore.projectTypeTraits.isEezFlowLite),
-        label: () => "Evaluate",
-        componentPaletteLabel: "Evaluate",
+        label: () => translateProjectEditorLabel("Evaluate"),
+        componentPaletteLabel: translateProjectEditorLabel("Evaluate"),
         properties: [
             makeExpressionProperty(
                 {
@@ -469,8 +469,8 @@ export class EvalExprActionComponent extends ActionComponent {
 export class WatchVariableActionComponent extends ActionComponent {
     static classInfo = makeDerivedClassInfo(ActionComponent.classInfo, {
         flowComponentId: COMPONENT_TYPE_WATCH_VARIABLE_ACTION,
-        label: () => "Watch",
-        componentPaletteLabel: "Watch",
+        label: () => translateProjectEditorLabel("Watch"),
+        componentPaletteLabel: translateProjectEditorLabel("Watch"),
         properties: [
             makeExpressionProperty(
                 {
@@ -564,8 +564,8 @@ export class WatchVariableActionComponent extends ActionComponent {
 
 export class EvalJSExprActionComponent extends ActionComponent {
     static classInfo = makeDerivedClassInfo(ActionComponent.classInfo, {
-        label: () => "Eval JS",
-        componentPaletteLabel: "Eval JS",
+        label: () => translateProjectEditorLabel("Eval JS"),
+        componentPaletteLabel: translateProjectEditorLabel("Eval JS"),
         componentPaletteGroupName: "Dashboard Specific",
         properties: [
             {
@@ -1048,7 +1048,7 @@ export class SwitchActionComponent extends ActionComponent {
     static classInfo = makeDerivedClassInfo(ActionComponent.classInfo, {
         flowComponentId: COMPONENT_TYPE_SWITCH_ACTION,
         label: () => "SwitchCase",
-        componentPaletteLabel: "SwitchCase",
+        componentPaletteLabel: translateProjectEditorLabel("SwitchCase"),
         properties: [
             {
                 name: "tests",
@@ -3023,9 +3023,9 @@ export class OnEventActionComponent extends ActionComponent {
                             .isDashboard
                     ) {
                         return [
-                            { id: "page_open", label: "Page open" },
-                            { id: "page_close", label: "Page close" },
-                            { id: "keydown", label: "Keydown" }
+                            { id: "page_open", label: translateProjectEditorLabel("Page open") },
+                            { id: "page_close", label: translateProjectEditorLabel("Page close") },
+                            { id: "keydown", label: translateProjectEditorLabel("Keydown") }
                         ];
                     }
                     return [
@@ -3134,9 +3134,9 @@ export class ShowPageActionComponent extends ActionComponent {
                 name: "mode",
                 type: PropertyType.Enum,
                 enumItems: [
-                    { id: "replace", label: "Replace" },
-                    { id: "push", label: "Push" },
-                    { id: "set", label: "Set" }
+                    { id: "replace", label: translateProjectEditorLabel("Replace") },
+                    { id: "push", label: translateProjectEditorLabel("Push") },
+                    { id: "set", label: translateProjectEditorLabel("Set") }
                 ],
                 enumDisallowUndefined: true,
                 propertyGridGroup: specificGroup,
@@ -3254,9 +3254,9 @@ export class ShowMessageBoxActionComponent extends ActionComponent {
                 name: "messageType",
                 type: PropertyType.Enum,
                 enumItems: [
-                    { id: MESSAGE_BOX_TYPE_INFO, label: "Info" },
-                    { id: MESSAGE_BOX_TYPE_ERROR, label: "Error" },
-                    { id: MESSAGE_BOX_TYPE_QUESTION, label: "Question" }
+                    { id: MESSAGE_BOX_TYPE_INFO, label: translateProjectEditorLabel("Info") },
+                    { id: MESSAGE_BOX_TYPE_ERROR, label: translateProjectEditorLabel("Error") },
+                    { id: MESSAGE_BOX_TYPE_QUESTION, label: translateProjectEditorLabel("Question") }
                 ],
                 propertyGridGroup: specificGroup
             },
@@ -4125,7 +4125,7 @@ export class ClipboardWriteActionComponent extends ActionComponent {
 export class NoopActionComponent extends ActionComponent {
     static classInfo = makeDerivedClassInfo(ActionComponent.classInfo, {
         flowComponentId: COMPONENT_TYPE_NOOP_ACTION,
-        componentPaletteLabel: "NoOp",
+        componentPaletteLabel: translateProjectEditorLabel("NoOp"),
         properties: [
             {
                 name: "name",
@@ -4615,7 +4615,7 @@ export class LabelOutActionComponent extends ActionComponent {
             </svg>
         ),
         componentHeaderColor: "#c9e4de",
-        componentPaletteLabel: "Label OUT",
+        componentPaletteLabel: translateProjectEditorLabel("Label OUT"),
 
         properties: [
             {
@@ -4775,7 +4775,7 @@ export class LabelInActionComponent extends ActionComponent {
             </svg>
         ),
         componentHeaderColor: "#c9e4de",
-        componentPaletteLabel: "Label IN",
+        componentPaletteLabel: translateProjectEditorLabel("Label IN"),
 
         properties: [
             {
