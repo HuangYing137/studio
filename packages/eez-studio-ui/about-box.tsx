@@ -8,6 +8,7 @@ import { Loader } from "eez-studio-ui/loader";
 
 import { isArray } from "eez-studio-shared/util";
 import { settingsController } from "home/settings";
+import { translateProjectEditorLabel as t } from "eez-studio-shared/i10n";
 
 const STUDIO_RELEASES_URL =
     "https://api.github.com/repos/eez-open/studio/releases";
@@ -128,7 +129,7 @@ const AboutBox = observer(
                 versionInfo = (
                     <>
                         <Loader size={20} />
-                        <span>Checking for updates...</span>
+                        <span>{t("Checking for updates...")}</span>
                     </>
                 );
             } else {
@@ -141,7 +142,7 @@ const AboutBox = observer(
                     ) {
                         versionInfo = (
                             <>
-                                There is a newer version {this.latestVersion} (
+                                {t("There is a newer version ")}{this.latestVersion} (
                                 <a
                                     href="#"
                                     onClick={event => {
@@ -158,7 +159,7 @@ const AboutBox = observer(
                             </>
                         );
                     } else {
-                        versionInfo = "You have the latest version";
+                        versionInfo = t("You have the latest version");
                     }
                 } else {
                     versionInfo = "";
