@@ -1,4 +1,5 @@
 import React from "react";
+import { translateProjectEditorLabel } from "eez-studio-shared/i10n";
 import { Duplex, Readable } from "stream";
 
 import type { IDashboardComponentContext, ValueType } from "eez-studio-types";
