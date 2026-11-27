@@ -1472,7 +1472,7 @@ export class UserWidgetWidget extends Widget {
             makeDataPropertyInfo("context"),
             {
                 name: "userWidgetPageName",
-                displayName: "User widget",
+                displayName: t("User widget"),
                 type: PropertyType.ObjectReference,
                 propertyGridGroup: specificGroup,
                 referencedObjectCollectionPath: "userWidgets"
@@ -1822,7 +1822,7 @@ export class UserWidgetWidget extends Widget {
 
         return [
             {
-                label: "Replace with Container",
+                label: t("Replace with Container"),
                 click: () => {
                     const widget = this.replaceWithContainer();
                     if (widget) {
