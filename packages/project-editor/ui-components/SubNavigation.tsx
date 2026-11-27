@@ -4,16 +4,7 @@ import { observer } from "mobx-react";
 
 import { ProjectContext } from "project-editor/project/context";
 import classNames from "classnames";
-import { getLocale } from "eez-studio-shared/i10n";
-
-const translateSubNavigationName = (name: string) => {
-    if (!getLocale().toLowerCase().startsWith("zh")) return name;
-    const labels: { [key: string]: string } = {
-        Global: "全局", Local: "局部", Structs: "结构体", Enums: "枚举",
-        "Named Expressions": "命名表达式", Widgets: "控件", Actions: "动作"
-    };
-    return labels[name] || name;
-};
+import { translateProjectEditorLabel as t } from "eez-studio-shared/i10n";
 
 export interface SubNavigationItem {
     name: string;
@@ -71,7 +62,7 @@ export const SubNavigation = observer(
                     <ul className="nav nav-pills">
                         {this.props.items.map(item => (
                             <li
-                                key={translateSubNavigationName(item.name)}
+                                key={t(item.name)}
                                 className="nav-item"
                                 onClick={() => this.selectItem(item.name)}
                             >
