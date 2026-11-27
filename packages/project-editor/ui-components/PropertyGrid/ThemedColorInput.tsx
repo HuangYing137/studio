@@ -27,6 +27,7 @@ import { settingsController } from "home/settings";
 import { getProperty } from "project-editor/core/object";
 import { getEezStudioDataFromDragEvent } from "project-editor/store";
 import { ProjectContext } from "project-editor/project/context";
+import { translateProjectEditorLabel as t } from "eez-studio-shared/i10n";
 import {
     getProjectWithThemes,
     getThemedColor
@@ -854,7 +855,7 @@ const ColorPicker = observer(
                                         padding: 0,
                                         fontSize: 14
                                     }}
-                                    title="Pick color from screen"
+                                    title={t("Pick color from screen")}
                                 >
                                     <svg
                                         width="14"
@@ -955,7 +956,7 @@ const ColorPicker = observer(
                                     flexShrink: 0,
                                     marginTop: 0
                                 }}
-                                title="Switch input mode"
+                                title={t("Switch input mode")}
                             >
                                 <svg
                                     width="14"
@@ -1020,7 +1021,7 @@ const ColorPicker = observer(
                                                 : 400,
                                         padding: 0
                                     }}
-                                    title="Lighten color"
+                                    title={t("Lighten color")}
                                 >
                                     Lighten
                                 </button>
@@ -1053,7 +1054,7 @@ const ColorPicker = observer(
                                                 : 400,
                                         padding: 0
                                     }}
-                                    title="Darken color"
+                                    title={t("Darken color")}
                                 >
                                     Darken
                                 </button>
