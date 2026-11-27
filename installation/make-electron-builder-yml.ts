@@ -9,7 +9,7 @@ const packageJson = require("../package.json");
 async function getExtraResource() {
     // the expression grammar is compiled into the app at build time (gulp
     // task "expression-parser"), so it isn't an extra resource anymore
-    const extraResource: string[] = [];
+    const extraResource: string[] = ["./resources/locales"];
 
     const extraResources = extraResource.map((extraResourcePath: string) => ({
         from: extraResourcePath,

@@ -1,4 +1,5 @@
 import React from "react";
+import { translateProjectEditorLabel as t } from "eez-studio-shared/i10n";
 import { observable, makeObservable, runInAction, autorun } from "mobx";
 import { Stream } from "stream";
 
@@ -134,7 +135,7 @@ export class SCPIActionComponent extends ActionComponent {
             makeExpressionProperty(
                 {
                     name: "timeout",
-                    displayName: "Timeout (ms)",
+                    displayName: t("Timeout (ms)"),
                     type: PropertyType.MultilineText,
                     propertyGridGroup: specificGroup
                 },
@@ -143,8 +144,8 @@ export class SCPIActionComponent extends ActionComponent {
             makeExpressionProperty(
                 {
                     name: "delay",
-                    displayName: "Delay (ms)",
-                    formText: "Minimum delay between commands.",
+                    displayName: t("Delay (ms)"),
+                    formText: t("Minimum delay between commands."),
                     type: PropertyType.MultilineText,
                     propertyGridGroup: specificGroup
                 },
@@ -441,7 +442,7 @@ export class GetInstrumentActionComponent extends ActionComponent {
             makeExpressionProperty(
                 {
                     name: "instrumentId",
-                    displayName: "Instrument ID",
+                    displayName: t("Instrument ID"),
                     type: PropertyType.MultilineText,
                     propertyGridGroup: specificGroup
                 },
@@ -473,7 +474,7 @@ export class GetInstrumentActionComponent extends ActionComponent {
             const instrument = instruments.get(instrumentId);
 
             if (!instrument) {
-                context.throwError("Instrument not found");
+                context.throwError(t("Instrument not found"));
                 return;
             }
 
@@ -1209,7 +1210,7 @@ export class AddToInstrumentHistoryActionComponent extends ActionComponent {
                     },
                     {
                         id: "widget",
-                        label: "Widget"
+                        label: t("Widget")
                     }
                 ],
                 propertyGridGroup: specificGroup
@@ -1706,7 +1707,7 @@ export class AddToInstrumentHistoryActionComponent extends ActionComponent {
                 message = instrumentItemData.message;
                 chartData = undefined;
             } else {
-                context.throwError("Invalid item type");
+                context.throwError(t("Invalid item type"));
                 return;
             }
 
@@ -2045,7 +2046,7 @@ export const SelectInstrumentDialog = observer(
                     okButtonText={
                         this.connectToInstrument && instrument
                             ? "Conect"
-                            : "Select"
+                            : t("Select")
                     }
                     cancelButtonText={
                         this.connectToInstrument && instrument
@@ -2104,7 +2105,7 @@ export async function showSelectInstrumentDialog(
             {
                 jsPanel: {
                     id: "select-instrument-5",
-                    title: name ? `Select: ${name}` : "Select Instrument",
+                    title: name ? `${t("Select")}: ${name}` : t("Select Instrument"),
                     width: 920,
                     height: 680
                 }
@@ -2187,7 +2188,7 @@ registerObjectVariableType("Instrument", {
         return {
             constructorParams,
             status: {
-                label: "Unknown instrument",
+                label: t("Unknown instrument"),
                 error: `Instrument with ID [${constructorParams}] is not found`
             }
         };

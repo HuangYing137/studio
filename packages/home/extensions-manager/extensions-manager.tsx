@@ -1,5 +1,6 @@
 import { dialog, getCurrentWindow } from "@electron/remote";
 import React from "react";
+import { translateProjectEditorLabel } from "eez-studio-shared/i10n";
 import {
     observable,
     computed,
@@ -1188,40 +1189,40 @@ export const DetailsView = observer(
                             <Toolbar>
                                 {this.installEnabled && (
                                     <ButtonAction
-                                        text="Install"
-                                        title="Install extension"
+                                        text={translateProjectEditorLabel("Install")}
+                                        title={translateProjectEditorLabel("Install extension")}
                                         className="btn-success"
                                         onClick={this.handleInstall}
                                     />
                                 )}
                                 {this.updateEnabled && (
                                     <ButtonAction
-                                        text="Update"
-                                        title="Update extension to the latest version"
+                                        text={translateProjectEditorLabel("Update")}
+                                        title={translateProjectEditorLabel("Update extension to the latest version")}
                                         className="btn-success"
                                         onClick={this.handleInstall}
                                     />
                                 )}
                                 {this.replaceEnabled && (
                                     <ButtonAction
-                                        text="Replace"
-                                        title="Replace installed extension with selected version"
+                                        text={translateProjectEditorLabel("Replace")}
+                                        title={translateProjectEditorLabel("Replace installed extension with selected version")}
                                         className="btn-success"
                                         onClick={this.handleInstall}
                                     />
                                 )}
                                 {this.uninstallEnabled && (
                                     <ButtonAction
-                                        text="Uninstall"
-                                        title="Uninstall extension"
+                                        text={translateProjectEditorLabel("Uninstall")}
+                                        title={translateProjectEditorLabel("Uninstall extension")}
                                         className="btn-danger"
                                         onClick={this.handleUninstall}
                                     />
                                 )}
                                 {extension.isEditable && extension.isDirty && (
                                     <ButtonAction
-                                        text="Export"
-                                        title="Export extension"
+                                        text={translateProjectEditorLabel("Export")}
+                                        title={translateProjectEditorLabel("Export extension")}
                                         className="btn-secondary"
                                         onClick={this.handleExport}
                                     />
@@ -1445,7 +1446,7 @@ const ExtensionsManagerSubNavigation = observer(
                                     })}
                                 >
                                     <Count
-                                        label={"All"}
+                                        label={translateProjectEditorLabel("All")}
                                         count={
                                             extensionsManagerStore.all.length
                                         }
@@ -1471,7 +1472,7 @@ const ExtensionsManagerSubNavigation = observer(
                                         })}
                                     >
                                         <Count
-                                            label={"Installed"}
+                                            label={translateProjectEditorLabel("Installed")}
                                             count={
                                                 extensionsManagerStore.installed
                                                     .length
@@ -1499,7 +1500,7 @@ const ExtensionsManagerSubNavigation = observer(
                                         })}
                                     >
                                         <Count
-                                            label={"Not installed"}
+                                            label={translateProjectEditorLabel("Not installed")}
                                             count={
                                                 extensionsManagerStore
                                                     .notInstalled.length
@@ -1527,7 +1528,7 @@ const ExtensionsManagerSubNavigation = observer(
                                         })}
                                     >
                                         <Count
-                                            label={"New versions"}
+                                            label={translateProjectEditorLabel("New versions")}
                                             count={
                                                 extensionsManagerStore
                                                     .newVersions.length
@@ -1546,7 +1547,7 @@ const ExtensionsManagerSubNavigation = observer(
                     <div>
                         {
                             <ButtonAction
-                                text="Update All"
+                                text={translateProjectEditorLabel("Update All")}
                                 title=""
                                 className="btn-success"
                                 onClick={this.updateAll}
@@ -1564,25 +1565,25 @@ const ExtensionsManagerSubNavigation = observer(
                         }
                         <DropdownIconAction
                             icon="material:menu"
-                            title="Actions"
+                            title={translateProjectEditorLabel("Actions")}
                         >
                             <DropdownItem
-                                text="Update Catalog"
+                                text={translateProjectEditorLabel("Update Catalog")}
                                 onClick={this.updateCatalog}
                             />
                             {(extensionsManagerStore.section == "iext" ||
                                 extensionsManagerStore.section ==
                                     "measurement-functions") && (
                                 <DropdownItem
-                                    text="Install Extension"
-                                    title="Install extension from local file"
+                                    text={translateProjectEditorLabel("Install Extension")}
+                                    title={translateProjectEditorLabel("Install extension from local file")}
                                     onClick={this.installExtensionFromFile}
                                 />
                             )}
                             {extensionsManagerStore.section == "pext" && (
                                 <DropdownItem
-                                    text="Install Extension"
-                                    title="Install extension from local folder"
+                                    text={translateProjectEditorLabel("Install Extension")}
+                                    title={translateProjectEditorLabel("Install extension from local folder")}
                                     onClick={this.installExtensionFromFolder}
                                 />
                             )}
@@ -1660,7 +1661,7 @@ export const ExtensionsManager = observer(
                             }
                         >
                             <Count
-                                label="Project Editor Extensions"
+                                label={translateProjectEditorLabel("Project Editor Extensions")}
                                 count={
                                     extensionsManagerStore.searchText
                                         ? extensionsManagerStore.extensionsVersionsCatalogBuilder.get(
@@ -1692,7 +1693,7 @@ export const ExtensionsManager = observer(
                             }
                         >
                             <Count
-                                label="Instrument Extensions"
+                                label={translateProjectEditorLabel("Instrument Extensions")}
                                 count={
                                     extensionsManagerStore.searchText
                                         ? extensionsManagerStore.extensionsVersionsCatalogBuilder.get(
@@ -1725,7 +1726,7 @@ export const ExtensionsManager = observer(
                             }
                         >
                             <Count
-                                label="Measurement Extensions"
+                                label={translateProjectEditorLabel("Measurement Extensions")}
                                 count={
                                     extensionsManagerStore.searchText
                                         ? extensionsManagerStore.extensionsVersionsCatalogBuilder.get(

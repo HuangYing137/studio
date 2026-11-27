@@ -1,4 +1,5 @@
 import React from "react";
+import { translateProjectEditorLabel } from "eez-studio-shared/i10n";
 import {
     action,
     computed,
@@ -13,6 +14,7 @@ import { map } from "lodash-es";
 import { humanize } from "eez-studio-shared/string";
 import { UNITS } from "eez-studio-shared/units";
 import { guid } from "eez-studio-shared/guid";
+import { getLocale } from "eez-studio-shared/i10n";
 
 import { Rule, validators } from "eez-studio-shared/validation";
 
@@ -687,7 +689,7 @@ export const GenericDialog = observer(
                         key={fieldGroup.name}
                         className="EezStudio_PropertyList_Fieldset"
                     >
-                        <div className="EezStudio_PropertyList_Legend">{fieldGroup.name}</div>
+                        <div className="EezStudio_PropertyList_Legend">{translateProjectEditorLabel(fieldGroup.name)}</div>
                         {propertyList}
                     </div>
                 );
@@ -716,7 +718,7 @@ export const GenericDialog = observer(
                     <Dialog
                         modal={this.modal}
                         backdrop={this.props.backdrop}
-                        title={this.props.dialogDefinition.title}
+                        title={translateProjectEditorLabel(this.props.dialogDefinition.title)}
                         size={this.props.dialogDefinition.size}
                         okButtonText={this.props.okButtonText}
                         cancelButtonText={this.props.cancelButtonText}
@@ -766,7 +768,7 @@ export const GenericDialog = observer(
                                             }}
                                             style={{ marginLeft: 20 }}
                                         >
-                                            Abort
+                                            {getLocale().toLowerCase().startsWith("zh") ? "中止" : "Abort"}
                                         </button>
                                     </>
                                 )}

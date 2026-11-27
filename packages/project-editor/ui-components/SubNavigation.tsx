@@ -4,6 +4,7 @@ import { observer } from "mobx-react";
 
 import { ProjectContext } from "project-editor/project/context";
 import classNames from "classnames";
+import { translateProjectEditorLabel as t } from "eez-studio-shared/i10n";
 
 export interface SubNavigationItem {
     name: string;
@@ -71,7 +72,7 @@ export const SubNavigation = observer(
                                     })}
                                     href="#"
                                 >
-                                    {item.name}
+                                    {t(item.name)}
                                     {item.numItems > 0 ? (
                                         <span
                                             className="badge rounded-pill bg-secondary ms-1"

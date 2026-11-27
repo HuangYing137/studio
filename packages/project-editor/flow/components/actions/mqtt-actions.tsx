@@ -1,4 +1,5 @@
 import React from "react";
+import { translateProjectEditorLabel as t } from "eez-studio-shared/i10n";
 import { observable, makeObservable, runInAction, computed } from "mobx";
 import type mqtt from "mqtt";
 
@@ -403,16 +404,16 @@ export class MQTTDisconnectActionComponent extends ActionComponent {
 ////////////////////////////////////////////////////////////////////////////////
 
 const MQTT_EVENTS = [
-    { id: "connect", label: "Connect", paramExpressionType: "null" },
-    { id: "reconnect", label: "Reconnect", paramExpressionType: "null" },
-    { id: "close", label: "Close", paramExpressionType: "null" },
-    { id: "disconnect", label: "Disconnect", paramExpressionType: "null" },
-    { id: "offline", label: "Offline", paramExpressionType: "null" },
-    { id: "end", label: "End", paramExpressionType: "null" },
-    { id: "error", label: "Error", paramExpressionType: "string" },
+    { id: "connect", label: t("Connect"), paramExpressionType: "null" },
+    { id: "reconnect", label: t("Reconnect"), paramExpressionType: "null" },
+    { id: "close", label: t("Close"), paramExpressionType: "null" },
+    { id: "disconnect", label: t("Disconnect"), paramExpressionType: "null" },
+    { id: "offline", label: t("Offline"), paramExpressionType: "null" },
+    { id: "end", label: t("End"), paramExpressionType: "null" },
+    { id: "error", label: t("Error"), paramExpressionType: "string" },
     {
         id: "message",
-        label: "Message",
+        label: t("Message"),
         paramExpressionType: "struct:$MQTTMessage"
     }
 ];
@@ -462,8 +463,8 @@ class EventHandler extends EezObject {
                 name: "handlerType",
                 type: PropertyType.Enum,
                 enumItems: [
-                    { id: "flow", label: "Flow" },
-                    { id: "action", label: "Action" }
+                    { id: "flow", label: t("Flow") },
+                    { id: "action", label: t("Action") }
                 ],
                 enumDisallowUndefined: true,
                 disabled: eventHandler =>
@@ -573,8 +574,8 @@ class EventHandler extends EezObject {
                             name: "handlerType",
                             type: "enum",
                             enumItems: [
-                                { id: "flow", label: "Flow" },
-                                { id: "action", label: "Action" }
+                                { id: "flow", label: t("Flow") },
+                                { id: "action", label: t("Action") }
                             ],
                             visible: () =>
                                 project.projectTypeTraits.hasFlowSupport

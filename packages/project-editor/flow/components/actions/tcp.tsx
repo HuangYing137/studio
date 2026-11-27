@@ -1,4 +1,5 @@
 import React from "react";
+import { translateProjectEditorLabel as t } from "eez-studio-shared/i10n";
 import { makeObservable, observable, runInAction } from "mobx";
 import * as net from "net";
 
@@ -226,12 +227,12 @@ registerActionComponents("Network", [
 ////////////////////////////////////////////////////////////////////////////////
 
 const TCP_SOCKET_EVENTS = [
-    { id: "ready", label: "Ready", paramExpressionType: "null" },
-    { id: "data", label: "Data", paramExpressionType: "string" },
-    { id: "close", label: "Close", paramExpressionType: "null" },
-    { id: "end", label: "End", paramExpressionType: "null" },
-    { id: "error", label: "Error", paramExpressionType: "string" },
-    { id: "timeout", label: "Timeout", paramExpressionType: "null" }
+    { id: "ready", label: t("Ready"), paramExpressionType: "null" },
+    { id: "data", label: t("Data"), paramExpressionType: "string" },
+    { id: "close", label: t("Close"), paramExpressionType: "null" },
+    { id: "end", label: t("End"), paramExpressionType: "null" },
+    { id: "error", label: t("Error"), paramExpressionType: "string" },
+    { id: "timeout", label: t("Timeout"), paramExpressionType: "null" }
 ];
 
 class EventHandler extends EezObject {
@@ -279,8 +280,8 @@ class EventHandler extends EezObject {
                 name: "handlerType",
                 type: PropertyType.Enum,
                 enumItems: [
-                    { id: "flow", label: "Flow" },
-                    { id: "action", label: "Action" }
+                    { id: "flow", label: t("Flow") },
+                    { id: "action", label: t("Action") }
                 ],
                 enumDisallowUndefined: true,
                 disabled: eventHandler =>
@@ -390,8 +391,8 @@ class EventHandler extends EezObject {
                             name: "handlerType",
                             type: "enum",
                             enumItems: [
-                                { id: "flow", label: "Flow" },
-                                { id: "action", label: "Action" }
+                                { id: "flow", label: t("Flow") },
+                                { id: "action", label: t("Action") }
                             ],
                             visible: () =>
                                 project.projectTypeTraits.hasFlowSupport

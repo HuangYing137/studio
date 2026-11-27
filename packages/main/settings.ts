@@ -432,7 +432,8 @@ ipcMain.on("setDbPaths", function (event: any, dbPaths: IDbPath[]) {
 ////////////////////////////////////////////////////////////////////////////////
 
 export function getLocale() {
-    return settings.locale || app.getLocale();
+    // This fork is the Simplified Chinese edition; users can still select another locale in Settings.
+    return settings.locale || "zh-CN";
 }
 
 export function setLocale(value: string) {

@@ -630,7 +630,7 @@ function buildViewMenu(win: IWindow | undefined) {
             }
         },
         {
-            label: "Noteboooks",
+            label: "Notebooks",
             click: function (item) {
                 if (win) {
                     win.browserWindow.webContents.send(
@@ -926,11 +926,105 @@ function buildMenuTemplate(win: IWindow | undefined) {
 
 ////////////////////////////////////////////////////////////////////////////////
 
+// The upstream locale setting formats dates and times, but does not translate
+// the application chrome. This catalog changes visible menu labels only.
+const zhCNMenuLabels: Record<string, string> = {
+    "About": "关于",
+    "Add Instrument...": "添加仪器...",
+    "All Files": "所有文件",
+    "Build": "构建",
+    "Bring All to Front": "将所有窗口置于最前",
+    "Build and Install Extensions": "构建并安装扩展",
+    "Build Extensions": "构建扩展",
+    "Check": "检查",
+    "Close": "关闭",
+    "Close Window": "关闭窗口",
+    "Command Palette...": "命令面板...",
+    "Copy": "复制",
+    "Cut": "剪切",
+    "Delete": "删除",
+    "Documentation": "文档",
+    "Edit": "编辑",
+    "Extensions": "扩展",
+    "EEZ Dashboard": "EEZ 仪表板项目",
+    "EEZ Debug Info": "EEZ 调试信息",
+    "EEZ Project": "EEZ 项目",
+    "Exit": "退出",
+    "File": "文件",
+    "Find Project Component": "查找项目组件",
+    "Go to Object...": "转到对象...",
+    "Help": "帮助",
+    "Hide Others": "隐藏其他窗口",
+    "Hide Components Palette": "隐藏控件面板",
+    "History": "历史记录",
+    "Home": "主页",
+    "Import Instrument Definition...": "导入仪器定义...",
+    "Instrument Definition Files": "仪器定义文件",
+    "Load Debug Info...": "加载调试信息...",
+    "Minimize": "最小化",
+    "New Project...": "新建项目...",
+    "New Window": "新建窗口",
+    "Next Tab": "下一个标签页",
+    "Notebooks": "笔记本",
+    "Open...": "打开...",
+    "Open Recent": "最近打开",
+    "Paste": "粘贴",
+    "Previous Tab": "上一个标签页",
+    "Quit": "退出",
+    "Redo": "重做",
+    "Reload": "重新加载",
+    "Reload Project": "重新加载项目",
+    "Reset Layout": "重置布局",
+    "Reset Zoom": "重置缩放",
+    "Save": "保存",
+    "Save As": "另存为",
+    "Save Debug Info...": "保存调试信息...",
+    "Scrapbook for Project Editor": "项目编辑器素材库",
+    "Select All": "全选",
+    "Services": "服务",
+    "Settings": "设置",
+    "Show All": "显示全部",
+    "Show Components Palette": "显示控件面板",
+    "Shortcuts and Groups": "快捷方式和分组",
+    "Switch to Dark Theme": "切换到深色主题",
+    "Switch to Light Theme": "切换到浅色主题",
+    "Toggle Developer Tools": "切换开发者工具",
+    "Toggle Full Screen": "切换全屏",
+    "Undo": "撤销",
+    "View": "视图",
+    "Window": "窗口",
+    "Zoom In": "放大",
+    "Zoom Out": "缩小"
+};
+
+function translateMenuTemplate(items: Electron.MenuItemConstructorOptions[], locale: string) {
+    if (!locale.toLowerCase().startsWith("zh")) return items;
+    for (const item of items) {
+        if (typeof item.label === "string") {
+            const translated = zhCNMenuLabels[item.label];
+            if (translated) {
+                item.label = translated;
+            } else {
+                for (const [english, chinese] of Object.entries(zhCNMenuLabels)) {
+                    if (item.label.startsWith(english + " ")) {
+                        item.label = chinese + item.label.substring(english.length);
+                        break;
+                    }
+                }
+            }
+        }
+        if (item.submenu && "length" in item.submenu) {
+            translateMenuTemplate(item.submenu as Electron.MenuItemConstructorOptions[], locale);
+        }
+    }
+    return items;
+}
+
 autorun(() => {
     for (let i = 0; i < windows.length; i++) {
         const win = windows[i];
         if (win.focused) {
-            let menuTemplate = buildMenuTemplate(win);
+            let menuTemplate = translateMenuTemplate(buildMenuTemplate(win), settings.locale || app.getLocale());
             let menu = Menu.buildFromTemplate(menuTemplate);
             Menu.setApplicationMenu(menu);
         }

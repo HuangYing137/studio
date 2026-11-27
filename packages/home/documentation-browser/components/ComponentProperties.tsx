@@ -1,4 +1,5 @@
 import React from "react";
+import { translateProjectEditorLabel as t } from "eez-studio-shared/i10n";
 import { observer } from "mobx-react";
 import {
     IPropertyGridGroupDefinition,
@@ -25,7 +26,7 @@ export const ComponentProperties = observer(
             );
 
             return (
-                <BodySection title="Properties">
+                <BodySection title={t("Properties")}>
                     <div className="EezStudio_Component_Documentation_Properties">
                         {groupPropertiesArray.map((groupProperties, i) => {
                             return (

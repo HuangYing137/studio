@@ -1,5 +1,6 @@
 import { observer } from "mobx-react";
 import React from "react";
+import { translateProjectEditorLabel } from "eez-studio-shared/i10n";
 import { computed, makeObservable, observable } from "mobx";
 import * as FlexLayout from "flexlayout-react";
 
@@ -138,7 +139,7 @@ const ProjectFeature = observer(
                         <button
                             className="btn btn-secondary float-right"
                             disabled={true}
-                            title="This feature can't be removed"
+                            title={translateProjectEditorLabel("This feature can't be removed")}
                         >
                             Remove
                         </button>
@@ -148,7 +149,7 @@ const ProjectFeature = observer(
                         <button
                             className="btn btn-secondary float-right"
                             onClick={this.onRemove}
-                            title="Remove feature from the project"
+                            title={translateProjectEditorLabel("Remove feature from the project")}
                         >
                             Remove
                         </button>
@@ -159,7 +160,7 @@ const ProjectFeature = observer(
                     <button
                         className="btn btn-success float-right"
                         onClick={this.onAdd}
-                        title="Add feature to the project"
+                        title={translateProjectEditorLabel("Add feature to the project")}
                     >
                         Add
                     </button>
@@ -468,7 +469,7 @@ export const SettingsContent = observer(
                 return (
                     <div className="EezStudio_SettingsEditor">
                         <PropertyGrid objects={[this.object]} />
-                        <h3>Project features</h3>
+                        <h3>{translateProjectEditorLabel("Project features")}</h3>
                         <div className="d-flex flex-wrap">
                             {projectFeatures}
                         </div>
@@ -481,7 +482,7 @@ export const SettingsContent = observer(
                         <PropertyGrid objects={[this.object]} />
                         {this.object.widget && (
                             <>
-                                <h3>Widget properties</h3>
+                                <h3>{translateProjectEditorLabel("Widget properties")}</h3>
                                 <PropertyGrid
                                     objects={[this.object.widget]}
                                 />
@@ -709,7 +710,7 @@ const DeleteButton = observer(
         render() {
             return (
                 <IconAction
-                    title="Delete Selected Item"
+                    title={translateProjectEditorLabel("Delete Selected Item")}
                     icon="material:delete"
                     iconSize={16}
                     onClick={this.onDelete}

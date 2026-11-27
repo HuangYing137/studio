@@ -1,4 +1,5 @@
 import React from "react";
+import { translateProjectEditorLabel } from "eez-studio-shared/i10n";
 import { observable, makeObservable, computed } from "mobx";
 
 import QRC from "../qrcodegen";
@@ -196,7 +197,7 @@ type LabelPosition = "top" | "left";
 
 const labelPositionPropertyInfo: PropertyInfo = {
     name: "labelPosition",
-    displayName: "Label position",
+    displayName: translateProjectEditorLabel("Label position"),
     type: PropertyType.Enum,
     enumItems: [
         { id: "top", label: "Top" },
@@ -336,7 +337,7 @@ export class TextWidget extends Widget {
                 }
             }),
             makeTextPropertyInfo("text", {
-                displayName: "Static text",
+                displayName: translateProjectEditorLabel("Static text"),
                 disabled: isProjectWithFlowSupport
             }),
             // shown in the editor instead of the data, not built
@@ -347,7 +348,7 @@ export class TextWidget extends Widget {
             },
             {
                 name: "fitToContent",
-                displayName: "Fit to content",
+                displayName: translateProjectEditorLabel("Fit to content"),
                 type: PropertyType.Enum,
                 enumItems: [
                     { id: "none", label: "None" },
@@ -420,7 +421,7 @@ export class TextWidget extends Widget {
             },
             {
                 name: "unitAndFractionFont",
-                displayName: "Unit and fraction font",
+                displayName: translateProjectEditorLabel("Unit and fraction font"),
                 type: PropertyType.ObjectReference,
                 referencedObjectCollectionPath: "fonts",
                 propertyGridGroup: specificGroup,
@@ -435,7 +436,7 @@ export class TextWidget extends Widget {
             makeDataPropertyInfo(
                 "displayUnit",
                 {
-                    displayName: "Display unit",
+                    displayName: translateProjectEditorLabel("Display unit"),
                     disabled: hasNotFlowSupport,
                     hideInPropertyGrid: hideInTextWidget(
                         "number",
@@ -475,7 +476,7 @@ export class TextWidget extends Widget {
             makeDataPropertyInfo(
                 "trailingIcon",
                 {
-                    displayName: "Trailing icon",
+                    displayName: translateProjectEditorLabel("Trailing icon"),
                     disabled: hasNotFlowSupport,
                     hideInPropertyGrid: hideInTextWidget(
                         "icon",
@@ -1039,7 +1040,7 @@ export class DisplayDataWidget extends TextWidget {
             // only in a row or column (see Widget.getLayoutFlags)
             {
                 name: "fitToContent",
-                displayName: "Fit to content",
+                displayName: translateProjectEditorLabel("Fit to content"),
                 type: PropertyType.Enum,
                 enumItems: [
                     { id: "none", label: "None" },
@@ -1266,18 +1267,18 @@ export class MultilineTextWidget extends Widget {
                 }
             }),
             makeTextPropertyInfo("text", {
-                displayName: "Static text",
+                displayName: translateProjectEditorLabel("Static text"),
                 disabled: isProjectWithFlowSupport
             }),
             {
                 name: "firstLineIndent",
-                displayName: "First line",
+                displayName: translateProjectEditorLabel("First line"),
                 type: PropertyType.Number,
                 propertyGridGroup: indentationGroup
             },
             {
                 name: "hangingIndent",
-                displayName: "Hanging",
+                displayName: translateProjectEditorLabel("Hanging"),
                 type: PropertyType.Number,
                 propertyGridGroup: indentationGroup
             },
@@ -1983,8 +1984,8 @@ export class BarGraphWidget extends Widget {
                 propertyGridGroup: specificGroup
             },
             makeDataPropertyInfo("data"),
-            makeDataPropertyInfo("line1Data", { displayName: "Threshold1" }),
-            makeDataPropertyInfo("line2Data", { displayName: "Threshold2" }),
+            makeDataPropertyInfo("line1Data", { displayName: translateProjectEditorLabel("Threshold1") }),
+            makeDataPropertyInfo("line2Data", { displayName: translateProjectEditorLabel("Threshold2") }),
             makeDataPropertyInfo("min", {
                 disabled: hasNotFlowSupport
             }),
@@ -2007,7 +2008,7 @@ export class BarGraphWidget extends Widget {
             },
             {
                 name: "line1Marker",
-                displayName: "Threshold1 marker",
+                displayName: translateProjectEditorLabel("Threshold1 marker"),
                 type: PropertyType.Boolean,
                 propertyGridGroup: specificGroup,
                 checkboxStyleSwitch: true
@@ -2015,7 +2016,7 @@ export class BarGraphWidget extends Widget {
             makeDataPropertyInfo(
                 "line1Label",
                 {
-                    displayName: "Threshold1 label",
+                    displayName: translateProjectEditorLabel("Threshold1 label"),
                     disabled: (widget: BarGraphWidget) =>
                         hasNotFlowSupport(widget) || !widget.line1Marker
                 },
@@ -2023,7 +2024,7 @@ export class BarGraphWidget extends Widget {
             ),
             {
                 name: "zone",
-                displayName: "Zone to threshold1",
+                displayName: translateProjectEditorLabel("Zone to threshold1"),
                 type: PropertyType.Boolean,
                 propertyGridGroup: specificGroup,
                 checkboxStyleSwitch: true
@@ -2334,7 +2335,7 @@ class YTChartTrace extends EezObject {
             },
             {
                 name: "field",
-                displayName: "BB3 module field",
+                displayName: translateProjectEditorLabel("BB3 module field"),
                 type: PropertyType.Enum,
                 enumItems: (trace: YTChartTrace) =>
                     getSampledBB3ModuleFields(trace).map(variable => ({
@@ -2343,7 +2344,7 @@ class YTChartTrace extends EezObject {
             },
             {
                 name: "field2",
-                displayName: "Second BB3 module field",
+                displayName: translateProjectEditorLabel("Second BB3 module field"),
                 type: PropertyType.Enum,
                 enumItems: (trace: YTChartTrace) =>
                     getSampledBB3ModuleFields(trace).map(variable => ({
@@ -2526,7 +2527,7 @@ export class YTChartWidget extends Widget {
             },
             makeDataPropertyInfo(
                 "mode",
-                { displayName: "Mode (0 - scroll, 1 - scan)" },
+                { displayName: translateProjectEditorLabel("Mode (0 - scroll, 1 - scan)") },
                 "integer"
             )
         ],
@@ -3302,7 +3303,7 @@ class LineChartLine extends EezObject {
             },
             {
                 name: "width",
-                displayName: "Line width",
+                displayName: translateProjectEditorLabel("Line width"),
                 type: PropertyType.Number,
                 propertyGridGroup: specificGroup
             },
@@ -3393,7 +3394,7 @@ export class LineChartEmbeddedWidget extends Widget {
             makeExpressionProperty(
                 {
                     name: "xValue",
-                    displayName: "X value",
+                    displayName: translateProjectEditorLabel("X value"),
                     type: PropertyType.MultilineText,
                     propertyGridGroup: specificGroup
                 },
@@ -3412,12 +3413,12 @@ export class LineChartEmbeddedWidget extends Widget {
             makeDataPropertyInfo("showLegend", {}, "boolean"),
             makeDataPropertyInfo(
                 "showXAxis",
-                { displayName: "Show X axis" },
+                { displayName: translateProjectEditorLabel("Show X axis") },
                 "boolean"
             ),
             makeDataPropertyInfo(
                 "showYAxis",
-                { displayName: "Show Y axis" },
+                { displayName: translateProjectEditorLabel("Show Y axis") },
                 "boolean"
             ),
             makeDataPropertyInfo("showYAxis", {}, "boolean"),
@@ -3920,7 +3921,7 @@ export class InputEmbeddedWidget extends Widget {
             },
             {
                 ...makeDataPropertyInfo("displayUnit", {}, "string"),
-                displayName: "Display unit",
+                displayName: translateProjectEditorLabel("Display unit"),
                 disabled: (widget: InputEmbeddedWidget) =>
                     widget.inputType != "number"
             },
@@ -3941,7 +3942,7 @@ export class InputEmbeddedWidget extends Widget {
             makeDataPropertyInfo("icon", {}, "string"),
             makeDataPropertyInfo(
                 "trailingIcon",
-                { displayName: "Trailing icon" },
+                { displayName: translateProjectEditorLabel("Trailing icon") },
                 "string"
             ),
             makeStylePropertyInfo("style", "Default style"),
@@ -4317,7 +4318,7 @@ export class SwitchWidget extends Widget {
             makeDataPropertyInfo("label", {}, "string"),
             {
                 name: "showStateText",
-                displayName: "On/Off text",
+                displayName: translateProjectEditorLabel("On/Off text"),
                 type: PropertyType.Boolean,
                 propertyGridGroup: specificGroup
             },
@@ -4657,7 +4658,7 @@ export class DropDownListWidget extends Widget {
             makeDataPropertyInfo("label", {}, "string"),
             {
                 name: "boxWidth",
-                displayName: "Box width",
+                displayName: translateProjectEditorLabel("Box width"),
                 type: PropertyType.Number,
                 propertyGridGroup: specificGroup,
                 disabled: (widget: DropDownListWidget) => !widget.label
@@ -4772,7 +4773,7 @@ export class QRCodeWidget extends Widget {
 
         properties: [
             makeDataPropertyInfo("data", {
-                displayName: "Text"
+                displayName: translateProjectEditorLabel("Text")
             }),
             {
                 name: "errorCorrection",

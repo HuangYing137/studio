@@ -31,6 +31,7 @@ import { List } from "project-editor/ui-components/List";
 
 import { ProjectContext } from "project-editor/project/context";
 import classNames from "classnames";
+import { translateProjectEditorLabel as t } from "eez-studio-shared/i10n";
 import { ProjectEditor } from "project-editor/project-editor-interface";
 import { getExternalItems } from "project-editor/project/helper";
 import type { Project } from "project-editor/project/project";
@@ -42,6 +43,7 @@ import {
 } from "project-editor/ui-components/ProjectExplorerFilter";
 
 ////////////////////////////////////////////////////////////////////////////////
+
 
 export const SortControl = observer(
     class SortControl extends React.Component<{
@@ -112,11 +114,7 @@ const AddButton = observer(
         render() {
             return (
                 <IconAction
-                    title={`Add ${
-                        this.props.navigationObject
-                            ? getAddItemName(this.props.navigationObject)
-                            : "Item"
-                    }...`}
+                    title={t("Add new item")}
                     icon="material:add"
                     iconSize={16}
                     onClick={this.onAdd}
@@ -143,7 +141,7 @@ const DeleteButton = observer(
         render() {
             return (
                 <IconAction
-                    title="Delete Selected Item"
+                    title={t("Delete Selected Item")}
                     icon="material:delete"
                     iconSize={16}
                     onClick={this.onDelete}

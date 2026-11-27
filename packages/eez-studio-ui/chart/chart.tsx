@@ -18,7 +18,7 @@ import { cssTransition } from "react-toastify";
 import * as FlexLayout from "flexlayout-react";
 import { uniqWith, range, map } from "lodash-es";
 
-import { getLocale } from "eez-studio-shared/i10n";
+import { getLocale, translateProjectEditorLabel as t } from "eez-studio-shared/i10n";
 import { extensions } from "eez-studio-shared/extensions/extensions";
 import { IUnit, UNITS, UNKNOWN_UNIT } from "eez-studio-shared/units";
 import { Point, pointDistance } from "eez-studio-shared/geometry";
@@ -1271,7 +1271,7 @@ const AxisView = observer(
                                 height={ZOOM_ICON_SIZE}
                                 padding={ZOOM_ICON_PADDING}
                                 onClick={this.props.axisController.zoomIn}
-                                title="Zoom In"
+                                title={t("Zoom In")}
                             />
                         )}
 
@@ -1286,7 +1286,7 @@ const AxisView = observer(
                                 height={ZOOM_ICON_SIZE}
                                 padding={ZOOM_ICON_PADDING}
                                 onClick={this.props.axisController.zoomOut}
-                                title="Zoom Out"
+                                title={t("Zoom Out")}
                             />
                         )}
 
@@ -2465,7 +2465,7 @@ function HelpView(props: any) {
                                 height="64"
                                 src="../eez-studio-ui/_images/mouse_middle_button.png"
                             ></img>
-                            <span className="text">or</span>
+                            <span className="text">{t("or")}</span>
                             <img
                                 width="46"
                                 height="64"
@@ -2476,7 +2476,7 @@ function HelpView(props: any) {
                             <Arrow />
                         </td>
                         <td>
-                            <span className="text">Drag chart</span>
+                            <span className="text">{t("Drag chart")}</span>
                         </td>
                     </tr>
                     <tr>
@@ -2491,7 +2491,7 @@ function HelpView(props: any) {
                             <Arrow />
                         </td>
                         <td>
-                            <span className="text">X-Axis Offset</span>
+                            <span className="text">{t("X-Axis Offset")}</span>
                         </td>
                     </tr>
                     <tr>
@@ -2508,7 +2508,7 @@ function HelpView(props: any) {
                             <Arrow />
                         </td>
                         <td>
-                            <span className="text">X-Axis Zoom</span>
+                            <span className="text">{t("X-Axis Zoom")}</span>
                         </td>
                     </tr>
                     <tr>
@@ -2525,7 +2525,7 @@ function HelpView(props: any) {
                             <Arrow />
                         </td>
                         <td>
-                            <span className="text">Y-Axis Offset</span>
+                            <span className="text">{t("Y-Axis Offset")}</span>
                         </td>
                     </tr>
                     <tr>
@@ -2546,7 +2546,7 @@ function HelpView(props: any) {
                             <Arrow />
                         </td>
                         <td>
-                            <span className="text">Y-Axis Zoom</span>
+                            <span className="text">{t("Y-Axis Zoom")}</span>
                         </td>
                     </tr>
                 </tbody>
@@ -5304,7 +5304,7 @@ const MeasurementInputField = observer(
             return (
                 <select
                     className="form-select"
-                    title="Chart rendering algorithm"
+                    title={t("Chart rendering algorithm")}
                     value={
                         measurement.arity === 1
                             ? measurement.chartIndex
@@ -5384,7 +5384,7 @@ const MeasurementComponent = observer(
                 <IconAction
                     icon="material:delete"
                     iconSize={16}
-                    title="Remove measurement"
+                    title={t("Remove measurement")}
                     onClick={() => {
                         runInAction(() => {
                             measurements.splice(index, 1);
@@ -5656,7 +5656,7 @@ const MeasurementComponent = observer(
                                 <IconAction
                                     icon="material:content_copy"
                                     iconSize={16}
-                                    title="Copy to clipboard"
+                                    title={t("Copy to clipboard")}
                                     onClick={this.onCopy}
                                     enabled={
                                         !this.operationInProgress &&
@@ -5666,7 +5666,7 @@ const MeasurementComponent = observer(
                                 <IconAction
                                     icon="material:save"
                                     iconSize={16}
-                                    title="Save as CSV file"
+                                    title={t("Save as CSV file")}
                                     onClick={this.onSaveAsCsv}
                                     overlayText={"CSV"}
                                     enabled={

@@ -3,6 +3,7 @@ import fs from "fs";
 import { rmdir } from "fs/promises";
 import path from "path";
 import React from "react";
+import { translateProjectEditorLabel } from "eez-studio-shared/i10n";
 import ReactDOM from "react-dom";
 import { SimpleGitProgressEvent } from "simple-git";
 import classNames from "classnames";
@@ -751,7 +752,7 @@ export class WizardModel {
                 projectType: PROJECT_TYPE_NAMES[ProjectType.FIRMWARE],
                 image: EEZ_GUI_PROJECT_ICON(128),
                 projectName: "EEZ-GUI",
-                description: "Start your new EEZ-GUI project development here.",
+                description: translateProjectEditorLabel("Start your new EEZ-GUI project development here."),
                 projectFileUrl: getTemplatePathOrUrl(
                     "templates/firmware.eez-project"
                 )
@@ -761,7 +762,7 @@ export class WizardModel {
                 projectType: PROJECT_TYPE_NAMES[ProjectType.LVGL],
                 image: LVGL_PROJECT_ICON(128),
                 projectName: "LVGL",
-                description: "Start your new LVGL project development here.",
+                description: translateProjectEditorLabel("Start your new LVGL project development here."),
                 projectFileUrl: {
                     "8.4.0": getTemplatePathOrUrl(
                         "templates/v0.23.0/LVGL-8.3.eez-project"
@@ -810,7 +811,7 @@ export class WizardModel {
                 projectType: PROJECT_TYPE_NAMES[ProjectType.IEXT],
                 image: IEXT_PROJECT_ICON(128),
                 projectName: "IEXT",
-                description: "Start your new IEXT project development here.",
+                description: translateProjectEditorLabel("Start your new IEXT project development here."),
                 projectFileUrl: {
                     SCPI: getTemplatePathOrUrl("templates/IEXT.eez-project"),
                     PROPRIETARY: getTemplatePathOrUrl(
@@ -823,7 +824,7 @@ export class WizardModel {
                 projectType: PROJECT_TYPE_NAMES[ProjectType.EEZ_GUI_LITE],
                 image: EEZ_GUI_LITE_PROJECT_ICON(128),
                 projectName: "EEZ-GUI Lite",
-                description: "Start your new EEZ-GUI Lite project development here.",
+                description: translateProjectEditorLabel("Start your new EEZ-GUI Lite project development here."),
                 projectFileUrl: getTemplatePathOrUrl(
                     "templates/eez-gui-lite.eez-project"
                 )
@@ -899,7 +900,7 @@ export class WizardModel {
                     id: "_allTemplates",
                     label: (
                         <Count
-                            label="All Templates"
+                            label={translateProjectEditorLabel("All Templates")}
                             count={this.allTemplateProjectTypes.length}
                             attention={false}
                         ></Count>
@@ -916,7 +917,7 @@ export class WizardModel {
                     id: "_standard",
                     label: (
                         <Count
-                            label="Builtin Templates"
+                            label={translateProjectEditorLabel("Builtin Templates")}
                             count={this.standardProjectTypes.length}
                             attention={false}
                         ></Count>
@@ -933,7 +934,7 @@ export class WizardModel {
                     id: "_bb3",
                     label: (
                         <Count
-                            label="BB3 Script Templates"
+                            label={translateProjectEditorLabel("BB3 Script Templates")}
                             count={this.bb3ProjectTypes.length}
                             attention={false}
                         ></Count>
@@ -950,7 +951,7 @@ export class WizardModel {
                     id: "_templates",
                     label: (
                         <Count
-                            label="From envox.eu/gitea"
+                            label={translateProjectEditorLabel("From envox.eu/gitea")}
                             count={this.templateProjectTypes.length}
                             attention={false}
                         ></Count>
@@ -2078,7 +2079,7 @@ const ProjectTypeComponent = observer(
                                             event.preventDefault();
                                             openLink(projectType.repository!);
                                         }}
-                                        title="Project Git Repository"
+                                        title={translateProjectEditorLabel("Project Git Repository")}
                                     >
                                         INFO
                                     </a>
@@ -2218,7 +2219,7 @@ const ProjectProperties = observer(
             if (wizardModel.createProjectInProgress) {
                 return (
                     <div className="EezStudio_NewProjectWizard_CreateProjectProgress">
-                        <h6>Creating project ...</h6>
+                        <h6>{translateProjectEditorLabel("Creating project ...")}</h6>
                         <Loader />
                         <div>{wizardModel.progress || <span>&nbsp;</span>}</div>
                     </div>
@@ -2230,7 +2231,7 @@ const ProjectProperties = observer(
                     <PlatformDescription wizardModel={wizardModel} />
 
                     <div className="EezStudio_NewProjectWizard_ProjectProperties_Section">
-                        <h6>Project Settings</h6>
+                        <h6>{translateProjectEditorLabel("Project Settings")}</h6>
                         <div>
                             <div className="mb-3">
                                 <label
@@ -2571,8 +2572,8 @@ const ProjectProperties = observer(
                                     <>
                                         <ButtonAction
                                             className="btn-primary"
-                                            text="Edit Project"
-                                            title="Edit Project"
+                                            text={translateProjectEditorLabel("Edit Project")}
+                                            title={translateProjectEditorLabel("Edit Project")}
                                             icon="material:edit"
                                             onClick={this.onCreateProject}
                                             enabled={
@@ -2583,8 +2584,8 @@ const ProjectProperties = observer(
                                             ?.projectType != "IEXT" && (
                                             <ButtonAction
                                                 className="btn-secondary"
-                                                text="Run Project"
-                                                title="Run Project"
+                                                text={translateProjectEditorLabel("Run Project")}
+                                                title={translateProjectEditorLabel("Run Project")}
                                                 icon="material:play_arrow"
                                                 onClick={this.onRunProject}
                                                 enabled={

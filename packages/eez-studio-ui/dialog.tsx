@@ -5,7 +5,9 @@ import { observable, action, makeObservable } from "mobx";
 import { observer } from "mobx-react";
 import classNames from "classnames";
 
+import { getLocale } from "eez-studio-shared/i10n";
 import { Icon } from "eez-studio-ui/icon";
+import { translateProjectEditorLabel } from "eez-studio-shared/i10n";
 import { IconAction } from "eez-studio-ui/action";
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -236,7 +238,7 @@ export const Dialog = observer(
                     onClick: this.onCancel,
                     disabled: this.disableButtons,
                     style: { marginLeft: "auto" },
-                    text: this.props.cancelButtonText || "Cancel"
+                    text: this.props.cancelButtonText || (getLocale().toLowerCase().startsWith("zh") ? "取消" : "Cancel")
                 });
             }
 
@@ -252,7 +254,7 @@ export const Dialog = observer(
                             ? !this.props.okEnabled()
                             : false),
                     style: {},
-                    text: this.props.okButtonText || "OK"
+                    text: this.props.okButtonText || (getLocale().toLowerCase().startsWith("zh") ? "确定" : "OK")
                 });
             }
 
@@ -445,7 +447,7 @@ export const BootstrapDialog = observer(
                     <IconAction
                         key={button.id}
                         icon={button.icon!}
-                        title={button.title || ""}
+                        title={translateProjectEditorLabel(button.title || "")}
                         style={{ color: "#333" }}
                         onClick={button.onClick}
                         enabled={!button.disabled}
@@ -509,14 +511,14 @@ export const BootstrapDialog = observer(
                                         id="myModalLabel"
                                     >
                                         {props.titleIcon}
-                                        <span>{props.title}</span>
+                                        <span>{translateProjectEditorLabel(props.title)}</span>
                                     </h5>
                                     {!this.props.cancelDisabled && (
                                         <button
                                             type="button"
                                             className="btn-close float-right"
                                             disabled={props.disableButtons}
-                                            aria-label="Close"
+                                            aria-label={getLocale().toLowerCase().startsWith("zh") ? "关闭" : "Close"}
                                             onClick={props.onCancel}
                                         ></button>
                                     )}

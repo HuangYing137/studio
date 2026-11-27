@@ -51,6 +51,7 @@ import { ImageProperty } from "./ImageProperty";
 import { General } from "project-editor/project/project";
 import { UniqueValueInput } from "./UniqueValueInput";
 import { IconEnumDropdown } from "./IconEnumDropdown";
+import { translateProjectEditorLabel } from "eez-studio-shared/i10n";
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -947,7 +948,7 @@ export const Property = observer(
                             <button
                                 className="btn btn-secondary"
                                 type="button"
-                                title="Generate GUID"
+                                title={translateProjectEditorLabel("Generate GUID")}
                                 onClick={this.onGenerateGuid}
                             >
                                 +
@@ -1124,7 +1125,7 @@ export const Property = observer(
                                     <button
                                         className="btn btn-secondary"
                                         type="button"
-                                        title="Open in system explorer"
+                                        title={translateProjectEditorLabel("Open in system explorer")}
                                         onClick={async () => {
                                             if (
                                                 this.context.filePath &&

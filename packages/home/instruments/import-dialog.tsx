@@ -1,4 +1,5 @@
 import React from "react";
+import { translateProjectEditorLabel } from "eez-studio-shared/i10n";
 import { action } from "mobx";
 import { observer } from "mobx-react";
 import Database from "better-sqlite3";
@@ -36,12 +37,12 @@ const ImportDialog = observer(
             return (
                 <Dialog
                     className="EezStudio_ImportDialog"
-                    title="Import"
+                    title={translateProjectEditorLabel("Import")}
                     onOk={this.onOK}
                 >
-                    <div>From file:</div>
+                    <div>{translateProjectEditorLabel("From file:")}</div>
                     <div>{this.props.filePath}</div>
-                    <div>Description:</div>
+                    <div>{translateProjectEditorLabel("Description:")}</div>
                     <div className={className}>{description}</div>
                 </Dialog>
             );

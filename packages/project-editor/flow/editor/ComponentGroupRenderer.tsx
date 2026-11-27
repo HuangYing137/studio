@@ -1,4 +1,5 @@
 import React from "react";
+import { translateProjectEditorLabel } from "eez-studio-shared/i10n";
 import { observer } from "mobx-react";
 import { getId } from "project-editor/core/object";
 import type { IFlowContext } from "project-editor/flow/flow-interfaces";
@@ -120,7 +121,7 @@ export const ComponentGroupRenderer = observer(
             >
                 <div
                     style={labelTextStyle}
-                    title={group.description || "Group"}
+                    title={translateProjectEditorLabel(group.description || "Group")}
                 >
                     {group.description || "Group"}
                 </div>

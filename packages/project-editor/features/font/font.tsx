@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import React from "react";
+import { translateProjectEditorLabel as t } from "eez-studio-shared/i10n";
 import { observer } from "mobx-react";
 import { clipboard, nativeImage } from "@electron/remote";
 import {
@@ -1768,11 +1769,11 @@ export class Font extends EezObject {
                 enumItems: [
                     {
                         id: "BITMAP",
-                        label: "Bitmap"
+                        label: t("Bitmap")
                     },
                     {
                         id: "OUTLINE",
-                        label: "Outline"
+                        label: t("Outline")
                     }
                 ],
                 disabled: (font: Font) =>
@@ -1789,19 +1790,19 @@ export class Font extends EezObject {
                 enumItems: [
                     {
                         id: "NORMAL",
-                        label: "Normal"
+                        label: t("Normal")
                     },
                     {
                         id: "ITALIC",
-                        label: "Italic"
+                        label: t("Italic")
                     },
                     {
                         id: "BOLD",
-                        label: "Bold"
+                        label: t("Bold")
                     },
                     {
                         id: "BOLD_ITALIC",
-                        label: "Bold Italic"
+                        label: t("Bold Italic")
                     }
                 ],
                 disabled: (font: Font) =>
@@ -2077,11 +2078,11 @@ export class Font extends EezObject {
                                         enumItems: [
                                             {
                                                 id: "BITMAP",
-                                                label: "Bitmap"
+                                                label: t("Bitmap")
                                             },
                                             {
                                                 id: "OUTLINE",
-                                                label: "Outline"
+                                                label: t("Outline")
                                             }
                                         ],
                                         // Disabled until LVGL FreeType integration is fixed
@@ -2099,19 +2100,19 @@ export class Font extends EezObject {
                                         enumItems: [
                                             {
                                                 id: "NORMAL",
-                                                label: "Normal"
+                                                label: t("Normal")
                                             },
                                             {
                                                 id: "ITALIC",
-                                                label: "Italic"
+                                                label: t("Italic")
                                             },
                                             {
                                                 id: "BOLD",
-                                                label: "Bold"
+                                                label: t("Bold")
                                             },
                                             {
                                                 id: "BOLD_ITALIC",
-                                                label: "Bold Italic"
+                                                label: t("Bold Italic")
                                             }
                                         ],
                                         visible: values =>

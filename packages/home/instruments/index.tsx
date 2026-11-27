@@ -1,6 +1,7 @@
 import { ipcRenderer } from "electron";
 import { Menu, MenuItem, dialog, getCurrentWindow } from "@electron/remote";
 import React from "react";
+import { translateProjectEditorLabel } from "eez-studio-shared/i10n";
 import {
     computed,
     observable,
@@ -494,7 +495,7 @@ const InstrumentPropertiesEnclosure = observer(
 
         return (
             <div className="EezStudio_HomeTab_Instruments_SelectedInstrument_Properties_Section">
-                <h6>Properties</h6>
+                <h6>{translateProjectEditorLabel("Properties")}</h6>
                 <div>
                     <div className="EezStudio_InstrumentPropertiesEnclosure">
                         <InstrumentProperties instrument={instrument} />
@@ -526,7 +527,7 @@ const InstrumentConnectionEnclosure = observer(
 
         return (
             <div className="EezStudio_HomeTab_Instruments_SelectedInstrument_Properties_Section">
-                <h6>Connection</h6>
+                <h6>{translateProjectEditorLabel("Connection")}</h6>
                 <div>
                     <div className="EezStudio_InstrumentConnectionEnclosure">
                         <InstrumentConnection instrument={instrument} />

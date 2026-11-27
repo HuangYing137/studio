@@ -39,6 +39,7 @@ import { ListNavigation } from "project-editor/ui-components/ListNavigation";
 
 import { ProjectContext } from "project-editor/project/context";
 import { ProjectEditor } from "project-editor/project-editor-interface";
+import { translateProjectEditorLabel as t } from "eez-studio-shared/i10n";
 
 import type { Project } from "project-editor/project/project";
 import { getName, NamingConvention } from "project-editor/build/helper";
@@ -226,7 +227,7 @@ const ColorItem = observer(
                                 (getColorAlpha(color) * 100) / 255
                             )}
                             onChange={this.onChangeAlpha}
-                            title="Alpha (%)"
+                            title={t("Alpha (%)")}
                             disabled={this.readOnly}
                         />
                     )}
@@ -585,7 +586,7 @@ export class Color extends EezObject {
 
             const result = await showGenericDialog({
                 dialogDefinition: {
-                    title: "New Color",
+                    title: t("New Color"),
                     fields: [
                         {
                             name: "name",
@@ -671,7 +672,7 @@ export class Color extends EezObject {
 
             if (editable) {
                 additionalMenuItems.push({
-                    label: "Copy to other themes",
+                    label: t("Copy to other themes"),
                     click: () => {
                         const projectStore = getProjectStore(thisObject);
 
@@ -778,7 +779,7 @@ export class Theme extends EezObject implements ITheme {
         newItem: async (parent: IEezObject) => {
             const result = await showGenericDialog({
                 dialogDefinition: {
-                    title: "New Theme",
+                    title: t("New Theme"),
                     fields: [
                         {
                             name: "name",

@@ -3,6 +3,7 @@
 // (widgets/dashboard/containers.tsx).
 
 import React from "react";
+import { translateProjectEditorLabel as t } from "eez-studio-shared/i10n";
 import { observable, computed, makeObservable } from "mobx";
 import { observer } from "mobx-react";
 import { range } from "lodash-es";
@@ -196,9 +197,9 @@ export class ContainerWidget extends Widget {
                 name: "layout",
                 type: PropertyType.Enum,
                 enumItems: [
-                    { id: "static", label: "Static" },
-                    { id: "horizontal", label: "Row" },
-                    { id: "vertical", label: "Column" }
+                    { id: "static", label: t("Static") },
+                    { id: "horizontal", label: t("Row") },
+                    { id: "vertical", label: t("Column") }
                 ],
                 propertyGridGroup: layoutGroup
             },
@@ -218,13 +219,13 @@ export class ContainerWidget extends Widget {
             },
             {
                 name: "justifyContent",
-                displayName: "Justify content",
+                displayName: t("Justify content"),
                 type: PropertyType.Enum,
                 enumItems: [
-                    { id: "start", label: "Start" },
-                    { id: "center", label: "Center" },
-                    { id: "end", label: "End" },
-                    { id: "space-between", label: "Space between" }
+                    { id: "start", label: t("Start") },
+                    { id: "center", label: t("Center") },
+                    { id: "end", label: t("End") },
+                    { id: "space-between", label: t("Space between") }
                 ],
                 propertyGridGroup: layoutGroup,
                 hideInPropertyGrid: (widget: ContainerWidget) =>
@@ -232,14 +233,14 @@ export class ContainerWidget extends Widget {
             },
             {
                 name: "alignItems",
-                displayName: "Align items",
+                displayName: t("Align items"),
                 type: PropertyType.Enum,
                 enumItems: [
-                    { id: "start", label: "Start" },
-                    { id: "center", label: "Center" },
-                    { id: "end", label: "End" },
-                    { id: "stretch", label: "Stretch" },
-                    { id: "baseline", label: "Baseline" }
+                    { id: "start", label: t("Start") },
+                    { id: "center", label: t("Center") },
+                    { id: "end", label: t("End") },
+                    { id: "stretch", label: t("Stretch") },
+                    { id: "baseline", label: t("Baseline") }
                 ],
                 propertyGridGroup: layoutGroup,
                 hideInPropertyGrid: (widget: ContainerWidget) =>
@@ -247,13 +248,13 @@ export class ContainerWidget extends Widget {
             },
             {
                 name: "fitToContent",
-                displayName: "Fit to content",
+                displayName: t("Fit to content"),
                 type: PropertyType.Enum,
                 enumItems: [
-                    { id: "none", label: "None" },
-                    { id: "width", label: "Width" },
-                    { id: "height", label: "Height" },
-                    { id: "both", label: "Both" }
+                    { id: "none", label: t("None") },
+                    { id: "width", label: t("Width") },
+                    { id: "height", label: t("Height") },
+                    { id: "both", label: t("Both") }
                 ],
                 propertyGridGroup: geometryGroup,
                 hideInPropertyGrid: (widget: ContainerWidget) =>
@@ -263,12 +264,12 @@ export class ContainerWidget extends Widget {
                 name: "scroll",
                 type: PropertyType.Enum,
                 enumItems: [
-                    { id: "none", label: "None" },
-                    { id: "vertical", label: "Vertical" }
+                    { id: "none", label: t("None") },
+                    { id: "vertical", label: t("Vertical") }
                 ],
                 propertyGridGroup: layoutGroup
             },
-            makeStylePropertyInfo("style", "Default style", {
+            makeStylePropertyInfo("style", t("Default style"), {
                 hideInDocumentation: "none"
             })
         ],
@@ -365,7 +366,7 @@ export class ContainerWidget extends Widget {
 
         return [
             {
-                label: "Remove Container",
+                label: t("Remove Container"),
                 click: () => {
                     const widgets = this.removeContainer();
                     if (widgets.length > 0) {
@@ -702,7 +703,7 @@ export class ListWidget extends Widget {
                 type: PropertyType.Number,
                 propertyGridGroup: specificGroup
             },
-            makeStylePropertyInfo("style", "Default style"),
+            makeStylePropertyInfo("style", t("Default style")),
             makeStylePropertyInfo("pageDotsStyle", "Page dots style", {
                 styleWithoutFont: true
             }),
@@ -920,7 +921,7 @@ export class GridWidget extends Widget {
                     }
                 ]
             },
-            makeStylePropertyInfo("style", "Default style"),
+            makeStylePropertyInfo("style", t("Default style")),
             makeDataPropertyInfo("data")
         ],
 
@@ -1161,7 +1162,7 @@ export class SelectWidget extends Widget {
                     return object;
                 }
             },
-            makeStylePropertyInfo("style", "Default style"),
+            makeStylePropertyInfo("style", t("Default style")),
             makeDataPropertyInfo("data", {}, "boolean")
         ],
 

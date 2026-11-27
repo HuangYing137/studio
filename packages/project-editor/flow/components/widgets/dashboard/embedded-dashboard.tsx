@@ -1,6 +1,7 @@
 import path from "path";
 import { ipcRenderer } from "electron";
 import React from "react";
+import { translateProjectEditorLabel as t } from "eez-studio-shared/i10n";
 import {
     observable,
     makeObservable,
@@ -232,7 +233,7 @@ const EmbeddedDashboardElement = observer(
                 };
 
                 if (isCycleDetected(parentProjectStore)) {
-                    this.error = "Cycle detected in Embedded Dashboard widget";
+                    this.error = t("Cycle detected in Embedded Dashboard widget");
                 } else {
                     this.error = undefined;
                     this.loadDashboard = new LoadDashboard(
@@ -244,7 +245,7 @@ const EmbeddedDashboardElement = observer(
                 }
             } else {
                 if (!this.props.flowContext.projectStore.runtime) {
-                    this.error = "Dashboard not specified";
+                    this.error = t("Dashboard not specified");
                 }
             }
         }
@@ -421,7 +422,7 @@ export class EmbeddedDashboardWidget extends Widget {
         enabledInComponentPalette: (projectType: ProjectType) =>
             projectType === ProjectType.DASHBOARD,
 
-        componentPaletteLabel: "Embedded Dashboard",
+        componentPaletteLabel: t("Embedded Dashboard"),
 
         properties: [
             makeDataPropertyInfo("data", {

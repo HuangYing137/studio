@@ -1,4 +1,5 @@
 import React from "react";
+import { translateProjectEditorLabel } from "eez-studio-shared/i10n";
 import { computed, makeObservable } from "mobx";
 import { observer } from "mobx-react";
 
@@ -113,7 +114,7 @@ export const PropertiesPanel = observer(
             let icon = null;
 
             if (objects.length == 0) {
-                title = "Nothing selected";
+                title = translateProjectEditorLabel("Nothing selected");
             } else if (objects.length == 1) {
                 let object = objects[0];
                 if (object instanceof EezValueObject) {
@@ -123,7 +124,7 @@ export const PropertiesPanel = observer(
                 icon = getObjectIcon(object);
                 title = getPropertiesPanelLabel(object);
             } else {
-                title = "Multiple objects selected";
+                title = translateProjectEditorLabel("Multiple objects selected");
             }
 
             // if LVGL project show properties for both Page object and Screen widget object

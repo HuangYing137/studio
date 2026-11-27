@@ -5,6 +5,7 @@ import {
     isProperSubclassOf
 } from "project-editor/core/object";
 import React from "react";
+import { translateProjectEditorLabel } from "eez-studio-shared/i10n";
 import { ProjectEditor } from "project-editor/project-editor-interface";
 import { mostReadable } from "eez-studio-shared/color";
 import type { ProjectStore } from "project-editor/store";
@@ -384,10 +385,13 @@ export function getComponentVisualData(
         }
     }
 
+    // Preserve user-created widget/action names; translate only built-in labels.
     let label = componentClass.displayName
         ? componentClass.displayName
-        : classInfo.componentPaletteLabel ||
-          getComponentName(componentClass.name);
+        : translateProjectEditorLabel(
+              classInfo.componentPaletteLabel ||
+                  getComponentName(componentClass.name)
+          );
 
     let titleStyle: React.CSSProperties | undefined;
     if (classInfo.componentHeaderColor) {
@@ -413,7 +417,7 @@ export function getComponentVisualData(
 
 export function getComponentGroupDisplayName(groupName: string) {
     if (groupName.startsWith("!")) {
-        return groupName.substring(2);
+        return translateProjectEditorLabel(groupName.substring(2));
     }
-    return groupName;
+    return translateProjectEditorLabel(groupName);
 }

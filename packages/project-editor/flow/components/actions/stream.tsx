@@ -1,4 +1,5 @@
 import { Duplex, Readable } from "stream";
+import { translateProjectEditorLabel } from "eez-studio-shared/i10n";
 
 import type { IDashboardComponentContext } from "eez-studio-types";
 
@@ -29,6 +30,7 @@ registerActionComponents("Dashboard Specific", [
         properties: [
             {
                 name: "stream",
+                displayName: translateProjectEditorLabel("Stream"),
                 type: "expression",
                 valueType: "any"
             }

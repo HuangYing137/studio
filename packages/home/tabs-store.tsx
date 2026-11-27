@@ -17,6 +17,7 @@ import * as path from "path";
 import { dockerBuildState } from "project-editor/lvgl/docker-build/docker-build-state";
 
 import { onSimpleMessage } from "eez-studio-shared/util-renderer";
+import { getLocale } from "eez-studio-shared/i10n";
 
 import {
     loadPreinstalledExtension,
@@ -89,7 +90,7 @@ export class HomeTab implements IHomeTab {
     modified: boolean = false;
 
     id = "home";
-    title = "Home";
+    title = getLocale().toLowerCase().startsWith("zh") ? "主页" : "Home";
     icon = "material:home";
     category: HomeTabCategory = "none";
 
@@ -126,7 +127,7 @@ class HistoryTab implements IHomeTab {
     modified: boolean = false;
 
     id = "history";
-    title = "History";
+    title = getLocale().toLowerCase().startsWith("zh") ? "历史记录" : "History";
     icon = "material:history";
     category: HomeTabCategory = "instrument";
 
@@ -223,7 +224,7 @@ class ShortcutsAndGroupsTab implements IHomeTab {
     modified: boolean = false;
 
     id = "shortcutsAndGroups";
-    title = "Shortcuts and Groups";
+    title = getLocale().toLowerCase().startsWith("zh") ? "快捷方式和分组" : "Shortcuts and Groups";
     icon = "material:playlist_play";
     category: HomeTabCategory = "instrument";
 

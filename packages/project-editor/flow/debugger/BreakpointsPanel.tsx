@@ -1,4 +1,5 @@
 import React from "react";
+import { translateProjectEditorLabel } from "eez-studio-shared/i10n";
 import { observer } from "mobx-react";
 import { IListNode, List } from "eez-studio-ui/list";
 import { Panel } from "project-editor/ui-components/Panel";
@@ -106,7 +107,7 @@ export const BreakpointsPanel = observer(
                     key="remove-selected"
                     icon={"material:delete"}
                     iconSize={16}
-                    title="Remove selected breakpoint"
+                    title={translateProjectEditorLabel("Remove selected breakpoint")}
                     onClick={this.removeSelected}
                     enabled={
                         !!this.context.uiStateStore.selectedBreakpoint.get()
@@ -116,7 +117,7 @@ export const BreakpointsPanel = observer(
                     key="remove-all"
                     icon={"material:delete_sweep"}
                     iconSize={16}
-                    title="Remove all breakpoints"
+                    title={translateProjectEditorLabel("Remove all breakpoints")}
                     onClick={this.removeAll}
                     enabled={this.context.uiStateStore.breakpoints.size > 0}
                 />

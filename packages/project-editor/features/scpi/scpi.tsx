@@ -1,4 +1,5 @@
 import { observable, computed, makeObservable } from "mobx";
+import { translateProjectEditorLabel as t } from "eez-studio-shared/i10n";
 
 import { humanize } from "eez-studio-shared/string";
 import { validators } from "eez-studio-shared/validation";
@@ -181,8 +182,8 @@ const repeatProperty: PropertyInfo = {
     name: "repeat",
     type: PropertyType.Enum,
     enumItems: [
-        { id: "once", label: "Once" },
-        { id: "list", label: "List (one or more values)" }
+        { id: "once", label: t("Once") },
+        { id: "list", label: t("List (one or more values)") }
     ],
     hideInPropertyGrid: hideIfNotBB3ModuleProject
 };
@@ -257,9 +258,9 @@ export class ScpiParameter extends EezObject {
                                     displayName: "",
                                     type: "enum",
                                     enumItems: [
-                                        { id: "nr1", label: "Integer (NR1)" },
-                                        { id: "nr2", label: "Decimal (NR2)" },
-                                        { id: "nr3", label: "Real (NR3)" }
+                                        { id: "nr1", label: t("Integer (NR1)") },
+                                        { id: "nr2", label: t("Decimal (NR2)") },
+                                        { id: "nr3", label: t("Real (NR3)") }
                                     ],
                                     visible: (values: any) => {
                                         return !values.any && values.numeric;
@@ -567,9 +568,9 @@ async function onSelectResponseType(object: ScpiTypedObject & IEezObject) {
                     displayName: "",
                     type: "enum",
                     enumItems: [
-                        { id: "nr1", label: "Integer (NR1)" },
-                        { id: "nr2", label: "Decimal (NR2)" },
-                        { id: "nr3", label: "Real (NR3)" }
+                        { id: "nr1", label: t("Integer (NR1)") },
+                        { id: "nr2", label: t("Decimal (NR2)") },
+                        { id: "nr3", label: t("Real (NR3)") }
                     ],
                     visible: (values: any) => {
                         return !values.any && values.numeric;
@@ -1165,11 +1166,11 @@ export class ScpiCommand extends EezObject {
                 enumItems: [
                     {
                         id: "group",
-                        label: "Sent to all the channels of the group"
+                        label: t("Sent to all the channels of the group")
                     },
                     {
                         id: "refused",
-                        label: "Refused for a channel in the group (313)"
+                        label: t("Refused for a channel in the group (313)")
                     }
                 ],
                 hideInPropertyGrid: hideIfNotBB3ModuleProject,

@@ -1,4 +1,5 @@
 import React from "react";
+import { translateProjectEditorLabel } from "eez-studio-shared/i10n";
 import ReactDOM from "react-dom";
 import {
     action,
@@ -273,7 +274,7 @@ const EditorButtons = observer(
                     {!this.context.runtime && (
                         <div className="btn-group" role="group">
                             <IconAction
-                                title="Save"
+                                title={translateProjectEditorLabel("Save")}
                                 icon="material:save"
                                 onClick={() => this.context.save()}
                                 enabled={this.context.isModified}
@@ -287,7 +288,7 @@ const EditorButtons = observer(
                                 <IconAction
                                     title={
                                         this.context.undoManager.canUndo
-                                            ? `Undo "${this.context.undoManager.undoDescription}"`
+                                            ? `${translateProjectEditorLabel("Undo")} "${this.context.undoManager.undoDescription}"`
                                             : ""
                                     }
                                     icon="material:undo"
@@ -299,7 +300,7 @@ const EditorButtons = observer(
                                 <IconAction
                                     title={
                                         this.context.undoManager.canRedo
-                                            ? `Redo "${this.context.undoManager.redoDescription}"`
+                                            ? `${translateProjectEditorLabel("Redo")} "${this.context.undoManager.redoDescription}"`
                                             : ""
                                     }
                                     icon="material:redo"
@@ -313,7 +314,7 @@ const EditorButtons = observer(
                             <div className="btn-group" role="group">
                                 {false && (
                                     <IconAction
-                                        title="Cut"
+                                        title={translateProjectEditorLabel("Cut")}
                                         icon="material:content_cut"
                                         iconSize={22}
                                         onClick={this.context.cut}
@@ -321,14 +322,14 @@ const EditorButtons = observer(
                                     />
                                 )}
                                 <IconAction
-                                    title="Copy"
+                                    title={translateProjectEditorLabel("Copy")}
                                     icon="material:content_copy"
                                     iconSize={22}
                                     onClick={this.context.copy}
                                     enabled={this.context.canCopy}
                                 />
                                 <IconAction
-                                    title="Paste"
+                                    title={translateProjectEditorLabel("Paste")}
                                     icon="material:content_paste"
                                     iconSize={22}
                                     onClick={this.context.paste}
@@ -337,7 +338,7 @@ const EditorButtons = observer(
                             </div>
                             <div className="btn-group" role="group">
                                 <IconAction
-                                    title="Scrapbook"
+                                    title={translateProjectEditorLabel("Scrapbook")}
                                     icon={PROJECT_EDITOR_SCRAPBOOK}
                                     iconSize={24}
                                     onClick={() => showScrapbookManager()}
@@ -351,7 +352,7 @@ const EditorButtons = observer(
                         this.isBuildConfigurationSelectorVisible && (
                             <div className="btn-group">
                                 <select
-                                    title="Configuration"
+                                    title={translateProjectEditorLabel("Configuration")}
                                     id="btn-toolbar-configuration"
                                     className="form-select"
                                     value={
@@ -371,7 +372,7 @@ const EditorButtons = observer(
                         <div className="btn-group" role="group">
                             {!this.context.projectTypeTraits.isDashboard && (
                                 <IconAction
-                                    title="Check"
+                                    title={translateProjectEditorLabel("Check")}
                                     icon="material:check"
                                     onClick={() => this.context.check()}
                                     enabled={this.context.project._fullyLoaded}
@@ -382,7 +383,7 @@ const EditorButtons = observer(
                                 isScrapbookItemFilePath(this.context.filePath)
                             ) && (
                                 <IconAction
-                                    title="Build"
+                                    title={translateProjectEditorLabel("Build")}
                                     icon="material:build"
                                     onClick={() => this.context.build()}
                                     enabled={this.context.project._fullyLoaded}
@@ -396,7 +397,7 @@ const EditorButtons = observer(
                             ProjectType.FIRMWARE && (
                             <div className="btn-group" role="group">
                                 <IconAction
-                                    title="Exported Items"
+                                    title={translateProjectEditorLabel("Exported Items")}
                                     icon="material:publish"
                                     onClick={() =>
                                         showExportedItemsDialog(this.context)
@@ -410,7 +411,7 @@ const EditorButtons = observer(
                         this.context.project.micropython && (
                             <div className="btn-group" role="group">
                                 <IconAction
-                                    title="Run MicroPython Script"
+                                    title={translateProjectEditorLabel("Run MicroPython Script")}
                                     icon={RUN_ICON}
                                     iconSize={28}
                                     onClick={() =>
@@ -427,7 +428,7 @@ const EditorButtons = observer(
                                 <>
                                     <div className="btn-group" role="group">
                                         <IconAction
-                                            title="Show front face"
+                                            title={translateProjectEditorLabel("Show front face")}
                                             icon="material:flip_to_front"
                                             iconSize={20}
                                             onClick={() =>
@@ -438,7 +439,7 @@ const EditorButtons = observer(
                                             }
                                         />
                                         <IconAction
-                                            title="Show back face"
+                                            title={translateProjectEditorLabel("Show back face")}
                                             icon="material:flip_to_back"
                                             iconSize={20}
                                             onClick={() =>
@@ -453,7 +454,7 @@ const EditorButtons = observer(
                                     {!this.flowTabState?.flowState && (
                                         <div className="btn-group" role="group">
                                             <IconAction
-                                                title="Show timeline"
+                                                title={translateProjectEditorLabel("Show timeline")}
                                                 icon={
                                                     <svg viewBox="0 0 551 372">
                                                         <path d="M42.4631 336.4972H204.996v-42.4224h-65.4195v-60.132h65.4195v-42.4495H0l.0008 145.005zm-.0045-102.5747H99.046v60.132H42.4586zm233.9184-42.4632v42.4405h61.8929v60.132h-61.893v42.4405h61.352l42.4247.009h171.5298v-145.013zM442.0555 294.007h-61.893v-60.132h61.893zm67.1986 0h-24.74v-60.132h24.74z" />
@@ -476,7 +477,7 @@ const EditorButtons = observer(
                                     !this.pageTabState.frontFace)) && (
                                 <div className="btn-group" role="group">
                                     <IconAction
-                                        title="Show component descriptions"
+                                        title={translateProjectEditorLabel("Show component descriptions")}
                                         icon="material:comment"
                                         iconSize={20}
                                         onClick={action(
@@ -617,7 +618,7 @@ const PreviewBackgroundColorButton = observer(
                 <div
                     className="btn-group EezStudio_ProjectEditor_PreviewBackgroundColor"
                     role="group"
-                    title="Preview background color (this editor session only)"
+                    title={translateProjectEditorLabel("Preview background color (this editor session only)")}
                 >
                     <div className="EezStudio_ProjectEditor_PreviewBackgroundColor_Swatch">
                         <ThemedColorInput
@@ -638,7 +639,7 @@ const PreviewBackgroundColorButton = observer(
 
                     {previewBackgroundColor && (
                         <IconAction
-                            title="Reset preview background color"
+                            title={translateProjectEditorLabel("Reset preview background color")}
                             icon="material:close"
                             iconSize={16}
                             onClick={this.onReset}
@@ -952,8 +953,8 @@ const RunEditSwitchControls = observer(
             return (
                 <div className="EezStudio_ProjectEditor_ToolbarNav_RunEditSwitchControls">
                     <ButtonAction
-                        text="Edit"
-                        title="Enter edit mode (Shift+F5)"
+                        text={translateProjectEditorLabel("Edit")}
+                        title={translateProjectEditorLabel("Enter edit mode (Shift+F5)")}
                         icon="material:mode_edit"
                         iconSize={iconSize}
                         onClick={this.context.onSetEditorMode}
@@ -963,8 +964,8 @@ const RunEditSwitchControls = observer(
                     />
 
                     <ButtonAction
-                        text="Run"
-                        title="Enter run mode (F5)"
+                        text={translateProjectEditorLabel("Run")}
+                        title={translateProjectEditorLabel("Enter run mode (F5)")}
                         icon={RUN_ICON}
                         iconSize={iconSize}
                         onClick={this.context.onSetRuntimeMode}
@@ -976,8 +977,8 @@ const RunEditSwitchControls = observer(
                     />
 
                     <ButtonAction
-                        text="Debug"
-                        title="Enter debug mode (Ctrl+F5)"
+                        text={translateProjectEditorLabel("Debug")}
+                        title={translateProjectEditorLabel("Enter debug mode (Ctrl+F5)")}
                         icon={
                             <svg viewBox="0 0 64 64" fill="currentColor">
                                 <g transform="translate(-1,-1)">
@@ -1015,8 +1016,8 @@ const RunEditSwitchControls = observer(
 
                     {this.showFullSimulatorButton && (
                         <ButtonAction
-                            text="Full Sim"
-                            title="Run in Full Simulator (F7)"
+                            text={translateProjectEditorLabel("Full Sim")}
+                            title={translateProjectEditorLabel("Run in Full Simulator (F7)")}
                             icon="material:computer"
                             iconSize={iconSize}
                             onClick={this.context.onSetFullSimulatorMode}

@@ -7,6 +7,7 @@ import { dialog, getCurrentWindow } from "@electron/remote";
 import { formatBytes } from "eez-studio-shared/formatBytes";
 import { guid } from "eez-studio-shared/guid";
 import { capitalize } from "eez-studio-shared/string";
+import { getLocale } from "eez-studio-shared/i10n";
 
 import { ListContainer, List, IListNode } from "eez-studio-ui/list";
 
@@ -745,7 +746,7 @@ export const KeybindingProperty = observer(
                         {input}
                         <button
                             className="btn btn-secondary"
-                            title="Clear"
+                            title={getLocale().toLowerCase().startsWith("zh") ? "清除" : "Clear"}
                             onClick={this.onDeleteKeybinding}
                         >
                             &times;

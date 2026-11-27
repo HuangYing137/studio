@@ -1,4 +1,5 @@
 import React from "react";
+import { translateProjectEditorLabel as t } from "eez-studio-shared/i10n";
 import { makeObservable, observable } from "mobx";
 import type { ModbusRTUClient, ModbusTCPClient } from "jsmodbus";
 import type * as JsmodbusModule from "jsmodbus";
@@ -56,14 +57,14 @@ onWasmFlowRuntimeTerminate((wasmFlowRuntime: IWasmFlowRuntime) => {
 ////////////////////////////////////////////////////////////////////////////////
 
 const COMMANDS = [
-    { id: "01", label: "01 (0x01) Read Coils" },
-    { id: "02", label: "02 (0x02) Read Discrete Inputs" },
-    { id: "03", label: "03 (0x03) Read Holding Registers" },
-    { id: "04", label: "04 (0x04) Read Input Registers" },
-    { id: "05", label: "05 (0x05) Write Single Coil" },
-    { id: "06", label: "06 (0x06) Write Single Register" },
-    { id: "15", label: "15 (0x0F) Write Multiple Coils" },
-    { id: "16", label: "16 (0x10) Write Multiple Registers" }
+    { id: "01", label: t("01 (0x01) Read Coils") },
+    { id: "02", label: t("02 (0x02) Read Discrete Inputs") },
+    { id: "03", label: t("03 (0x03) Read Holding Registers") },
+    { id: "04", label: t("04 (0x04) Read Input Registers") },
+    { id: "05", label: t("05 (0x05) Write Single Coil") },
+    { id: "06", label: t("06 (0x06) Write Single Register") },
+    { id: "15", label: t("15 (0x0F) Write Multiple Coils") },
+    { id: "16", label: t("16 (0x10) Write Multiple Registers") }
 ];
 
 export class ModbusActionComponent extends ActionComponent {

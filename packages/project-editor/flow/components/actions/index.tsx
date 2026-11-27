@@ -1,5 +1,6 @@
 import path from "path";
 import React from "react";
+import { translateProjectEditorLabel } from "eez-studio-shared/i10n";
 import {
     observable,
     action,
@@ -217,7 +218,7 @@ export class InputActionComponent extends ActionComponent {
             },
             {
                 name: "inputType",
-                displayName: "Type",
+                displayName: translateProjectEditorLabel("Type"),
                 type: PropertyType.String,
                 propertyGridColumnComponent: VariableTypeUI,
                 propertyGridGroup: specificGroup
@@ -310,7 +311,7 @@ export class OutputActionComponent extends ActionComponent {
             },
             {
                 name: "outputType",
-                displayName: "Type",
+                displayName: translateProjectEditorLabel("Type"),
                 type: PropertyType.String,
                 propertyGridColumnComponent: VariableTypeUI,
                 propertyGridGroup: specificGroup
@@ -474,7 +475,7 @@ export class WatchVariableActionComponent extends ActionComponent {
             makeExpressionProperty(
                 {
                     name: "variable",
-                    displayName: "Expression",
+                    displayName: translateProjectEditorLabel("Expression"),
                     type: PropertyType.MultilineText,
                     propertyGridGroup: specificGroup
                 },
@@ -541,7 +542,7 @@ export class WatchVariableActionComponent extends ActionComponent {
             },
             {
                 name: "variable",
-                displayName: "changed",
+                displayName: translateProjectEditorLabel("changed"),
                 type: "any" as ValueType,
                 isSequenceOutput: false,
                 isOptionalOutput: false
@@ -821,7 +822,7 @@ export class SetVariableActionComponent extends ActionComponent {
         properties: [
             {
                 name: "entries",
-                displayName: "Set variable entries",
+                displayName: translateProjectEditorLabel("Set variable entries"),
                 type: PropertyType.Array,
                 typeClass: SetVariableEntry,
                 propertyGridGroup: specificGroup,
@@ -940,21 +941,21 @@ class SwitchTest extends EezObject {
             makeExpressionProperty(
                 {
                     name: "condition",
-                    displayName: "When",
+                    displayName: translateProjectEditorLabel("When"),
                     type: PropertyType.MultilineText
                 },
                 "boolean"
             ),
             {
                 name: "outputName",
-                displayName: "Then output",
+                displayName: translateProjectEditorLabel("Then output"),
                 type: PropertyType.String,
                 unique: componentOutputUnique
             },
             makeExpressionProperty(
                 {
                     name: "outputValue",
-                    displayName: "With value",
+                    displayName: translateProjectEditorLabel("With value"),
                     type: PropertyType.MultilineText
                 },
                 "any"
@@ -1051,7 +1052,7 @@ export class SwitchActionComponent extends ActionComponent {
         properties: [
             {
                 name: "tests",
-                displayName: "Cases",
+                displayName: translateProjectEditorLabel("Cases"),
                 type: PropertyType.Array,
                 typeClass: SwitchTest,
                 propertyGridGroup: specificGroup,
@@ -1174,7 +1175,7 @@ export class CompareActionComponent extends ActionComponent {
             makeExpressionProperty(
                 {
                     name: "A",
-                    displayName: "A",
+                    displayName: translateProjectEditorLabel("A"),
                     type: PropertyType.MultilineText,
                     propertyGridGroup: specificGroup
                 },
@@ -1183,7 +1184,7 @@ export class CompareActionComponent extends ActionComponent {
             makeExpressionProperty(
                 {
                     name: "B",
-                    displayName: "B",
+                    displayName: translateProjectEditorLabel("B"),
                     type: PropertyType.MultilineText,
                     propertyGridGroup: specificGroup,
                     disabled: (object: CompareActionComponent) => {
@@ -1195,7 +1196,7 @@ export class CompareActionComponent extends ActionComponent {
             makeExpressionProperty(
                 {
                     name: "C",
-                    displayName: "C",
+                    displayName: translateProjectEditorLabel("C"),
                     type: PropertyType.MultilineText,
                     propertyGridGroup: specificGroup,
                     disabled: (object: CompareActionComponent) => {
@@ -1424,14 +1425,14 @@ export class IsTrueActionComponent extends ActionComponent {
             },
             {
                 name: "True",
-                displayName: "Yes",
+                displayName: translateProjectEditorLabel("Yes"),
                 type: "boolean",
                 isSequenceOutput: true,
                 isOptionalOutput: outputIsOptionalIfAtLeastOneOutputExists
             },
             {
                 name: "False",
-                displayName: "No",
+                displayName: translateProjectEditorLabel("No"),
                 type: "boolean",
                 isSequenceOutput: true,
                 isOptionalOutput: outputIsOptionalIfAtLeastOneOutputExists
@@ -4749,7 +4750,7 @@ export class LabelOutActionComponent extends ActionComponent {
                     </svg>
                     <ComponentInputSpan
                         componentInput={this.inputs[0]}
-                        title="Sequence input"
+                        title={translateProjectEditorLabel("Sequence input")}
                     />
                     <div className="title empty-content" style={titleStyle}>
                         <span className="title-text">
@@ -4899,7 +4900,7 @@ export class LabelInActionComponent extends ActionComponent {
                     </svg>
                     <ComponentOutputSpan
                         componentOutput={this.outputs[0]}
-                        title="Sequence output"
+                        title={translateProjectEditorLabel("Sequence output")}
                     />
                 </div>
             </>

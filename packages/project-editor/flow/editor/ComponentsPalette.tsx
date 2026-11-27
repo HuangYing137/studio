@@ -1,4 +1,5 @@
 import React from "react";
+import { translateProjectEditorLabel } from "eez-studio-shared/i10n";
 import {
     observable,
     action,
@@ -104,9 +105,9 @@ const SelectComponentDialog = observer(
                         open={this.open}
                         modal={true}
                         backdrop="static"
-                        title={`Add ${
+                        title={translateProjectEditorLabel(`Add ${
                             this.props.type == "actions" ? "Action" : "Widget"
-                        }`}
+                        }`)}
                         onCancel={this.props.onCancel}
                     >
                         <ComponentsPalette1
@@ -162,7 +163,7 @@ export function newComponentMenuItem(
             menuItems.unshift({ type: "separator" });
 
             menuItems.unshift({
-                label: `Add ${type == "actions" ? "Action" : "Widget"}...`,
+                label: translateProjectEditorLabel(`Add ${type == "actions" ? "Action" : "Widget"}...`),
                 click: async () => {
                     const projectStore = ProjectEditor.getProjectStore(object);
 

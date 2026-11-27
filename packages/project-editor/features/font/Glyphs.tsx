@@ -15,6 +15,7 @@ import { Font, Glyph } from "project-editor/features/font/font";
 import { ProjectContext } from "project-editor/project/context";
 import { settingsController } from "home/settings";
 import { ProjectEditor } from "project-editor/project-editor-interface";
+import { translateProjectEditorLabel as t } from "eez-studio-shared/i10n";
 
 export const Glyphs = observer(
     class Glyphs
@@ -121,7 +122,7 @@ export const Glyphs = observer(
             ) {
                 addGlyphButton = (
                     <IconAction
-                        title="Add Characters"
+                        title={t("Add Characters")}
                         icon="material:add"
                         iconSize={16}
                         onClick={this.props.onAddGlyph}
@@ -144,7 +145,7 @@ export const Glyphs = observer(
                     if (font) {
                         deleteGlyphButton = (
                             <IconAction
-                                title="Delete Character"
+                                title={t("Delete Character")}
                                 icon="material:delete"
                                 iconSize={16}
                                 onClick={this.props.onDeleteGlyph}
@@ -158,7 +159,7 @@ export const Glyphs = observer(
             if (!this.props.dialog && this.props.onEditGlyphs) {
                 editGlyphsButton = (
                     <IconAction
-                        title="Add or Remove Characters"
+                        title={t("Add or Remove Characters")}
                         icon="material:edit"
                         iconSize={16}
                         onClick={this.props.onEditGlyphs}

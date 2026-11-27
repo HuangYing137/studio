@@ -12,6 +12,7 @@ import { validators as validatorsRenderer } from "eez-studio-shared/validation-r
 import { isPropertyOptional } from "project-editor/core/object";
 import { replaceObjectReference } from "project-editor/core/search";
 import { Icon } from "eez-studio-ui/icon";
+import { translateProjectEditorLabel as t } from "eez-studio-shared/i10n";
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -182,7 +183,7 @@ export const UniqueValueInput = observer(
                                     className="btn btn-secondary"
                                     type="button"
                                     onClick={this.onOK}
-                                    title={"Commit Change (ENTER)"}
+                                    title={t("Commit Change (ENTER)")}
                                 >
                                     <Icon icon="material:check" size={16} />
                                 </button>
@@ -190,7 +191,7 @@ export const UniqueValueInput = observer(
                                     className="btn btn-secondary"
                                     type="button"
                                     onClick={this.onCancel}
-                                    title={"Discard Change (ESC)"}
+                                    title={t("Discard Change (ESC)")}
                                 >
                                     <Icon icon="material:close" size={16} />
                                 </button>

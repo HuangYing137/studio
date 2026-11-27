@@ -25,8 +25,10 @@ import { getProjectIcon } from "home/helper";
 import { ProjectStore, loadProject } from "project-editor/store";
 import { loadProjectEditor } from "project-editor/project-editor-loader";
 import { HOME_TAB_OPEN_ICON } from "project-editor/ui-components/icons";
+import { translateProjectEditorLabel as t } from "eez-studio-shared/i10n";
 
 ////////////////////////////////////////////////////////////////////////////////
+
 
 const SORT_ALPHA_ICON = (
     <svg
@@ -235,7 +237,7 @@ export const Projects = observer(
 
             menu.append(
                 new MenuItem({
-                    label: "Edit Project",
+                    label: t("Edit Project"),
                     click: openProjectsStore.editProject
                 })
             );
@@ -243,7 +245,7 @@ export const Projects = observer(
             if (node.data.hasFlowSupport) {
                 menu.append(
                     new MenuItem({
-                        label: "Run Project",
+                        label: t("Run Project"),
                         click: openProjectsStore.runProject
                     })
                 );
@@ -251,14 +253,14 @@ export const Projects = observer(
 
             menu.append(
                 new MenuItem({
-                    label: "Copy Project Path",
+                    label: t("Copy Project Path"),
                     click: openProjectsStore.copyProjectPath
                 })
             );
 
             menu.append(
                 new MenuItem({
-                    label: "Remove From List",
+                    label: t("Remove From List"),
                     click: openProjectsStore.removeFromList
                 })
             );
@@ -287,8 +289,8 @@ export const Projects = observer(
                             }
                             title={
                                 openProjectsStore.sortAlphabetically
-                                    ? "Sort alphabetically"
-                                    : "Show most recent first"
+                                    ? (t("Sort alphabetically"))
+                                    : (t("Show most recent first"))
                             }
                             onClick={openProjectsStore.toggleSort}
                         />
@@ -298,8 +300,8 @@ export const Projects = observer(
                         <div className="EezStudio_HomeTab_Projects_Actions">
                             <ButtonAction
                                 className="btn-primary"
-                                text={"Open Project"}
-                                title="Open a local EEZ Studio Project"
+                                text={t("Open Project")}
+                                title={t("Open a local EEZ Studio Project")}
                                 icon={HOME_TAB_OPEN_ICON}
                                 onClick={() => {
                                     ipcRenderer.send("open-project");
@@ -384,8 +386,8 @@ export const ProjectInfo = observer(
                         <div className="EezStudio_HomeTab_Projects_ProjectInfo_Actions">
                             <ButtonAction
                                 className="btn-primary"
-                                text="Edit Project"
-                                title="Edit Project"
+                                text={t("Edit Project")}
+                                title={t("Edit Project")}
                                 icon="material:edit"
                                 onClick={openProjectsStore.editProject}
                             />
@@ -393,23 +395,23 @@ export const ProjectInfo = observer(
                                 .hasFlowSupport && (
                                 <ButtonAction
                                     className="btn-secondary"
-                                    text="Run Project"
-                                    title="Run Project"
+                                    text={t("Run Project")}
+                                    title={t("Run Project")}
                                     icon="material:play_arrow"
                                     onClick={openProjectsStore.runProject}
                                 />
                             )}
                             <ButtonAction
                                 className="btn-secondary"
-                                text="Copy Project Path"
-                                title="Copy Project Path"
+                                text={t("Copy Project Path")}
+                                title={t("Copy Project Path")}
                                 icon="material:content_copy"
                                 onClick={openProjectsStore.copyProjectPath}
                             />
                             <ButtonAction
                                 className="btn-danger"
-                                text="Remove From List"
-                                title="Remove From List"
+                                text={t("Remove From List")}
+                                title={t("Remove From List")}
                                 icon="material:close"
                                 onClick={openProjectsStore.removeFromList}
                             />

@@ -1,4 +1,5 @@
 import React from "react";
+import { translateProjectEditorLabel as t } from "eez-studio-shared/i10n";
 import { action, observable, runInAction, makeObservable, toJS } from "mobx";
 import { Stream } from "stream";
 
@@ -577,7 +578,7 @@ async function showConnectDialog(
                         inputGroupButton: (
                             <button
                                 className="btn btn-secondary"
-                                title="Refresh list of available serial ports"
+                                title={t("Refresh list of available serial ports")}
                                 onClick={event => {
                                     event.preventDefault();
                                     onRefreshSerialPortPaths();

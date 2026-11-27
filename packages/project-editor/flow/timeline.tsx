@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import { translateProjectEditorLabel } from "eez-studio-shared/i10n";
 import {
     observable,
     computed,
@@ -1373,9 +1374,9 @@ export const TimelineKeyframePropertyUI = observer(
                     <tbody>
                         <tr>
                             <td className="duration-heading"></td>
-                            <td className="duration-heading">Start</td>
-                            <td className="duration-heading">End</td>
-                            <td className="duration-heading">Duration</td>
+                            <td className="duration-heading">{translateProjectEditorLabel("Start")}</td>
+                            <td className="duration-heading">{translateProjectEditorLabel("End")}</td>
+                            <td className="duration-heading">{translateProjectEditorLabel("Duration")}</td>
                         </tr>
                         <tr>
                             <td></td>
@@ -1434,15 +1435,15 @@ export const TimelineKeyframePropertyUI = observer(
                             </td>
                         </tr>
                         <tr>
-                            <td className="property-heading">Property</td>
-                            <td className="property-heading">From Value</td>
-                            <td className="property-heading">To Value</td>
+                            <td className="property-heading">{translateProjectEditorLabel("Property")}</td>
+                            <td className="property-heading">{translateProjectEditorLabel("From Value")}</td>
+                            <td className="property-heading">{translateProjectEditorLabel("To Value")}</td>
                             <td className="property-heading">
-                                Easing{" "}
+                                {translateProjectEditorLabel("Easing")}{" "}
                                 <a>
                                     <Icon
                                         icon="material:info"
-                                        title="Open easing functions help page in the system browser"
+                                        title={translateProjectEditorLabel("Open easing functions help page in the system browser")}
                                         style={{ cursor: "pointer" }}
                                         onClick={async () => {
                                             const { shell } = await import(

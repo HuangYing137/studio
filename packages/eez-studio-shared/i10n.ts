@@ -1,4 +1,6 @@
 import { ipcRenderer } from "electron";
+import fs from "fs";
+import path from "path";
 
 import { isRenderer } from "eez-studio-shared/util-electron";
 
@@ -132,9 +134,9 @@ export const LOCALES = {
     xh: "Xhosa",
     yi: "Yiddish",
     yo: "Yoruba",
-    zh: "Chinese",
-    "zh-CN": "Chinese (Simplified)",
-    "zh-TW": "Chinese (Traditional)",
+    zh: "中文",
+    "zh-CN": "简体中文",
+    "zh-TW": "繁體中文",
     zu: "Zulu"
 };
 
@@ -197,3 +199,62 @@ if (isRenderer()) {
 }
 
 ////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////
+
+type LocaleDictionary = { [key: string]: string };
+
+let cachedLocale = "";
+let cachedLocaleDictionary: LocaleDictionary = {};
+
+function loadLocaleDictionary(locale: string): LocaleDictionary {
+    if (cachedLocale === locale) {
+        return cachedLocaleDictionary;
+    }
+
+    cachedLocale = locale;
+    cachedLocaleDictionary = {};
+
+    // This fork currently ships a Simplified Chinese resource. Keep it outside
+    // app.asar so translators can update the JSON file without changing code.
+    if (locale !== "zh-CN" && locale !== "zh") {
+        return cachedLocaleDictionary;
+    }
+
+    const resourcesPath = (process as NodeJS.Process & {
+        resourcesPath?: string;
+    }).resourcesPath;
+
+    const candidates = [
+        resourcesPath
+            ? path.join(resourcesPath, "locales", "zh-CN.json")
+            : "",
+        path.resolve(__dirname, "../../resources/locales/zh-CN.json")
+    ].filter(Boolean);
+
+    for (const localePath of candidates) {
+        try {
+            const content = fs.readFileSync(localePath, "utf8");
+            const dictionary = JSON.parse(content);
+            if (
+                dictionary &&
+                typeof dictionary === "object" &&
+                !Array.isArray(dictionary)
+            ) {
+                cachedLocaleDictionary = dictionary as LocaleDictionary;
+                break;
+            }
+        } catch {
+            // Try the next location; missing locale files fall back to English.
+        }
+    }
+
+    return cachedLocaleDictionary;
+}
+
+export function translateProjectEditorLabel(label: string) {
+    const locale = getLocale();
+    const dictionary = loadLocaleDictionary(locale);
+    return dictionary[label] || label;
+}
+

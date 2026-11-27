@@ -1,4 +1,5 @@
 import React from "react";
+import { translateProjectEditorLabel } from "eez-studio-shared/i10n";
 import { action, computed, makeObservable } from "mobx";
 import { observer } from "mobx-react";
 import classNames from "classnames";
@@ -35,7 +36,7 @@ export const LogsPanel = observer(
                         title=""
                         buttons={[
                             <div key="filter">
-                                <span style={{ marginRight: 5 }}>Filter:</span>
+                                <span style={{ marginRight: 5 }}>{translateProjectEditorLabel("Filter:")}</span>
                                 <select
                                     className="form-select"
                                     value={
@@ -44,12 +45,12 @@ export const LogsPanel = observer(
                                     }
                                     onChange={this.onChangeFilter}
                                 >
-                                    <option value="all">All</option>
-                                    <option value="fatal">Fatal</option>
-                                    <option value="error">Error</option>
-                                    <option value="warning">Warning</option>
-                                    <option value="info">Info</option>
-                                    <option value="debug">Debug</option>
+                                    <option value="all">{translateProjectEditorLabel("All")}</option>
+                                    <option value="fatal">{translateProjectEditorLabel("Fatal")}</option>
+                                    <option value="error">{translateProjectEditorLabel("Error")}</option>
+                                    <option value="warning">{translateProjectEditorLabel("Warning")}</option>
+                                    <option value="info">{translateProjectEditorLabel("Info")}</option>
+                                    <option value="debug">{translateProjectEditorLabel("Debug")}</option>
                                     <option value="scpi">SCPI</option>
                                 </select>
                             </div>,
@@ -57,7 +58,7 @@ export const LogsPanel = observer(
                                 key="clear"
                                 icon="material:delete"
                                 iconSize={20}
-                                title="Clear logs"
+                                title={translateProjectEditorLabel("Clear logs")}
                                 onClick={this.props.runtime.logs.clear}
                             ></IconAction>
                         ]}

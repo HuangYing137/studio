@@ -1,5 +1,6 @@
 import { clipboard } from "electron";
 import React from "react";
+import { translateProjectEditorLabel as t } from "eez-studio-shared/i10n";
 import {
     computed,
     action,
@@ -308,16 +309,14 @@ export const NativeVariableImplementationInfoPropertyUI = observer(
                     <div className="EezStudio_PropertyGrid_TipBox_Description">
                         <div className="EezStudio_PropertyGrid_TipBox_Header">
                             <Icon icon="material:lightbulb_outline" />
-                            <span>TIP</span>
+                            <span>{t("TIP")}</span>
                         </div>
                         <div className="EezStudio_PropertyGrid_TipBox_DescriptionText">
-                            {this.hasFlowSupport
-                                ? "For native variable "
-                                : "For variable "}
-                            you must provide implementation of get and set
-                            functions. Below is a basic implementation code for
-                            such functions. You can copy and paste it into some
-                            source file in your project.
+                            {t(
+                                this.hasFlowSupport
+                                    ? "For native variable implementation"
+                                    : "For variable implementation"
+                            )}
                         </div>
                         <div className="EezStudio_PropertyGrid_TipBox_Toolbar">
                             <select
@@ -334,7 +333,7 @@ export const NativeVariableImplementationInfoPropertyUI = observer(
                             <IconAction
                                 icon="material:content_copy"
                                 iconSize={20}
-                                title="Copy to Clipboard"
+                                title={t("Copy to Clipboard")}
                                 onClick={() => {
                                     clipboard.writeText(code);
                                 }}

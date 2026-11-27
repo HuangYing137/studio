@@ -1,4 +1,5 @@
 import React from "react";
+import { translateProjectEditorLabel } from "eez-studio-shared/i10n";
 import { action, makeObservable } from "mobx";
 import { observer } from "mobx-react";
 
@@ -125,8 +126,8 @@ const Toolbar = observer(
                         style={{ marginRight: "auto" }}
                     >
                         <ButtonAction
-                            text="Search for Unused Items"
-                            title="Search for Unused Items"
+                            text={translateProjectEditorLabel("Search for Unused Items")}
+                            title={translateProjectEditorLabel("Search for Unused Items")}
                             icon="material:search"
                             iconSize={18}
                             className="btn-secondary btn-sm"
@@ -137,13 +138,13 @@ const Toolbar = observer(
                     </div>
                     <div className="btn-group" role="group">
                         <IconAction
-                            title="Next Result"
+                            title={translateProjectEditorLabel("Next Result")}
                             icon="material:arrow_downward"
                             onClick={() => this.nextResult()}
                             enabled={this.nextResultEnabled}
                         />
                         <IconAction
-                            title="Previous Result"
+                            title={translateProjectEditorLabel("Previous Result")}
                             icon="material:arrow_upward"
                             onClick={() => this.previousResult()}
                             enabled={this.previousResultEnabled}

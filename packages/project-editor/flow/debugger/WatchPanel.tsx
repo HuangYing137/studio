@@ -1,4 +1,5 @@
 import React from "react";
+import { translateProjectEditorLabel } from "eez-studio-shared/i10n";
 import { observer } from "mobx-react";
 import { computedFn } from "mobx-utils";
 import {
@@ -145,14 +146,14 @@ export const WatchPanel = observer(
                                 key="add"
                                 icon="material:add"
                                 iconSize={20}
-                                title="Add Watch Expression"
+                                title={translateProjectEditorLabel("Add Watch Expression")}
                                 onClick={this.onAddExpression}
                             />,
                             <IconAction
                                 key="edit"
                                 icon="material:edit"
                                 iconSize={20}
-                                title="Edit Watch Expression"
+                                title={translateProjectEditorLabel("Edit Watch Expression")}
                                 onClick={this.onEditExpression}
                                 enabled={this.selectedExpression.get() != -1}
                             />,
@@ -160,7 +161,7 @@ export const WatchPanel = observer(
                                 key="delete"
                                 icon="material:delete"
                                 iconSize={20}
-                                title="Delete Watch Expression"
+                                title={translateProjectEditorLabel("Delete Watch Expression")}
                                 onClick={this.onDeleteEpression}
                                 enabled={this.selectedExpression.get() != -1}
                             />

@@ -1,5 +1,6 @@
 import { clipboard } from "electron";
 import React from "react";
+import { translateProjectEditorLabel as t } from "eez-studio-shared/i10n";
 import { observable, makeObservable, runInAction } from "mobx";
 
 import { validators } from "eez-studio-shared/validation";
@@ -118,16 +119,14 @@ export const NativeActionImplementationInfoPropertyUI = observer(
                     <div className="EezStudio_PropertyGrid_TipBox_Description">
                         <div className="EezStudio_PropertyGrid_TipBox_Header">
                             <Icon icon="material:lightbulb_outline" />
-                            <span>TIP</span>
+                            <span>{t("TIP")}</span>
                         </div>
                         <div className="EezStudio_PropertyGrid_TipBox_DescriptionText">
-                            {this.hasFlowSupport
-                                ? "For native user action "
-                                : "For user action "}
-                            you must provide implementation function. Below is a
-                            basic implementation code for such function. You can
-                            copy and paste it into some source file in your
-                            project.
+                            {t(
+                                this.hasFlowSupport
+                                    ? "For native user action implementation"
+                                    : "For user action implementation"
+                            )}
                         </div>
                         <div className="EezStudio_PropertyGrid_TipBox_Toolbar">
                             <select
@@ -144,7 +143,7 @@ export const NativeActionImplementationInfoPropertyUI = observer(
                             <IconAction
                                 icon="material:content_copy"
                                 iconSize={20}
-                                title="Copy to Clipboard"
+                                title={t("Copy to Clipboard")}
                                 onClick={() => {
                                     clipboard.writeText(code);
                                 }}
@@ -325,11 +324,11 @@ export class Action extends Flow {
                             enumItems: [
                                 {
                                     id: "flow",
-                                    label: "Flow"
+                                    label: t("Flow")
                                 },
                                 {
                                     id: "native",
-                                    label: "Native"
+                                    label: t("Native")
                                 }
                             ],
                             visible: () =>

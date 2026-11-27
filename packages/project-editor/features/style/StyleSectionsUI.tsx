@@ -1,4 +1,5 @@
 import React from "react";
+import { translateProjectEditorLabel as t } from "eez-studio-shared/i10n";
 import { observable, runInAction } from "mobx";
 import { observer } from "mobx-react";
 import classNames from "classnames";
@@ -54,96 +55,96 @@ export const STYLE_SECTIONS: { [name: string]: IStyleSection } = {
     textStyleSection: {
         title: "Text",
         rows: [
-            { label: "Font", fields: [{ name: "font" }] },
+            { label: t("Font"), fields: [{ name: "font" }] },
             {
-                label: "Align",
+                label: t("Align"),
                 fields: [
                     { name: "alignHorizontal", kind: "alignHorizontal" },
                     { name: "alignVertical", kind: "alignVertical" }
                 ]
             },
-            { label: "Color", fields: [{ name: "color" }] },
+            { label: t("Color"), fields: [{ name: "color" }] },
             {
-                label: "Spacing",
+                label: t("Spacing"),
                 fields: [
                     {
                         name: "letterSpacing",
-                        label: "Letter",
+                        label: t("Letter"),
                         title: "Letter spacing"
                     },
                     {
                         name: "lineHeight",
-                        label: "Line",
+                        label: t("Line"),
                         title: "Line height (0: the line height of the font)"
                     }
                 ]
             },
-            { label: "Ellipsis", fields: [{ name: "ellipsis" }] }
+            { label: t("Ellipsis"), fields: [{ name: "ellipsis" }] }
         ]
     },
     backgroundStyleSection: {
         title: "Background",
         rows: [
-            { label: "Color", fields: [{ name: "backgroundColor" }] },
-            { label: "Image", fields: [{ name: "backgroundImage" }] }
+            { label: t("Color"), fields: [{ name: "backgroundColor" }] },
+            { label: t("Image"), fields: [{ name: "backgroundImage" }] }
         ]
     },
     borderStyleSection: {
         title: "Border and padding",
         rows: [
             {
-                label: "Border size",
+                label: t("Border size"),
                 fields: [{ name: "borderSize", kind: "sides" }]
             },
             {
-                label: "Border radius",
+                label: t("Border radius"),
                 fields: [{ name: "borderRadius", kind: "corners" }]
             },
             {
-                label: "Border color",
+                label: t("Border color"),
                 fields: [{ name: "borderColor", kind: "colorSides" }]
             },
-            { label: "Padding", fields: [{ name: "padding", kind: "sides" }] }
+            { label: t("Padding"), fields: [{ name: "padding", kind: "sides" }] }
         ]
     },
     effectsStyleSection: {
         title: "Effects",
         rows: [
-            { label: "Opacity", fields: [{ name: "opacity" }] },
-            { label: "Blink", fields: [{ name: "blink" }] }
+            { label: t("Opacity"), fields: [{ name: "opacity" }] },
+            { label: t("Blink"), fields: [{ name: "blink" }] }
         ]
     },
     shadowStyleSection: {
         title: "Shadow",
         rows: [
             {
-                label: "Offset",
+                label: t("Offset"),
                 fields: [
-                    { name: "shadowOffsetX", label: "X", title: "Offset X" },
-                    { name: "shadowOffsetY", label: "Y", title: "Offset Y" }
+                    { name: "shadowOffsetX", label: "X", title: t("Offset X") },
+                    { name: "shadowOffsetY", label: "Y", title: t("Offset Y") }
                 ]
             },
             {
-                label: "Size",
+                label: t("Size"),
                 fields: [
-                    { name: "shadowBlur", label: "Blur" },
-                    { name: "shadowSpread", label: "Spread" }
+                    { name: "shadowBlur", label: t("Blur") },
+                    { name: "shadowSpread", label: t("Spread") }
                 ]
             },
-            { label: "Color", fields: [{ name: "shadowColor" }] }
+            { label: t("Color"), fields: [{ name: "shadowColor" }] }
         ]
     },
     focusRingStyleSection: {
         title: "Focus ring",
         rows: [
             {
-                label: "Size",
+                label: t("Size"),
                 fields: [
-                    { name: "focusRingWidth", label: "Width" },
-                    { name: "focusRingOffset", label: "Offset" }
+                    { name: "focusRingWidth", label: t("Width") },
+                    { name: "focusRingOffset", label: t("Offset") }
                 ]
             },
-            { label: "Color", fields: [{ name: "focusRingColor" }] }
+            { label: t("Color"), fields: [{ name: "focusRingColor" }] }
         ]
     }
 };
@@ -202,17 +203,17 @@ function compressValues(values: string[]) {
 }
 
 const SIDE_LABELS = [
-    { label: "T", title: "Top" },
-    { label: "R", title: "Right" },
-    { label: "B", title: "Bottom" },
-    { label: "L", title: "Left" }
+    { label: "T", title: t("Top") },
+    { label: "R", title: t("Right") },
+    { label: "B", title: t("Bottom") },
+    { label: "L", title: t("Left") }
 ];
 
 const CORNER_LABELS = [
-    { label: "TL", title: "Top left" },
-    { label: "TR", title: "Top right" },
-    { label: "BR", title: "Bottom right" },
-    { label: "BL", title: "Bottom left" }
+    { label: "TL", title: t("Top left") },
+    { label: "TR", title: t("Top right") },
+    { label: "BR", title: t("Bottom right") },
+    { label: "BL", title: t("Bottom left") }
 ];
 
 // the properties with the editor of the sides opened by the user (or closed:
@@ -249,7 +250,7 @@ const ALIGN_ITEMS: {
     alignHorizontal: [
         {
             id: "left",
-            title: "Left",
+            title: t("Left"),
             icon: <path d="M2.5 4h11M2.5 8h7M2.5 12h9" />
         },
         {
@@ -259,14 +260,14 @@ const ALIGN_ITEMS: {
         },
         {
             id: "right",
-            title: "Right",
+            title: t("Right"),
             icon: <path d="M2.5 4h11M6.5 8h7M4.5 12h9" />
         }
     ],
     alignVertical: [
         {
             id: "top",
-            title: "Top",
+            title: t("Top"),
             icon: <path d="M2.5 2.5h11M8 5v8M5.5 7.5 8 5l2.5 2.5" />
         },
         {
@@ -276,7 +277,7 @@ const ALIGN_ITEMS: {
         },
         {
             id: "bottom",
-            title: "Bottom",
+            title: t("Bottom"),
             icon: <path d="M2.5 13.5h11M8 3v8M5.5 8.5 8 11l2.5-2.5" />
         }
     ]

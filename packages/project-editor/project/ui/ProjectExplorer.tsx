@@ -1,4 +1,5 @@
 import React from "react";
+import { translateProjectEditorLabel } from "eez-studio-shared/i10n";
 import ReactDOM from "react-dom";
 import {
     action,
@@ -702,7 +703,7 @@ const ProjectExplorerGroupDropdown = observer(
                             >
                                 <GroupIcon group={group} />
                                 <span className="EezStudio_ProjectExplorer_GroupsPopupItemTitle">
-                                    {group.title}
+                                    {translateProjectEditorLabel(group.title)}
                                 </span>
                             </button>
                         </React.Fragment>
@@ -725,14 +726,14 @@ const ProjectExplorerGroupDropdown = observer(
                             "EezStudio_ProjectExplorer_GroupDropdown",
                             { open: isOpen }
                         )}
-                        title={selectedGroup?.title}
+                        title={selectedGroup?.title ? translateProjectEditorLabel(selectedGroup.title) : undefined}
                         aria-haspopup="menu"
                         aria-expanded={isOpen}
                         onClick={this.onClick}
                     >
                         {selectedGroup && <GroupIcon group={selectedGroup} />}
                         <span className="EezStudio_ProjectExplorer_GroupDropdownTitle">
-                            {selectedGroup?.title}
+                            {selectedGroup?.title ? translateProjectEditorLabel(selectedGroup.title) : ""}
                         </span>
                         <svg viewBox="0 0 8 5" width="8" height="5">
                             <path
@@ -1001,7 +1002,7 @@ export const ProjectExplorer = observer(
                                     "EezStudio_ProjectExplorer_Order",
                                     { disabled: !selectedGroup?.order }
                                 )}
-                                title="Order"
+                                title={translateProjectEditorLabel("Order")}
                             >
                                 <SortControl
                                     direction={
