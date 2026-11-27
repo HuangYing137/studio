@@ -447,5 +447,10 @@
     "Global": "全局",
     "Local": "局部",
     "Structs": "结构体",
-    "Widgets": "控件"
+    "Widgets": "控件",
+    "Filter:": "筛选：",
+    "Fatal": "严重错误",
+    "Error": "错误",
+    "Warning": "警告",
+    "Info": "信息"
 }
