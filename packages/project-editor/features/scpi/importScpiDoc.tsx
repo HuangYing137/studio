@@ -21,6 +21,7 @@ import {
 } from "eez-studio-shared/string";
 
 import { Loader } from "eez-studio-ui/loader";
+import { translateProjectEditorLabel as t } from "eez-studio-shared/i10n";
 
 import type { IParameter, IParameterType, IEnum } from "instrument/scpi";
 
@@ -1402,7 +1403,7 @@ export const ImportScpiDocDialog = observer(
                                         />{" "}
                                         Command
                                     </th>
-                                    <th className="col-4">From</th>
+                                    <th className="col-4">{t("From")}</th>
                                 </tr>
                             );
                         } else if (section === "moved") {
@@ -1418,7 +1419,7 @@ export const ImportScpiDocDialog = observer(
                                         />{" "}
                                         Command
                                     </th>
-                                    <th className="col-3">From</th>
+                                    <th className="col-3">{t("From")}</th>
                                     <th className="col-3">To</th>
                                 </tr>
                             );
@@ -1451,7 +1452,7 @@ export const ImportScpiDocDialog = observer(
                                         />{" "}
                                         Enum
                                     </th>
-                                    <th className="col-8">Members</th>
+                                    <th className="col-8">{t("Members")}</th>
                                 </tr>
                             );
                         }
@@ -1604,7 +1605,7 @@ export const ImportScpiDocDialog = observer(
                     ];
                 } else {
                     content = (
-                        <h4 style={{ textAlign: "center" }}>No changes!</h4>
+                        <h4 style={{ textAlign: "center" }}>{t("No changes!")}</h4>
                     );
 
                     buttons = [
@@ -1644,7 +1645,7 @@ export const ImportScpiDocDialog = observer(
                                     type="button"
                                     className="btn-close float-right"
                                     onClick={this.onCancel}
-                                    aria-label="Close"
+                                    aria-label={t("Close")}
                                 ></button>
                             </div>
                             <div className="modal-body">{content}</div>
