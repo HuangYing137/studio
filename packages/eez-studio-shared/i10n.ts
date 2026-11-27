@@ -242,7 +242,7 @@ function loadLocaleDictionary(locale: string): LocaleDictionary {
                 cachedLocaleDictionary = dictionary as LocaleDictionary;
                 break;
             }
-        } catch (error) {
+        } catch {
             // Try the next location; missing locale files fall back to English.
         }
     }
