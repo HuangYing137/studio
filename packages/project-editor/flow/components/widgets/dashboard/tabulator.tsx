@@ -1,5 +1,6 @@
 import { ipcRenderer } from "electron";
 import React from "react";
+import { translateProjectEditorLabel as t } from "eez-studio-shared/i10n";
 import { computed, makeObservable, observable, runInAction, toJS } from "mobx";
 import { clipboard } from "electron";
 
@@ -520,7 +521,7 @@ const CopyOptionsButton = observer(
             );
 
             notification.info(
-                "The options are copied as a JSON literal to the clipboard"
+                t("The options are copied as a JSON literal to the clipboard")
             );
         };
 
@@ -534,7 +535,7 @@ const CopyOptionsButton = observer(
                         marginTop: 10,
                         marginBottom: 10
                     }}
-                    title="Copy options as a JSON literal to the clipboard"
+                    title=t("Copy options as a JSON literal to the clipboard")
                 >
                     Copy Options
                 </Button>
@@ -901,14 +902,14 @@ class TabulatorOptions extends EezObject {
             },
             {
                 name: "syncColumns",
-                displayName: "Sync columns with structure",
+                displayName: t("Sync columns with structure"),
                 type: PropertyType.Boolean,
                 checkboxStyleSwitch: true,
                 disabled: (options: TabulatorOptions) => options.autoColumns
             },
             {
                 name: "syncStructure",
-                displayName: "Structure",
+                displayName: t("Structure"),
                 type: PropertyType.ObjectReference,
                 referencedObjectCollectionPath: "variables/structures",
                 disabled: (options: TabulatorOptions) =>
@@ -946,7 +947,7 @@ class TabulatorOptions extends EezObject {
                                 (async () => {
                                     const result = await showGenericDialog({
                                         dialogDefinition: {
-                                            title: "Select Structure",
+                                            title: t("Select Structure"),
                                             fields: [
                                                 {
                                                     name: "structure",
@@ -976,7 +977,7 @@ class TabulatorOptions extends EezObject {
                                     );
                                 })();
                             }}
-                            title="Build From Structure Definition"
+                            title=t("Build From Structure Definition")
                         />
                     ];
                 }
@@ -996,7 +997,7 @@ class TabulatorOptions extends EezObject {
                 messages.push(
                     new Message(
                         MessageType.ERROR,
-                        `"Selectable rows" should be either empty, true, false, number or highlight`,
+                        `t("Selectable rows") should be either empty, true, false, number or highlight`,
                         getChildOfObject(options, "selectableRows")
                     )
                 );
@@ -1158,7 +1159,7 @@ export class TabulatorWidget extends Widget {
             makeDataPropertyInfo("data", {}, "json"),
             {
                 name: "options",
-                displayName: "Basic options",
+                displayName: t("Basic options"),
                 type: PropertyType.Object,
                 typeClass: TabulatorOptions,
                 propertyGridGroup: specificGroup
@@ -1166,10 +1167,10 @@ export class TabulatorWidget extends Widget {
             makeExpressionProperty(
                 {
                     name: "configuration",
-                    displayName: "Advanced options",
+                    displayName: t("Advanced options"),
                     formText: () => (
                         <span>
-                            Advanced options are set via JSON value, check{" "}
+                            {t("Advanced options are set via JSON value, check")}{" "}
                             <a
                                 href="#"
                                 onClick={event => {
@@ -1191,7 +1192,7 @@ export class TabulatorWidget extends Widget {
             makeExpressionProperty(
                 {
                     name: "persistance",
-                    displayName: "Persistent configuration",
+                    displayName: t("Persistent configuration"),
                     type: PropertyType.MultilineText,
                     propertyGridGroup: specificGroup
                 },
