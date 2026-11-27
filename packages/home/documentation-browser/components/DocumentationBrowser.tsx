@@ -1,4 +1,5 @@
 import React from "react";
+import { translateProjectEditorLabel as t } from "eez-studio-shared/i10n";
 import { action } from "mobx";
 import { observer } from "mobx-react";
 import * as FlexLayout from "flexlayout-react";
@@ -91,7 +92,7 @@ export const DocumentationBrowser = observer(
                         </div>
                         {isDev && (
                             <div className="EezStudio_DocumentationBrowser_Stat">
-                                <span>Actions</span>
+                                <span>{t("Actions")}</span>
                                 {model.actionDocCounters.total -
                                     model.actionDocCounters.completed -
                                     model.actionDocCounters.drafts >
@@ -116,7 +117,7 @@ export const DocumentationBrowser = observer(
                         )}
                         {isDev && (
                             <div className="EezStudio_DocumentationBrowser_Stat">
-                                <span>Widgets</span>
+                                <span>{t("Widgets")}</span>
                                 {model.widgetDocCounters.total -
                                     model.widgetDocCounters.completed -
                                     model.widgetDocCounters.drafts >
