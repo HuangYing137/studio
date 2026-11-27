@@ -351,5 +351,14 @@
     "Contains invalid IDs": "包含无效 ID",
     "Number of changed IDs": "已更改 ID 的数量",
     "Sort by ID": "按 ID 排序",
-    "No items found.": "未找到项目项。"
+    "No items found.": "未找到项目项。",
+    "Checking for updates...": "正在检查更新…",
+    "There is a newer version ": "发现新版本 ",
+    "download": "下载",
+    "You have the latest version": "当前已是最新版本",
+    "release notes": "发行说明",
+    "Build date": "构建日期",
+    "Check for Updates": "检查更新",
+    "Home": "主页",
+    "Select Project Editor Extension": "选择项目编辑器扩展"
 }
