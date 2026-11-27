@@ -153,7 +153,7 @@ const AboutBox = observer(
                                         );
                                     }}
                                 >
-                                    download
+                                    {t("download")}
                                 </a>
                                 )
                             </>
@@ -200,7 +200,7 @@ const AboutBox = observer(
                                     );
                                 }}
                             >
-                                release notes
+                                {t("release notes")}
                             </a>
                             )
                         </div>
@@ -216,7 +216,7 @@ const AboutBox = observer(
                             onClick={this.checkForUpdates}
                             disabled={this.checkingForUpdates}
                         >
-                            Check for Updates
+                            {t("Check for Updates")}
                         </button>
 
                         <div className="EezStudio_Links">
@@ -227,7 +227,7 @@ const AboutBox = observer(
                                     openLink(STUDIO_HOME_PAGE_URL);
                                 }}
                             >
-                                Home
+                                {t("Home")}
                             </a>
                             {" | "}
                             <a
