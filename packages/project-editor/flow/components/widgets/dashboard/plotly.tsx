@@ -1,4 +1,5 @@
 import React from "react";
+import { translateProjectEditorLabel as t } from "eez-studio-shared/i10n";
 import {
     observable,
     reaction,
@@ -338,7 +339,7 @@ export class PlotlyWidget extends Widget {
             makeExpressionProperty(
                 {
                     name: "plotlyData",
-                    displayName: "Chart data",
+                    displayName: t("Chart data"),
                     formText: () => (
                         <span>
                             Plotly chart data is set via JSON value, check{" "}
@@ -366,7 +367,7 @@ export class PlotlyWidget extends Widget {
             makeExpressionProperty(
                 {
                     name: "layout",
-                    displayName: "Layout options",
+                    displayName: t("Layout options"),
                     formText: () => (
                         <span>
                             Plotly layout options are set via JSON value, check{" "}
@@ -393,7 +394,7 @@ export class PlotlyWidget extends Widget {
             makeExpressionProperty(
                 {
                     name: "config",
-                    displayName: "Configuration options",
+                    displayName: t("Configuration options"),
                     formText: () => (
                         <span>
                             Plotly configuration options are set via JSON value,
@@ -1124,7 +1125,7 @@ export class LineChartWidget extends Widget {
             makeExpressionProperty(
                 {
                     name: "xValue",
-                    displayName: "X value",
+                    displayName: t("X value"),
                     type: PropertyType.MultilineText,
                     propertyGridGroup: specificGroup
                 },
@@ -1146,12 +1147,12 @@ export class LineChartWidget extends Widget {
             },
             {
                 name: "displayModebar",
-                displayName: "Display mode bar",
+                displayName: t("Display mode bar"),
                 type: PropertyType.Enum,
                 enumItems: [
-                    { id: "hover", label: "Hover" },
-                    { id: "always", label: "Always" },
-                    { id: "never", label: "Never" }
+                    { id: "hover", label: t("Hover") },
+                    { id: "always", label: t("Always") },
+                    { id: "never", label: t("Never") }
                 ],
                 propertyGridGroup: specificGroup
             },
@@ -1175,7 +1176,7 @@ export class LineChartWidget extends Widget {
             },
             {
                 name: "showXAxis",
-                displayName: "Show X axis",
+                displayName: t("Show X axis"),
                 type: PropertyType.Boolean,
                 propertyGridGroup: specificGroup,
                 checkboxStyleSwitch: true
@@ -1191,11 +1192,11 @@ export class LineChartWidget extends Widget {
                 enumItems: [
                     {
                         id: "floating",
-                        label: "Floating"
+                        label: t("Floating")
                     },
                     {
                         id: "fixed",
-                        label: "Fixed"
+                        label: t("Fixed")
                     }
                 ],
                 propertyGridGroup: specificGroup
@@ -1222,7 +1223,7 @@ export class LineChartWidget extends Widget {
             ),
             {
                 name: "showYAxis",
-                displayName: "Show Y axis",
+                displayName: t("Show Y axis"),
                 type: PropertyType.Boolean,
                 propertyGridGroup: specificGroup,
                 checkboxStyleSwitch: true
@@ -1238,11 +1239,11 @@ export class LineChartWidget extends Widget {
                 enumItems: [
                     {
                         id: "floating",
-                        label: "Floating"
+                        label: t("Floating")
                     },
                     {
                         id: "fixed",
-                        label: "Fixed"
+                        label: t("Fixed")
                     }
                 ],
                 propertyGridGroup: specificGroup
@@ -1290,8 +1291,8 @@ export class LineChartWidget extends Widget {
                 },
                 "float"
             ),
-            makeStylePropertyInfo("style", "Default style"),
-            makeStylePropertyInfo("markerStyle", "Marker style")
+            makeStylePropertyInfo("style", t("Default style")),
+            makeStylePropertyInfo("markerStyle", t("Marker style"))
         ],
 
         beforeLoadHook: (object: LineChartWidget, jsObject: any) => {
@@ -1955,7 +1956,7 @@ export class GaugeWidget extends Widget {
                 typeClass: RectObject,
                 propertyGridGroup: specificGroup
             },
-            makeStylePropertyInfo("style", "Default style")
+            makeStylePropertyInfo("style", t("Default style"))
         ],
         defaultValue: {
             left: 0,
