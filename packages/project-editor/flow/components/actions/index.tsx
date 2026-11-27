@@ -1851,7 +1851,7 @@ export class ReadSettingActionComponent extends ActionComponent {
                 typeof key != "string" ||
                 key.trim() == ""
             ) {
-                context.throwError(`Invalid key property`);
+                context.throwError(translateProjectEditorLabel("Invalid key property"));
                 return;
             }
 
@@ -1927,7 +1927,7 @@ export class ReadSettingActionComponent extends ActionComponent {
 export class WriteSettingsActionComponent extends ActionComponent {
     static classInfo = makeDerivedClassInfo(ActionComponent.classInfo, {
         componentPaletteGroupName: "Dashboard Specific",
-        componentPaletteLabel: "WriteSetting",
+        componentPaletteLabel: translateProjectEditorLabel("WriteSetting"),
         properties: [
             makeExpressionProperty(
                 {
@@ -2102,7 +2102,7 @@ export class PlayAudioActionComponent extends ActionComponent {
         execute: (context: IDashboardComponentContext) => {
             const audioFile = context.evalProperty<string>("audioFile");
             if (audioFile == undefined) {
-                context.throwError(`Invalid Audio file property`);
+                context.throwError(translateProjectEditorLabel("Invalid Audio file property"));
                 return;
             }
 
@@ -2505,14 +2505,14 @@ export class DynamicCallActionActionComponent extends ActionComponent {
             const actionName = context.evalProperty<string>("action");
 
             if (actionName == undefined || typeof actionName != "string") {
-                context.throwError(`Invalid action name property`);
+                context.throwError(translateProjectEditorLabel("Invalid action name property"));
                 return;
             }
 
             const flowIndex =
                 context.WasmFlowRuntime.assetsMap.actionFlowIndexes[actionName];
             if (flowIndex == undefined) {
-                context.throwError(`Invalid action name: ${actionName}`);
+                context.throwError(translateProjectEditorLabel("Invalid action name: {0}").replace("{0}", actionName));
                 return;
             }
 
@@ -4068,7 +4068,7 @@ export class ClipboardWriteActionComponent extends ActionComponent {
                     data instanceof Uint8Array
                 )
             ) {
-                context.throwError(`Invalid data property`);
+                context.throwError(translateProjectEditorLabel("Invalid data property"));
                 return;
             }
 
@@ -4949,7 +4949,7 @@ export class PrintToPDFActionComponent extends ActionComponent {
         execute: (context: IDashboardComponentContext) => {
             const widget = context.evalProperty<number>("widget");
             if (widget == undefined) {
-                context.throwError(`Invalid Widget property`);
+                context.throwError(translateProjectEditorLabel("Invalid Widget property"));
                 return;
             }
 
@@ -4957,7 +4957,7 @@ export class PrintToPDFActionComponent extends ActionComponent {
                 context.WasmFlowRuntime.getWidgetHandleInfo(widget);
 
             if (!widgetInfo) {
-                context.throwError(`Invalid Widget handle`);
+                context.throwError(translateProjectEditorLabel("Invalid Widget handle"));
                 return;
             }
 
@@ -4971,18 +4971,18 @@ export class PrintToPDFActionComponent extends ActionComponent {
                 widgetContext.getComponentExecutionState<any>();
 
             if (!executionState) {
-                context.throwError(`Widget not initialized`);
+                context.throwError(translateProjectEditorLabel("Widget not initialized"));
                 return;
             }
 
             if (!executionState.printWidget) {
-                context.throwError(`Widget doesn't support printing`);
+                context.throwError(translateProjectEditorLabel("Widget doesn't support printing"));
                 return;
             }
 
             const options = context.evalProperty<any>("options");
             if (options != undefined && typeof options != "object") {
-                context.throwError(`Invalid Options property`);
+                context.throwError(translateProjectEditorLabel("Invalid Options property"));
                 return;
             }
 
@@ -5075,7 +5075,7 @@ export class FocusWidgetActionComponent extends ActionComponent {
             }
 
             if (!executionState.focus) {
-                context.throwError(`Widget doesn't support focus`);
+                context.throwError(translateProjectEditorLabel("Widget doesn't support focus"));
                 return;
             }
 
