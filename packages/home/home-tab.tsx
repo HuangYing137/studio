@@ -24,7 +24,7 @@ import { instrumentDatabases } from "eez-studio-shared/db";
 ////////////////////////////////////////////////////////////////////////////////
 
 const SAVED_OPTIONS_VERSION = 1;
-const isChinese = () => getLocale().toLowerCase().startsWith("zh");
+
 
 class HomeTabStore {
     activeTab:
