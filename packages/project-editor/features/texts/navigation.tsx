@@ -1,4 +1,5 @@
 import React from "react";
+import { translateProjectEditorLabel as t } from "eez-studio-shared/i10n";
 import * as FlexLayout from "flexlayout-react";
 import { observer } from "mobx-react";
 
@@ -30,7 +31,7 @@ export const TextsTab = observer(
         export = () => {
             showGenericDialog({
                 dialogDefinition: {
-                    title: "Export to XLIFF",
+                    title: t("Export to XLIFF"),
                     fields: [
                         {
                             name: "filePath",
@@ -309,13 +310,13 @@ export const TextsTab = observer(
                                       <TextAction
                                           key="export"
                                           text="Export"
-                                          title="Export to XLIFF"
+                                          title={t("Export to XLIFF")}
                                           onClick={this.export}
                                       />,
                                       <TextAction
                                           key="import"
                                           text="Import"
-                                          title="Import from XLIFF"
+                                          title={t("Import from XLIFF")}
                                           onClick={this.import}
                                       />
                                   ]
