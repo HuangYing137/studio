@@ -1,6 +1,7 @@
 import React from "react";
 import { observer } from "mobx-react";
 import classNames from "classnames";
+import { translateProjectEditorLabel as t } from "eez-studio-shared/i10n";
 import { ITreeNode, Tree } from "eez-studio-ui/tree";
 import { action, computed, makeObservable } from "mobx";
 import { FlowState, RuntimeBase } from "project-editor/flow/runtime/runtime";
@@ -122,7 +123,7 @@ const FlowsTree = observer(
 
             return {
                 id: "all",
-                label: "All",
+                label: t("All"),
                 children: getChildren(this.props.runtime.flowStates),
                 selected: false,
                 expanded: true
