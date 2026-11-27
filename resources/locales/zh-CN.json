@@ -498,5 +498,6 @@
     "Y-Axis Offset": "Y 轴偏移",
     "Y-Axis Zoom": "Y 轴缩放",
     "Remove measurement": "移除测量项",
-    "Save as CSV file": "保存为 CSV 文件"
+    "Save as CSV file": "保存为 CSV 文件",
+    "Copy to clipboard": "复制到剪贴板"
 }
