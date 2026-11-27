@@ -18,6 +18,7 @@ import {
 import { List, IListNode, ListItem } from "eez-studio-ui/list";
 import * as notification from "eez-studio-ui/notification";
 import { Loader } from "eez-studio-ui/loader";
+import { translateProjectEditorLabel as t } from "eez-studio-shared/i10n";
 
 import {
     ExtensionsManagerStore,
@@ -231,7 +232,7 @@ export const Setup = observer(() => {
             <div className="d-flex flex-column justify-content-center align-items-center h-100">
                 {setupState.extensionInstalling.inProgress && (
                     <div>
-                        <h3>Installing Extension</h3>
+                        <h3>{t("Installing Extension")}</h3>
                         <Loader />
                     </div>
                 )}
