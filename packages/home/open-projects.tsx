@@ -25,11 +25,10 @@ import { getProjectIcon } from "home/helper";
 import { ProjectStore, loadProject } from "project-editor/store";
 import { loadProjectEditor } from "project-editor/project-editor-loader";
 import { HOME_TAB_OPEN_ICON } from "project-editor/ui-components/icons";
-import { getLocale } from "eez-studio-shared/i10n";
+import { translateProjectEditorLabel as t } from "eez-studio-shared/i10n";
 
 ////////////////////////////////////////////////////////////////////////////////
 
-const isChinese = () => getLocale().toLowerCase().startsWith("zh");
 
 const SORT_ALPHA_ICON = (
     <svg
@@ -238,7 +237,7 @@ export const Projects = observer(
 
             menu.append(
                 new MenuItem({
-                    label: isChinese() ? "编辑项目" : "Edit Project",
+                    label: t("Edit Project"),
                     click: openProjectsStore.editProject
                 })
             );
@@ -246,7 +245,7 @@ export const Projects = observer(
             if (node.data.hasFlowSupport) {
                 menu.append(
                     new MenuItem({
-                        label: isChinese() ? "运行项目" : "Run Project",
+                        label: t("Run Project"),
                         click: openProjectsStore.runProject
                     })
                 );
@@ -254,14 +253,14 @@ export const Projects = observer(
 
             menu.append(
                 new MenuItem({
-                    label: isChinese() ? "复制项目路径" : "Copy Project Path",
+                    label: t("Copy Project Path"),
                     click: openProjectsStore.copyProjectPath
                 })
             );
 
             menu.append(
                 new MenuItem({
-                    label: isChinese() ? "从列表中移除" : "Remove From List",
+                    label: t("Remove From List"),
                     click: openProjectsStore.removeFromList
                 })
             );
@@ -290,8 +289,8 @@ export const Projects = observer(
                             }
                             title={
                                 openProjectsStore.sortAlphabetically
-                                    ? (isChinese() ? "按名称排序" : "Sort alphabetically")
-                                    : (isChinese() ? "最近使用的排在前面" : "Show most recent first")
+                                    ? (t("Sort alphabetically"))
+                                    : (t("Show most recent first"))
                             }
                             onClick={openProjectsStore.toggleSort}
                         />
@@ -301,8 +300,8 @@ export const Projects = observer(
                         <div className="EezStudio_HomeTab_Projects_Actions">
                             <ButtonAction
                                 className="btn-primary"
-                                text={isChinese() ? "打开项目" : "Open Project"}
-                                title={isChinese() ? "打开本地 EEZ Studio 项目" : "Open a local EEZ Studio Project"}
+                                text={t("Open Project")}
+                                title={t("Open a local EEZ Studio Project")}
                                 icon={HOME_TAB_OPEN_ICON}
                                 onClick={() => {
                                     ipcRenderer.send("open-project");
@@ -387,8 +386,8 @@ export const ProjectInfo = observer(
                         <div className="EezStudio_HomeTab_Projects_ProjectInfo_Actions">
                             <ButtonAction
                                 className="btn-primary"
-                                text={isChinese() ? "编辑项目" : "Edit Project"}
-                                title={isChinese() ? "编辑项目" : "Edit Project"}
+                                text={t("Edit Project")}
+                                title={t("Edit Project")}
                                 icon="material:edit"
                                 onClick={openProjectsStore.editProject}
                             />
@@ -396,23 +395,23 @@ export const ProjectInfo = observer(
                                 .hasFlowSupport && (
                                 <ButtonAction
                                     className="btn-secondary"
-                                    text={isChinese() ? "运行项目" : "Run Project"}
-                                    title={isChinese() ? "运行项目" : "Run Project"}
+                                    text={t("Run Project")}
+                                    title={t("Run Project")}
                                     icon="material:play_arrow"
                                     onClick={openProjectsStore.runProject}
                                 />
                             )}
                             <ButtonAction
                                 className="btn-secondary"
-                                text={isChinese() ? "复制项目路径" : "Copy Project Path"}
-                                title={isChinese() ? "复制项目路径" : "Copy Project Path"}
+                                text={t("Copy Project Path")}
+                                title={t("Copy Project Path")}
                                 icon="material:content_copy"
                                 onClick={openProjectsStore.copyProjectPath}
                             />
                             <ButtonAction
                                 className="btn-danger"
-                                text={isChinese() ? "从列表中移除" : "Remove From List"}
-                                title={isChinese() ? "从列表中移除" : "Remove From List"}
+                                text={t("Remove From List")}
+                                title={t("Remove From List")}
                                 icon="material:close"
                                 onClick={openProjectsStore.removeFromList}
                             />
