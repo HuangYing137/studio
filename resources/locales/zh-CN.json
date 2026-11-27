@@ -244,7 +244,7 @@
     "Not installed": "未安装",
     "New versions": "有新版本",
     "Update All": "全部更新",
-    "Actions": "操作",
+    "Actions": "动作",
     "Update Catalog": "更新目录",
     "Install Extension": "安装扩展",
     "Install extension from local file": "从本地文件安装扩展",
@@ -443,5 +443,9 @@
     "Pick color from screen": "从屏幕拾取颜色",
     "Switch input mode": "切换输入模式",
     "Lighten color": "调亮颜色",
-    "Darken color": "调暗颜色"
+    "Darken color": "调暗颜色",
+    "Global": "全局",
+    "Local": "局部",
+    "Structs": "结构体",
+    "Widgets": "控件"
 }
