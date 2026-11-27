@@ -1,4 +1,5 @@
 import React from "react";
+import { translateProjectEditorLabel as t } from "eez-studio-shared/i10n";
 
 import { tmpdir } from "os";
 import { sep } from "path";
@@ -45,15 +46,15 @@ registerActionComponents("Python", [
                 enumItems: [
                     {
                         id: "inline-script",
-                        label: "Inline script"
+                        label: t("Inline script")
                     },
                     {
                         id: "inline-script-as-expression",
-                        label: "Inline script as expression"
+                        label: t("Inline script as expression")
                     },
                     {
                         id: "script-file",
-                        label: "Script file"
+                        label: t("Script file")
                     }
                 ]
             },
