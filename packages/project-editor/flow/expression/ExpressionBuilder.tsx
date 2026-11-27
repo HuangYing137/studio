@@ -23,6 +23,7 @@ import {
     PropertyInfo
 } from "project-editor/core/object";
 import { ProjectContext } from "project-editor/project/context";
+import { translateProjectEditorLabel as t } from "eez-studio-shared/i10n";
 import {
     getProjectStore,
     ProjectStore
@@ -1095,7 +1096,7 @@ const SelectItemDialog = observer(
                     id: "conditional-operator",
                     label: (
                         <>
-                            <span>Conditional operator</span>
+                            <span>{t("Conditional operator")}</span>
                             <span className="EezStudio_ExpressionBuilder_OperatorSign">
                                 A ? B : C
                             </span>
@@ -1372,7 +1373,7 @@ const SelectItemDialog = observer(
 
                     instrumentsSelector = (
                         <div>
-                            <span>Instrument</span>
+                            <span>{t("Instrument")}</span>
                             <select
                                 className="form-select"
                                 value={this.expressionBuilderState.instrumentId}
