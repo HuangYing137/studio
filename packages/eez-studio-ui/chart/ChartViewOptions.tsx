@@ -30,7 +30,7 @@ export const ChartViewOptions = observer(
                 <div className="EezStudio_ChartViewOptionsContainer">
                     <div>
                         <div className="EezStudio_SideDockView_PropertyLabel">
-                            Axes lines subdivision:
+                            {t("Axes lines subdivision:")}
                         </div>
                         <div className="EezStudio_SideDockView_Property">
                             <Radio
@@ -41,7 +41,7 @@ export const ChartViewOptions = observer(
                                     viewOptions.setAxesLinesType("dynamic")
                                 )}
                             >
-                                Dynamic
+                                {t("Dynamic")}
                             </Radio>
                             {viewOptions.axesLines.type === "dynamic" && (
                                 <DynamicSubdivisionOptions
@@ -54,7 +54,7 @@ export const ChartViewOptions = observer(
                                     viewOptions.setAxesLinesType("fixed")
                                 )}
                             >
-                                Fixed
+                                {t("Fixed")}
                             </Radio>
                             {viewOptions.axesLines.type === "fixed" && (
                                 <FixedSubdivisionOptions
@@ -69,19 +69,19 @@ export const ChartViewOptions = observer(
                                     viewOptions.setAxesLinesSnapToGrid(checked);
                                 })}
                             >
-                                Snap to grid
+                                {t("Snap to grid")}
                             </Checkbox>
                         </div>
                     </div>
                     {this.props.showRenderAlgorithm && (
                         <div>
                             <div className="EezStudio_SideDockView_PropertyLabel">
-                                Rendering algorithm:
+                                {t("Rendering algorithm:")}
                             </div>
                             <div className="EezStudio_SideDockView_Property">
                                 <select
                                     className="form-select"
-                                    title=t("Chart rendering algorithm")
+                                    title={t("Chart rendering algorithm")}
                                     value={globalViewOptions.renderAlgorithm}
                                     onChange={action(
                                         (
@@ -92,9 +92,9 @@ export const ChartViewOptions = observer(
                                                     .value as WaveformRenderAlgorithm)
                                     )}
                                 >
-                                    <option value="avg">{t(t("Average"))}</option>
-                                    <option value="minmax">{t(t("Min-max"))}</option>
-                                    <option value="gradually">{t(t("Gradually"))}</option>
+                                    <option value="avg">{t("Average")}</option>
+                                    <option value="minmax">{t("Min-max")}</option>
+                                    <option value="gradually">{t("Gradually")}</option>
                                 </select>
                             </div>
                         </div>
@@ -107,7 +107,7 @@ export const ChartViewOptions = observer(
                                     viewOptions.setShowAxisLabels(checked);
                                 })}
                             >
-                                Show axis labels
+                                {t("Show axis labels")}
                             </Checkbox>
                         </div>
                         <div>
@@ -117,11 +117,11 @@ export const ChartViewOptions = observer(
                                     viewOptions.setShowZoomButtons(checked);
                                 })}
                             >
-                                Show zoom in/out buttons
+                                {t("Show zoom in/out buttons")}
                             </Checkbox>
                         </div>
                         <div className="EezStudio_GlobalOptionsContainer">
-                            Global options:
+                            {t("Global options:")}
                         </div>
                         <div>
                             <Checkbox
@@ -131,7 +131,7 @@ export const ChartViewOptions = observer(
                                         checked;
                                 })}
                             >
-                                Enable zoom in/out animations
+                                {t("Enable zoom in/out animations")}
                             </Checkbox>
                         </div>
                         <div>
@@ -141,7 +141,7 @@ export const ChartViewOptions = observer(
                                     globalViewOptions.blackBackground = checked;
                                 })}
                             >
-                                Black background
+                                {t("Black background")}
                             </Checkbox>
                         </div>
                         {this.props.showShowSampledDataOption && (
@@ -154,7 +154,7 @@ export const ChartViewOptions = observer(
                                                 checked)
                                     )}
                                 >
-                                    Show sampled data
+                                    {t("Show sampled data")}
                                 </Checkbox>
                             </div>
                         )}
@@ -308,10 +308,10 @@ const DynamicSubdivisionOptions = observer(
                         <tbody>
                             <tr>
                                 <td />
-                                <td>{t(t("Steps"))}</td>
+                                <td>{t("Steps")}</td>
                             </tr>
                             <tr>
-                                <td>{t(t("Time"))}</td>
+                                <td>{t("Time")}</td>
                                 <td>
                                     <input
                                         type="text"
@@ -425,12 +425,12 @@ const FixedSubdivisionOptions = observer(
                         <tbody>
                             <tr>
                                 <td />
-                                <td>{t(t("X axis"))}</td>
+                                <td>{t("X axis")}</td>
                                 <td />
-                                <td>{t(t("Y axis"))}</td>
+                                <td>{t("Y axis")}</td>
                             </tr>
                             <tr>
-                                <td>{t(t("Major"))}</td>
+                                <td>{t("Major")}</td>
                                 <td>
                                     <input
                                         type="number"
@@ -497,7 +497,7 @@ const FixedSubdivisionOptions = observer(
                                 </td>
                             </tr>
                             <tr>
-                                <td>{t(t("Minor"))}</td>
+                                <td>{t("Minor")}</td>
                                 <td>
                                     <input
                                         type="number"
@@ -526,7 +526,7 @@ const FixedSubdivisionOptions = observer(
                                         })}
                                     />
                                 </td>
-                                <td>by</td>
+                                <td>{t("by")}</td>
                                 <td>
                                     <input
                                         type="number"
