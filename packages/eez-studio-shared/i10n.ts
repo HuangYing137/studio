@@ -256,7 +256,3 @@ export function translateProjectEditorLabel(label: string) {
     return dictionary[label] || label;
 }
 
-export function translateProjectEditorLabel(label: string) {
-    if (!getLocale().toLowerCase().startsWith("zh")) return label;
-    return zhCNLabels[label] || label;
-}
