@@ -489,5 +489,14 @@
     "Y axis": "Y 轴",
     "Major": "主刻度",
     "Minor": "次刻度",
-    "by": "×"
+    "by": "×",
+    "Zoom In": "放大",
+    "Zoom Out": "缩小",
+    "Drag chart": "拖动图表",
+    "X-Axis Offset": "X 轴偏移",
+    "X-Axis Zoom": "X 轴缩放",
+    "Y-Axis Offset": "Y 轴偏移",
+    "Y-Axis Zoom": "Y 轴缩放",
+    "Remove measurement": "移除测量项",
+    "Save as CSV file": "保存为 CSV 文件"
 }
