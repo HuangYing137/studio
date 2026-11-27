@@ -1,4 +1,6 @@
-import { ipcRenderer } from "electron";\nimport fs from "fs";\nimport path from "path";
+import { ipcRenderer } from "electron";
+import fs from "fs";
+import path from "path";
 
 import { isRenderer } from "eez-studio-shared/util-electron";
 
