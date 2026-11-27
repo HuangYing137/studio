@@ -398,5 +398,8 @@
     "Lock All": "全部锁定",
     "Show All": "全部显示",
     "Hide all": "全部隐藏",
-    "Widget": "控件"
+    "Widget": "控件",
+    "TIP": "提示",
+    "For native variable implementation": "对于原生变量，必须提供 get 和 set 函数的实现。下面是这些函数的基本实现代码。你可以将其复制并粘贴到项目中的源文件里。",
+    "For variable implementation": "对于变量，必须提供 get 和 set 函数的实现。下面是这些函数的基本实现代码。你可以将其复制并粘贴到项目中的源文件里。"
 }
