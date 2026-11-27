@@ -723,5 +723,17 @@
     "Question": "提问",
     "NoOp": "空操作",
     "Label OUT": "输出标签",
-    "Label IN": "输入标签"
+    "Label IN": "输入标签",
+    "WriteSetting": "写入设置",
+    "Invalid key property": "键属性无效",
+    "Invalid Audio file property": "音频文件属性无效",
+    "Invalid action name property": "动作名称属性无效",
+    "Invalid action name: {0}": "无效的动作名称：{0}",
+    "Invalid data property": "数据属性无效",
+    "Invalid Widget property": "控件属性无效",
+    "Invalid Widget handle": "控件句柄无效",
+    "Widget not initialized": "控件尚未初始化",
+    "Widget doesn't support printing": "控件不支持打印",
+    "Invalid Options property": "选项属性无效",
+    "Widget doesn't support focus": "控件不支持焦点操作"
 }
