@@ -36,6 +36,7 @@ import {
     setTimeFormat
 } from "eez-studio-shared/i10n";
 import { formatBytes } from "eez-studio-shared/formatBytes";
+import { translateProjectEditorLabel as t } from "eez-studio-shared/i10n";
 
 import { showDialog, Dialog } from "eez-studio-ui/dialog";
 import { Loader } from "eez-studio-ui/loader";
@@ -606,7 +607,7 @@ const CompactDatabaseDialog = observer(
             return (
                 <Dialog
                     open={true}
-                    title={isChinese() ? "正在压缩数据库" : "Compacting Database"}
+                    title={t("Compacting Database")}
                     size="small"
                     cancelButtonText="Close"
                     cancelDisabled={this.sizeAfter === undefined}
@@ -614,11 +615,11 @@ const CompactDatabaseDialog = observer(
                     <table className="EezStudio_CompactDatabaseDialogTable">
                         <tbody>
                             <tr>
-                                <td>{isChinese() ? "压缩前大小" : "Size before"}</td>
+                                <td>{t("Size before")}</td>
                                 <td>{formatBytes(this.sizeBefore)}</td>
                             </tr>
                             <tr>
-                                <td>{isChinese() ? "压缩后大小" : "Size after"}</td>
+                                <td>{t("Size after")}</td>
                                 <td>
                                     {this.sizeAfter !== undefined ? (
                                         formatBytes(this.sizeAfter)
@@ -629,7 +630,7 @@ const CompactDatabaseDialog = observer(
                             </tr>
                             {this.sizeReduced !== undefined && (
                                 <tr>
-                                    <td>{isChinese() ? "减少了 " : "Size reduced by "}</td>
+                                    <td>{t("Size reduced by ")}</td>
                                     <td>
                                         {formatBytes(
                                             this.sizeBefore - this.sizeAfter!
@@ -721,7 +722,7 @@ const SelectedDatabaseDetails = observer(
                     </div>
 
                     <div>
-                        <label className="form-label">{isChinese() ? "路径：" : "Path:"}</label>
+                        <label className="form-label">{t("Path:")}</label>
                         <div>{selectedDatabase.filePath}</div>
 
                         <button
@@ -765,7 +766,7 @@ const SelectedDatabaseDetails = observer(
                             .
                         </div>
                         {selectedDatabase.isCompactDatabaseAdvisable && (
-                            <div>{COMPACT_DATABASE_MESSAGE}</div>
+                            <div>{t(COMPACT_DATABASE_MESSAGE)}</div>
                         )}
                         <div className="btn-group me-2">
                             <button
@@ -810,17 +811,17 @@ const DatatabaseList = observer(
                     <ToolbarHeader>
                         <IconAction
                             icon="material:add"
-                            title={isChinese() ? "创建新数据库" : "Create a new database"}
+                            title={t("Create a new database")}
                             onClick={settingsController.createNewDatabase}
                         />
                         <IconAction
                             icon={HOME_TAB_OPEN_ICON}
-                            title={isChinese() ? "打开现有数据库" : "Open an existing database"}
+                            title={t("Open an existing database")}
                             onClick={settingsController.openDatabase}
                         />
                         <IconAction
                             icon="material:delete"
-                            title={isChinese() ? "删除数据库" : "Delete a database"}
+                            title={t("Delete a database")}
                             onClick={settingsController.deleteDatabase}
                             enabled={
                                 settingsController.selectedDatabase &&
@@ -941,7 +942,7 @@ const PythonSettings = observer(
                     <td>
                         <PropertyList>
                             <StaticProperty
-                                name={isChinese() ? "默认路径" : "Default path"}
+                                name={t("Default path")}
                                 value={
                                     this.pythonPathError
                                         ? "Python not found"
@@ -950,7 +951,7 @@ const PythonSettings = observer(
                                 className="StaticPropertyValueWrap"
                             />
                             <BooleanProperty
-                                name={isChinese() ? "设置自定义路径" : "Set custom path"}
+                                name={t("Set custom path")}
                                 value={settingsController.pythonUseCustomPath}
                                 onChange={action(
                                     value =>
@@ -961,7 +962,7 @@ const PythonSettings = observer(
                             />
                             {settingsController.pythonUseCustomPath && (
                                 <AbsoluteFileInputProperty
-                                    name={isChinese() ? "自定义 Python 路径" : "Custom Python path"}
+                                    name={t("Custom Python path")}
                                     value={settingsController.pythonCustomPath}
                                     onChange={action(value => {
                                         settingsController.pythonCustomPath =
@@ -1026,11 +1027,11 @@ const TemplateSettings = observer(
         render() {
             return (
                 <tr>
-                    <td>{isChinese() ? "项目模板" : "Project Templates"}</td>
+                    <td>{t("Project Templates")}</td>
                     <td>
                         <PropertyList>
                             <BooleanProperty
-                                name={isChinese() ? "使用本地模板文件夹" : "Use local templates folder"}
+                                name={t("Use local templates folder")}
                                 value={settingsController.useLocalTemplates}
                                 onChange={action(
                                     value =>
@@ -1042,7 +1043,7 @@ const TemplateSettings = observer(
                             {settingsController.useLocalTemplates && (
                                 <>
                                     <AbsoluteDirectoryInputProperty
-                                        name={isChinese() ? "本地模板路径" : "Local templates path"}
+                                        name={t("Local templates path")}
                                         value={
                                             settingsController.localTemplatesPath
                                         }
@@ -1052,7 +1053,7 @@ const TemplateSettings = observer(
                                         })}
                                     />
                                     <tr>
-                                        <td>{isChinese() ? "仓库" : "Repository"}</td>
+                                        <td>{t("Repository")}</td>
                                         <td>
                                             <a
                                                 href="#"
@@ -1079,7 +1080,7 @@ const TemplateSettings = observer(
 
 ////////////////////////////////////////////////////////////////////////////////
 
-const isChinese = () => getLocale().toLowerCase().startsWith("zh");
+
 
 const SettingsSectionHeader = ({
     title
@@ -1101,12 +1102,12 @@ export const Settings = observer(
             return (
                 <div className="EezStudio_HomeSettingsBody">
                     <PropertyList>
-                        <SettingsSectionHeader title={isChinese() ? "数据库" : "Databases"} />
+                        <SettingsSectionHeader title={t("Databases")} />
                         <Databases />
 
-                        <SettingsSectionHeader title={isChinese() ? "语言和区域" : "Localization"} />
+                        <SettingsSectionHeader title={t("Localization")} />
                         <SelectProperty
-                            name={isChinese() ? "界面语言" : "Locale"}
+                            name={t("Locale")}
                             value={settingsController.locale}
                             onChange={settingsController.onLocaleChange}
                         >
@@ -1125,7 +1126,7 @@ export const Settings = observer(
                                 ))}
                         </SelectProperty>
                         <SelectProperty
-                            name={isChinese() ? "日期格式" : "Date format"}
+                            name={t("Date format")}
                             value={settingsController.dateFormat}
                             onChange={settingsController.onDateFormatChanged}
                         >
@@ -1139,7 +1140,7 @@ export const Settings = observer(
                             ))}
                         </SelectProperty>
                         <SelectProperty
-                            name={isChinese() ? "时间格式" : "Time format"}
+                            name={t("Time format")}
                             value={settingsController.timeFormat}
                             onChange={settingsController.onTimeFormatChanged}
                         >
@@ -1153,35 +1154,35 @@ export const Settings = observer(
                             ))}
                         </SelectProperty>
 
-                        <SettingsSectionHeader title={isChinese() ? "外部工具" : "External Tools"} />
+                        <SettingsSectionHeader title={t("External Tools")} />
                         <PythonSettings />
 
-                        <SettingsSectionHeader title={isChinese() ? "项目编辑器" : "Project Editor"} />
+                        <SettingsSectionHeader title={t("Project Editor")} />
                         <SelectProperty
-                            name={isChinese() ? "项目编辑器布局" : "Project editor layout"}
+                            name={t("Project editor layout")}
                             value={settingsController.projectEditorLayout}
                             onChange={settingsController.setProjectEditorLayout}
                         >
-                            <option value="classic">{isChinese() ? "经典布局" : "Classic"}</option>
+                            <option value="classic">{t("Classic")}</option>
                             <option value="project-explorer">
-                                {isChinese() ? "项目浏览器" : "Project Explorer"}
+                                {t("Project Explorer")}
                             </option>
                         </SelectProperty>
                         <SelectProperty
-                            name={isChinese() ? "属性编辑器" : "Properties editor"}
+                            name={t("Properties editor")}
                             value={settingsController.propertiesEditor}
                             onChange={settingsController.setPropertiesEditor}
                         >
                             <option value="panel">
-                                {isChinese() ? "面板（位于右侧的标签页）" : "Panel (tab on the right side)"}
+                                {t("Panel (tab on the right side)")}
                             </option>
-                            <option value="dialog">{isChinese() ? "弹出对话框" : "Popup dialog"}</option>
+                            <option value="dialog">{t("Popup dialog")}</option>
                         </SelectProperty>
                         <TemplateSettings />
 
-                        <SettingsSectionHeader title={isChinese() ? "外观" : "Appearance"} />
+                        <SettingsSectionHeader title={t("Appearance")} />
                         <BooleanProperty
-                            name={isChinese() ? "深色主题" : "Dark theme"}
+                            name={t("Dark theme")}
                             value={settingsController.isDarkTheme}
                             onChange={settingsController.switchTheme}
                             checkboxStyleSwitch={true}
