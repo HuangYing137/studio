@@ -1,4 +1,5 @@
 import React from "react";
+import { translateProjectEditorLabel as t } from "eez-studio-shared/i10n";
 
 import type { IDashboardComponentContext } from "eez-studio-types";
 
@@ -144,7 +145,7 @@ registerActionComponents("Dashboard Specific", [
 
             const url = context.evalProperty<string>("url");
             if (url == undefined || typeof url != "string") {
-                context.throwError(`Invalid URL property`);
+                context.throwError(t("Invalid URL property"));
                 return;
             }
 
@@ -155,14 +156,14 @@ registerActionComponents("Dashboard Specific", [
                     4,
                     i,
                     0,
-                    `Failed to evaluate ${i + 1}. header name`
+                    t("Failed to evaluate {0}. header name").replace("{0}", String(i + 1))
                 );
 
                 const value = context.evalListParamElementExpression<string>(
                     4,
                     i,
                     4,
-                    `Failed to evaluate ${i + 1}. header value`
+                    t("Failed to evaluate {0}. header value").replace("{0}", String(i + 1))
                 );
 
                 if (name && value) {
@@ -174,7 +175,7 @@ registerActionComponents("Dashboard Specific", [
             if (method == "post" || method == "put" || method == "patch") {
                 body = context.evalProperty<string>("body");
                 if (body && typeof body != "string") {
-                    context.throwError(`Body is not a string`);
+                    context.throwError(t("Body is not a string"));
                     return;
                 }
             }
@@ -189,7 +190,7 @@ registerActionComponents("Dashboard Specific", [
                     });
                     if (!response.ok) {
                         context.throwError(
-                            "Failed: " +
+                            t("Failed: ") +
                                 (response.statusText ||
                                     response.status.toString())
                         );
